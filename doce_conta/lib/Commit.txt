@@ -1,0 +1,51 @@
+Gerenciamento de Configuração Doce Conta: 
+O gerenciamento de configuração e controle de versão do software doce conta, 
+será feito por meio da plataforma Gt hub, onde serão adotados métodos e padrões
+para se realizar tal fim (levando em consideração que tudo será feito por padrão na 
+língua inglesa). 
+
+Dentre eles: 
+
+1 - Padronização de Commits 
+
+2 - Padronização de Branch 
+
+3 - Utilização de Sistema de pull request 
+
+4 - Padronização de codificação 
+
+Os commitis deverão seguir o seguinte padrão para cada caso de uso pré-determinado: 
+
+Fix: descrição (correção de bug) 
+
+Feat: descrição (implementação de novas feature) 
+
+Wip: descrição (trabalho inacabado de nova feature) 
+
+Style: descrição (mudança cosmética) 
+
+Conf: descrição (mudança de configuração) 
+
+Refact: descrição (refatoração de código) 
+
+
+As Branchs terão de ser padronizadas colocando os prefixos já descritos na parte 
+de commits e acrescentar no máximo três palavras o objetivo da branch, 
+e separados por hiffen como o exemplo abaixo: 
+
+bug-visual-login-button 
+
+ 
+
+Sistema de restrição de push para a branch principal, 
+baseando-se na análise da request(senda está verificação feita pelo Gerenciador 
+de versão). 
+
+ 
+
+O código deverá obedecer às boas condutas da programação, 
+como clean code e modularismo, além de ser inteligível e ou bem comentado, 
+e conter intrinsicamente validações afins de evitar erros. Caso não seja possível, 
+poderá ser adotado em medida preliminar códigos fora destes quesitos, 
+entretanto será necessário refatoração futura, e tendo de ser aprovado 
+por membros do grupo ou do gerenciador de versão. 

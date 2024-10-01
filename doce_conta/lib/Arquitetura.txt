@@ -1,0 +1,47 @@
+Arquitetura de Software Doce Conta 
+O software doce conta, será criado usando uma arquitetura de model view controler,
+e acresentando a pasta widgets para widgets criados, além de ademais pastas de 
+configurações. 
+Contando com a seguinte estrutura de código apartir da pasta lib: 
+
+/lib  
+
+|-- /src 
+
+|--|--/model  
+
+|--|--/view  
+
+|--|--/controller  
+
+|--|--/widgets 
+
+|--|main.dart // main do projeto 
+
+|--/configs 
+
+ 
+
+Onde:  
+
+Src: conterá os arquivos principais do projeto. 
+
+Configs: conterá outras configurações necessárias ao software. 
+
+Model : arquivos responsáveis pelo gerenciamento e manipulação de dados. 
+
+View : arquivos responsáveis pela parte visual do software. 
+
+Controller : responsável por controlar todo o fluxo do software e suas pastas. 
+
+Widgets : responsável por fornecer os widgets do software. 
+
+ 
+
+Vale destacar que poderão ser remodelados e criar
+pastas para caso venha a ter apis, e ou mais modularizações 
+de código como validadores e utilitários, porém essa primeira 
+versão visa a simplificação e facilidade de entendimento por toda a equipe, 
+pois de maneira mais robusta acreditamos que poderia se tornar um empecilho 
+essa estrutura, pela falta de domínio e falta de tempo para aprender tais 
+conceitos e evitar potenciais erros de importação; 
