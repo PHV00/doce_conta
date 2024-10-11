@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 import '../widgets/button.dart';
 import '../widgets/other_options.dart';
+import '../widgets/api_brands_login.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main(){
@@ -57,7 +58,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 )
               ),
               const SizedBox(height: 50,),
-              const OtherOptionsWidget()
+              const OtherOptionsWidget(),
+              const SizedBox(height: 40,),
+              const ApiBrandsLogin()
             ],
           )
         )
