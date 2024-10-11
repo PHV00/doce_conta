@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../widgets/text_field.dart';
+import '../widgets/button.dart';
 
 void main(){
   runApp(const RegisterScreen());
@@ -23,17 +25,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
               //FAZER OS INPUTS COMO UM WIDGET
               Text("Doce"),
               Text("Conta", style: TextStyle(color: Colors.green)),
-              Text("Mei ou Email"),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(CircularProgressIndicator.strokeAlignCenter))),
-                ),                
+              Column(
+                children: [
+                  Text("Mei ou Email"),
+                  RegisterInput()
+                ],
               ),
-              Text("Senha"),
-              TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(CircularProgressIndicator.strokeAlignCenter)))
-                ),
+              Column(
+                children: [
+                  Text("Senha"),
+                  RegisterInput()
+                ],
               )
             ],
           )
