@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 import '../widgets/button.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main(){
   runApp(const RegisterScreen());
@@ -24,8 +25,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               //FAZER OS INPUTS COMO UM WIDGET
-              const Text("Doce"),
-              const Text("Conta", style: TextStyle(color: Colors.green)),
+              SvgPicture.asset("img/pao.svg"),
               const Column(
                 children: [
                   Text("Mei ou Email"),
