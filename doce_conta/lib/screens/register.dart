@@ -3,6 +3,7 @@ import '../widgets/text_field.dart';
 import '../widgets/button.dart';
 import '../widgets/other_options.dart';
 import '../widgets/api_brands_login.dart';
+import '../widgets/input_and_label.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main(){
@@ -22,27 +23,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.white,
-        body: Center(
-          child: Column(
+        body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //FAZER OS INPUTS COMO UM WIDGET
               SvgPicture.asset("img/pao.svg"),
               const SizedBox(height: 50,),
-              const Column(
-                children: [
-                  Text("Mei ou Email"),
-                  RegisterInput()
-                ],
-              ),
+
+              const InputAndLabelWidget(labelText: "Mei ou Email",),
               const SizedBox(height: 20,),
-              const Column(
-                children: [
-                  Text("Senha"),
-                  RegisterInput()
-                ],
-              ),
+
+              const InputAndLabelWidget(labelText: "Senha"),
               const SizedBox(height: 50,),
+              
               const ButtonWidget(btnText: "Logar"),
               const SizedBox(height: 10,),
               RichText(
@@ -64,7 +56,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ],
           )
         )
-      )
-    );
+      );
   }
 }
