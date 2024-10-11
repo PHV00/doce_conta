@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/text_field.dart';
 import '../widgets/button.dart';
+import '../widgets/other_options.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main(){
@@ -26,19 +27,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
             children: [
               //FAZER OS INPUTS COMO UM WIDGET
               SvgPicture.asset("img/pao.svg"),
+              const SizedBox(height: 50,),
               const Column(
                 children: [
                   Text("Mei ou Email"),
                   RegisterInput()
                 ],
               ),
+              const SizedBox(height: 20,),
               const Column(
                 children: [
                   Text("Senha"),
                   RegisterInput()
                 ],
               ),
+              const SizedBox(height: 50,),
               const ButtonWidget(btnText: "Logar"),
+              const SizedBox(height: 10,),
               RichText(
                 text: const TextSpan(
                     style: TextStyle(color: Colors.black, fontSize: 12),
@@ -50,7 +55,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         //Usar o recognizer para fazer ele ir para outra tela
                     ]
                 )
-              )
+              ),
+              const SizedBox(height: 50,),
+              const OtherOptionsWidget()
             ],
           )
         )
