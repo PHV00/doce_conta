@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "doce_conta",
+            "cwd": "doce_conta",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "doce_conta (profile mode)",
+            "cwd": "doce_conta",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "doce_conta (release mode)",
+            "cwd": "doce_conta",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
