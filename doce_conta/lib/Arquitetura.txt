@@ -10,7 +10,7 @@ Contando com a seguinte estrutura de código apartir da pasta lib:
 
 |--|--/model  
 
-|--|--/view  
+|--|--/view
 
 |--|--/controller  
 
