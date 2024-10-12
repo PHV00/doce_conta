@@ -26,7 +26,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SvgPicture.asset("img/pao.svg"),
+              SvgPicture.asset("img/doce_conta_logo.svg", width: 50, height: 50,),
               const SizedBox(height: 50,),
 
               const InputAndLabelWidget(labelText: "Mei ou Email",),
