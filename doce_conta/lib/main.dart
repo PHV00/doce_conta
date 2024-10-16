@@ -1,5 +1,5 @@
 import 'package:doce_conta/view/pagina_produto.dart';
-import 'package:doce_conta/view/register.dart';
+import 'package:doce_conta/view/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
