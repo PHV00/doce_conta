@@ -7,9 +7,9 @@ import '../widgets/api_brands_login.dart';
 import '../widgets/input_and_label.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-void main(){
-  runApp(const MaterialApp(home: LoginScreen()));
-}
+// void main(){
+//   runApp(const MaterialApp(home: LoginScreen()));
+// }
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

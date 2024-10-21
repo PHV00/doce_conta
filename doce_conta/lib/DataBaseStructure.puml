@@ -1,0 +1,43 @@
+@startuml
+
+class User{
+    id_user int primary key auto_increments not null,
+    name_user varchar(45),
+    password varchar(25),
+    email varchar(45),
+    MEI varchar(150),
+}
+
+class Product{
+    id_product int primary key auto_increments not null,
+    name_product varchar(45),
+    profit_product double,
+    coust_product double,
+    profit_margin_product double,
+    qtd_product int,
+}
+
+class Category{
+    id_category int primary key auto_increments not null,
+    name_category varchar(45),
+}
+
+class Coust_Category{
+    id_cost_category int primary key auto_increments not null,
+    name_category varchar(45)
+    svg_category varchar(45)
+}
+
+class Coust{
+    id_coust int primary key auto_increments not null,
+    name_coust varchar(45)
+    value_coust double
+}
+
+class Estoque{
+    id_estoque
+    data dataTime
+    
+}
+
+@enduml
