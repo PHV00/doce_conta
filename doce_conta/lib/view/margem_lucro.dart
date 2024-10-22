@@ -15,10 +15,14 @@ class MargemLucroScreen extends StatelessWidget {
       child: Scaffold(
           body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
                 "Selecione a procentagem de lucro que gostaria de ter em seu produto:"),
-            buildColumnProfits(),
+            SizedBox(
+              width: 310,
+              child: buildColumnProfits(),
+            )
           ],
         ),
       )),
@@ -42,7 +46,9 @@ Column buildColumnProfits() {
       index++;
     }
     listRow.removeLast(); //Remove last widht box
-    listRow.add(const SizedBox(height: 60,)); //Add space box height
+    listRow.add(const SizedBox(
+      height: 60,
+    )); //Add space box height
     listColumn.add(Row(children: listRow));
 
     listRow = [];
