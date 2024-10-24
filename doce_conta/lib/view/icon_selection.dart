@@ -65,21 +65,21 @@ class IconSelectionScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0), // Ajuste da margem
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             Expanded(
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
-                  crossAxisSpacing: 16.0, // Ajuste do espaçamento horizontal
-                  mainAxisSpacing: 16.0,  // Ajuste do espaçamento vertical
-                  childAspectRatio: 1, // Mantém as caixas proporcionais
+                  crossAxisSpacing: 16.0,
+                  mainAxisSpacing: 16.0,
+                  childAspectRatio: 1,
                 ),
                 itemCount: icons.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: EdgeInsets.all(8), // Margem interna ajustada
+                    padding: EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: const Color(0xFF00382B),
                       borderRadius: BorderRadius.circular(10),
@@ -88,8 +88,8 @@ class IconSelectionScreen extends StatelessWidget {
                       icon: SvgPicture.asset(
                         icons[index],
                         color: const Color(0xFFF5A001),
-                        width: 30, // Redução do tamanho do ícone
-                        height: 30, // Redução do tamanho do ícone
+                        width: 30,
+                        height: 30,
                       ),
                       onPressed: () {},
                     ),
