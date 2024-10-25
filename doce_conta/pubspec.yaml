@@ -69,6 +69,34 @@ flutter:
     - img/google_icon.svg
     - img/microsoft_icon.svg
     - img/doce_conta_logo.svg
+    - img/prato.svg
+    - img/mel.svg
+    - img/ovo.svg
+    - img/bolacha.svg
+    - img/pote.svg
+    - img/melancia.svg
+    - img/burrito.svg
+    - img/sanduiche.svg
+    - img/pastel.svg
+    - img/croissant.svg
+    - img/pao2.svg
+    - img/pao3.svg
+    - img/pao4.svg
+    - img/pao5.svg
+    - img/pirulito.svg
+    - img/cupcake.svg
+    - img/donuts.svg
+    - img/bolinhos.svg
+    - img/sorvete.svg
+    - img/brigadeiro.svg
+    - img/bolo.svg
+    - img/hamburguer.svg
+    - img/cafe.svg
+    - img/refrigerante.svg
+    - img/cerveja.svg
+    - img/drink.svg
+    - img/drink2.svg
+    - img/drink3.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
