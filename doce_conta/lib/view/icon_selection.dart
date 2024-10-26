@@ -17,34 +17,34 @@ class MyApp extends StatelessWidget {
 
 class IconSelectionScreen extends StatelessWidget {
   final List<String> icons = [
-    'img/prato.svg',
-    'img/mel.svg',
-    'img/ovo.svg',
-    'img/bolacha.svg',
-    'img/pote.svg',
-    'img/melancia.svg',
-    'img/burrito.svg',
-    'img/sanduiche.svg',
-    'img/pastel.svg',
-    'img/croissant.svg',
-    'img/pao2.svg',
-    'img/pao3.svg',
-    'img/pao4.svg',
-    'img/pao5.svg',
-    'img/pirulito.svg',
-    'img/cupcake.svg',
-    'img/donuts.svg',
-    'img/bolinhos.svg',
-    'img/sorvete.svg',
-    'img/brigadeiro.svg',
-    'img/bolo.svg',
-    'img/hamburguer.svg',
-    'img/cafe.svg',
-    'img/refrigerante.svg',
-    'img/cerveja.svg',
-    'img/drink.svg',
-    'img/drink2.svg',
-    'img/drink3.svg',
+    'assets/Images/prato.svg',
+    'assets/Images/mel.svg',
+    'assets/Images/ovo.svg',
+    'assets/Images/bolacha.svg',
+    'assets/Images/pote.svg',
+    'assets/Images/melancia.svg',
+    'assets/Images/burrito.svg',
+    'assets/Images/sanduiche.svg',
+    'assets/Images/pastel.svg',
+    'assets/Images/croissant.svg',
+    'assets/Images/pao2.svg',
+    'assets/Images/pao3.svg',
+    'assets/Images/pao4.svg',
+    'assets/Images/pao5.svg',
+    'assets/Images/pirulito.svg',
+    'assets/Images/cupcake.svg',
+    'assets/Images/donuts.svg',
+    'assets/Images/bolinhos.svg',
+    'assets/Images/sorvete.svg',
+    'assets/Images/brigadeiro.svg',
+    'assets/Images/bolo.svg',
+    'assets/Images/hamburguer.svg',
+    'assets/Images/cafe.svg',
+    'assets/Images/refrigerante.svg',
+    'assets/Images/cerveja.svg',
+    'assets/Images/drink.svg',
+    'assets/Images/drink2.svg',
+    'assets/Images/drink3.svg',
   ];
 
   @override
@@ -113,36 +113,37 @@ class IconSelectionScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'Images/produto.svg',
-              color: const Color(0xFFF5A001),
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/Images/produto.svg',
+              // ignore: deprecated_member_use
+              color: const Color(0xFFF5A001), height: 30,
+              ),
+              backgroundColor: const Color(0xFF00382B),
+            //  icon: Icon(Icons.widgets_outlined),
+              label: '',
             ),
-            backgroundColor: const Color(0xFF00382B),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'Images/loja.svg',
-              color: const Color(0xFFF5A001),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/Images/loja.svg',
+              // ignore: deprecated_member_use
+              color: const Color(0xFFF5A001), height: 30,),
+              //icon: Icon(Icons.store),
+              label: '',
             ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'Images/estoque.svg',
-              color: const Color(0xFFF5A001),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/Images/estoque.svg',
+              // ignore: deprecated_member_use
+              color: const Color(0xFFF5A001), height: 30),
+              //icon: Icon(Icons.calculate_outlined),
+              label: '',
             ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'Images/relatorio.svg',
-              color: const Color(0xFFF5A001),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('assets/Images/relatorio.svg',
+              // ignore: deprecated_member_use
+              color: const Color(0xFFF5A001), height: 30),
+              //icon: Icon(Icons.receipt_long_outlined),
+              label: '',
             ),
-            label: '',
-          ),
         ],
         selectedItemColor: Colors.green[900],
         unselectedItemColor: Colors.green[600],
