@@ -28,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              "img/doce_conta_logo.svg",
+              "assets/Images/doce_conta_logo.svg",
               width: 50,
               height: 50,
             ),
@@ -47,12 +47,11 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             ButtonWidget(
               btnText: "Logar",
-              onPressedFunction: (){
+              onPressedFunction: () {
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          const ProductPage()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProductPage()));
               },
             ),
             const SizedBox(

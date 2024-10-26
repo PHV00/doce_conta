@@ -9,11 +9,11 @@ class ApiBrandsLogin extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgPicture.asset("img/google_icon.svg", width: 24, height: 24,),
+        SvgPicture.asset("assets/Images/google_icon.svg", width: 24, height: 24,),
         const SizedBox(width: 40,),
-        SvgPicture.asset("img/microsoft_icon.svg", width: 24, height: 24,),
+        SvgPicture.asset("assets/Images/microsoft_icon.svg", width: 24, height: 24,),
         const SizedBox(width: 40,),
-        SvgPicture.asset("img/apple_icon.svg", width: 30, height: 30,),
+        SvgPicture.asset("assets/Images/apple_icon.svg", width: 30, height: 30,),
       ],
     );
   }
