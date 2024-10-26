@@ -14,6 +14,17 @@ class MargemLucroScreen extends StatelessWidget {
     return MaterialApp(
         home: SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          leading: const Icon(Icons.arrow_back, color: Colors.white),
+          centerTitle: true,
+          title: const Text(
+            "Margem de Lucro por produto",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          backgroundColor: const Color(0xFF00382B),
+        ),
           backgroundColor: const Color(0xFFFFFFFF),
           body: Center(
             child: Column(
