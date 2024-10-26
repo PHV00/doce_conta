@@ -68,12 +68,14 @@ Column buildColumnProfits() {
               percentage: "${j * 5}%",
               color: const Color(
                 0xFF6FC3AF,
-              ))
+              )
+            )
           : BtnMargemLucro(
               percentage: "${j * 5}%",
               color: const Color(
                 0xFFC1BFBF,
-              )));
+              )
+            ));
       listRow.add(const SizedBox(width: 50));
       index++;
     }
@@ -86,6 +88,7 @@ Column buildColumnProfits() {
     listRow = [];
     index = 0;
   }
+  listColumn.add(const BtnMargemLucro(percentage: "+", color: Color(0xFFC1BFBF)));
   return Column(
     children: listColumn,
   );
