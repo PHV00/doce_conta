@@ -1,5 +1,6 @@
 import 'package:doce_conta/widgets/button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../widgets/btn_margem_lucro.dart';
 
 void main() {
@@ -27,30 +28,70 @@ class MargemLucroScreen extends StatelessWidget {
         ),
           backgroundColor: const Color(0xFFFFFFFF),
           body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(
                     width: 310,
                     child: Text(
-                        "Selecione a procentagem de lucro que gostaria de ter em seu produto:")),
-                const SizedBox(height: 10,),
-                SizedBox(
-                  width: 310,
-                  child: buildColumnProfits(),
-                ),
-                const SizedBox(height: 10,),
-                const SizedBox(
-                  width: 310,
-                  child: Text(
+                        "Selecione a procentagem de lucro que gostaria de ter em seu produto:"
+                      )
+                    ),
+                  const SizedBox(height: 10,),
+                  SizedBox(
+                    width: 310,
+                    child: buildColumnProfits(),
+                  ),
+                  const SizedBox(height: 10,),
+                  const SizedBox(
+                    width: 310,
+                    child: Text(
                       "Os Valores de 40% e de 75% são porcentagens recomendadas para o seu negócio!"),
-                ),
-                const SizedBox(height: 10,),
-                const ButtonWidget(btnText: "Ok"),
-              ],
+                  ),
+                  const SizedBox(height: 10,),
+                  const ButtonWidget(btnText: "Ok"),
+                ],
+              ),
+            ), 
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('Images/produto.svg',
+              // ignore: deprecated_member_use
+              color: const Color(0xFFF5A001),
+              ),
+              backgroundColor: const Color(0xFF00382B),
+            //  icon: Icon(Icons.widgets_outlined),
+              label: '',
             ),
-          )),
-    ));
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('Images/loja.svg',
+              // ignore: deprecated_member_use
+              color: const Color(0xFFF5A001),),
+              //icon: Icon(Icons.store),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('Images/estoque.svg',
+              // ignore: deprecated_member_use
+              color: const Color(0xFFF5A001),),
+              //icon: Icon(Icons.calculate_outlined),
+              label: '',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset('Images/relatorio.svg',
+              // ignore: deprecated_member_use
+              color: const Color(0xFFF5A001),),
+              //icon: Icon(Icons.receipt_long_outlined),
+              label: '',
+            ),
+          ],
+        ),
+      )
+    )
+    );
   }
 }
 
@@ -84,6 +125,8 @@ Column buildColumnProfits() {
       height: 60,
     )); //Add space box height
     listColumn.add(Row(children: listRow));
+    
+    listRow.removeLast();
 
     listRow = [];
     index = 0;
