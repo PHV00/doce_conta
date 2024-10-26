@@ -3,12 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../widgets/btn_margem_lucro.dart';
 
-void main() {
-  runApp(const MargemLucroScreen());
-}
-
-class MargemLucroScreen extends StatelessWidget {
-  const MargemLucroScreen({super.key});
+class ProfitMarginScreen extends StatelessWidget {
+  const ProfitMarginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

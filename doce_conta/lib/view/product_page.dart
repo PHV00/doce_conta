@@ -1,9 +1,9 @@
-import 'package:doce_conta/widgets/footer_nav.dart';
+import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ProductPage extends StatelessWidget {
-  const ProductPage({super.key});
+class ProductScreen extends StatelessWidget {
+  const ProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +85,6 @@ class ProductPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BootomNavigationBarDefault()
     );
   }
 }

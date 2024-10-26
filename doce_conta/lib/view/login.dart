@@ -1,4 +1,5 @@
-import 'package:doce_conta/view/pagina_produto.dart';
+import 'package:doce_conta/view/main_screen.dart';
+import 'package:doce_conta/view/product_page.dart';
 import 'package:doce_conta/view/register.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -48,10 +49,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ButtonWidget(
               btnText: "Logar",
               onPressedFunction: () {
-                Navigator.push(
+                Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ProductPage()));
+                        builder: (context) => const MainScreen()));
               },
             ),
             const SizedBox(
