@@ -12,10 +12,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BootomNavigationBarDefault extends StatefulWidget {
-  const BootomNavigationBarDefault({super.key});
+typedef ChangeScreen(int index);
 
-  
+class BootomNavigationBarDefault extends StatefulWidget {
+  const BootomNavigationBarDefault({super.key, required this.changeScreen});
+
+  final ChangeScreen changeScreen;
 
   @override
   State<BootomNavigationBarDefault> createState() =>
@@ -25,10 +27,11 @@ class BootomNavigationBarDefault extends StatefulWidget {
 class _BootomNavigationBarDefaultState
     extends State<BootomNavigationBarDefault> {
   int _selectPosition = 0;
-  
+
   void _onSelectOption(int position) {
     setState(() {
       _selectPosition = position;
+      widget.changeScreen(position);
     });
   }
 
