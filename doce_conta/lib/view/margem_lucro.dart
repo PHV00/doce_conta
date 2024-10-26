@@ -58,32 +58,32 @@ class MargemLucroScreen extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
           items: [
             BottomNavigationBarItem(
-              icon: SvgPicture.asset('Images/produto.svg',
+              icon: SvgPicture.asset('assets/Images/produto.svg',
               // ignore: deprecated_member_use
-              color: const Color(0xFFF5A001),
+              color: const Color(0xFFF5A001), height: 30,
               ),
               backgroundColor: const Color(0xFF00382B),
             //  icon: Icon(Icons.widgets_outlined),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset('Images/loja.svg',
+              icon: SvgPicture.asset('assets/Images/loja.svg',
               // ignore: deprecated_member_use
-              color: const Color(0xFFF5A001),),
+              color: const Color(0xFFF5A001), height: 30,),
               //icon: Icon(Icons.store),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset('Images/estoque.svg',
+              icon: SvgPicture.asset('assets/Images/estoque.svg',
               // ignore: deprecated_member_use
-              color: const Color(0xFFF5A001),),
+              color: const Color(0xFFF5A001), height: 30),
               //icon: Icon(Icons.calculate_outlined),
               label: '',
             ),
             BottomNavigationBarItem(
-              icon: SvgPicture.asset('Images/relatorio.svg',
+              icon: SvgPicture.asset('assets/Images/relatorio.svg',
               // ignore: deprecated_member_use
-              color: const Color(0xFFF5A001),),
+              color: const Color(0xFFF5A001), height: 30),
               //icon: Icon(Icons.receipt_long_outlined),
               label: '',
             ),

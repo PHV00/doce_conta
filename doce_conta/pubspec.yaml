@@ -64,39 +64,43 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - img/pao.svg
-    - img/apple_icon.svg
-    - img/google_icon.svg
-    - img/microsoft_icon.svg
-    - img/doce_conta_logo.svg
-    - img/prato.svg
-    - img/mel.svg
-    - img/ovo.svg
-    - img/bolacha.svg
-    - img/pote.svg
-    - img/melancia.svg
-    - img/burrito.svg
-    - img/sanduiche.svg
-    - img/pastel.svg
-    - img/croissant.svg
-    - img/pao2.svg
-    - img/pao3.svg
-    - img/pao4.svg
-    - img/pao5.svg
-    - img/pirulito.svg
-    - img/cupcake.svg
-    - img/donuts.svg
-    - img/bolinhos.svg
-    - img/sorvete.svg
-    - img/brigadeiro.svg
-    - img/bolo.svg
-    - img/hamburguer.svg
-    - img/cafe.svg
-    - img/refrigerante.svg
-    - img/cerveja.svg
-    - img/drink.svg
-    - img/drink2.svg
-    - img/drink3.svg
+    - assets/Images/pao.svg
+    - assets/Images/apple_icon.svg
+    - assets/Images/google_icon.svg
+    - assets/Images/microsoft_icon.svg
+    - assets/Images/doce_conta_logo.svg
+    - assets/Images/prato.svg
+    - assets/Images/mel.svg
+    - assets/Images/ovo.svg
+    - assets/Images/bolacha.svg
+    - assets/Images/pote.svg
+    - assets/Images/melancia.svg
+    - assets/Images/burrito.svg
+    - assets/Images/sanduiche.svg
+    - assets/Images/pastel.svg
+    - assets/Images/croissant.svg
+    - assets/Images/pao2.svg
+    - assets/Images/pao3.svg
+    - assets/Images/pao4.svg
+    - assets/Images/pao5.svg
+    - assets/Images/pirulito.svg
+    - assets/Images/cupcake.svg
+    - assets/Images/donuts.svg
+    - assets/Images/bolinhos.svg
+    - assets/Images/sorvete.svg
+    - assets/Images/brigadeiro.svg
+    - assets/Images/bolo.svg
+    - assets/Images/hamburguer.svg
+    - assets/Images/cafe.svg
+    - assets/Images/refrigerante.svg
+    - assets/Images/cerveja.svg
+    - assets/Images/drink.svg
+    - assets/Images/drink2.svg
+    - assets/Images/drink3.svg
+    - assets/Images/produto.svg
+    - assets/Images/loja.svg
+    - assets/Images/estoque.svg
+    - assets/Images/relatorio.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
