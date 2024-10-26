@@ -7,10 +7,7 @@ import '../widgets/other_options.dart';
 import '../widgets/api_brands_login.dart';
 import '../widgets/input_and_label.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-// void main(){
-//   runApp(const MaterialApp(home: LoginScreen()));
-// }
+import 'mainpage.dart'; 
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -32,32 +29,21 @@ class _LoginScreenState extends State<LoginScreen> {
               width: 50,
               height: 50,
             ),
-            const SizedBox(
-              height: 50,
-            ),
-            const InputAndLabelWidget(
-              labelText: "Mei ou Email",
-            ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 50),
+            const InputAndLabelWidget(labelText: "Mei ou Email"),
+            const SizedBox(height: 20),
             const InputAndLabelWidget(labelText: "Senha"),
-            const SizedBox(
-              height: 50,
-            ),
+            const SizedBox(height: 50),
             ButtonWidget(
               btnText: "Logar",
-              onPressedFunction: (){
+              onPressedFunction: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          const ProductPage()));
+                  MaterialPageRoute(builder: (context) => const ProductPage()),
+                );
               },
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            const SizedBox(height: 10),
             RichText(
                 text: TextSpan(
                     style: const TextStyle(color: Colors.black, fontSize: 12),
@@ -69,20 +55,25 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      const RegisterScreen()));
+                                  builder: (context) => const RegisterScreen()));
                         },
                       text: "Cadastra-se",
                       style: const TextStyle(color: Color(0xFF00A3FF))),
                 ])),
-            const SizedBox(
-              height: 50,
-            ),
+            const SizedBox(height: 50),
             const OtherOptionsWidget(),
-            const SizedBox(
-              height: 40,
+            const SizedBox(height: 40),
+            const ApiBrandsLogin(),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MainPage()),
+                );
+              },
+              child: const Text('Ir para MainPage'),
             ),
-            const ApiBrandsLogin()
           ],
         ));
   }
