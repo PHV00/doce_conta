@@ -7,7 +7,7 @@ import '../widgets/other_options.dart';
 import '../widgets/api_brands_login.dart';
 import '../widgets/input_and_label.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'mainpage.dart'; 
+import 'selecao_produtos.dart'; 
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -65,16 +65,16 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 40),
             const ApiBrandsLogin(),
             const SizedBox(height: 20),
+            
             ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MainPage()),
-                );
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ProductSelection()));
               },
-              child: const Text('Ir para MainPage'),
-            ),
+            child: const Text("Seleção de Produtos"),
+            )
           ],
         ));
   }
 }
+
+
