@@ -10,7 +10,7 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
@@ -76,6 +76,7 @@ class ProductScreen extends StatelessWidget {
                 ) 
                 
               ),
+            SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
                 showDialog(
@@ -97,10 +98,10 @@ class ProductScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green[900], // cor botão
+                backgroundColor: Color(0xff003326), // cor botão
               ),
               child: const Text(
-                'ok',
+                'Cadastrar',
                 style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
               ),
             ),
