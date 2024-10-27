@@ -1,5 +1,6 @@
+import 'package:doce_conta/view/costing_system_screen.dart';
+import 'package:doce_conta/view/infrastructure_costs_screen.dart';
 import 'package:doce_conta/view/main_screen.dart';
-import 'package:doce_conta/view/product_screen.dart';
 import 'package:doce_conta/view/register.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,6 @@ import '../widgets/other_options.dart';
 import '../widgets/api_brands_login.dart';
 import '../widgets/input_and_label.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'product_selection.dart'; 
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -69,9 +69,9 @@ class _LoginScreenState extends State<LoginScreen> {
             
             ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => CustomMargin()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => InfraestructureCost()));
               },
-            child: const Text("Custom Profit Margin"),
+            child: const Text("Testing Button"),
             )
           ],
         ));

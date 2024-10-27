@@ -10,7 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Initial_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:doce_conta/view/login.dart';
-import 'package:doce_conta/view/product_selection.dart';
+import 'package:doce_conta/view/product_selection_screen.dart';
+
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
