@@ -29,8 +29,9 @@ class InfraestructureCost extends StatelessWidget {
               itemCount: 4,
               itemBuilder: (context, index) {
                 // Lista de produtos
-                final productNames = ['Aluguel', 'Luz', 'Água', 'Segurança'];
-                return _buildProductItem(productNames[index]);
+                final serviceNames = ['Aluguel', 'Luz', 'Água', 'Segurança'];
+                final servicePrice = ['R\$ 1400', 'R\$ 350', 'R\$ 180', 'R\$ 380'];
+                return _buildServiceItem(serviceNames[index], servicePrice[index]);
               },
               separatorBuilder: (context, index) => Divider(
                 color: Colors.amber, // Linha amarela entre os itens
@@ -55,7 +56,7 @@ class InfraestructureCost extends StatelessWidget {
     );
   }
 
-  Widget _buildProductItem(String productName) {
+ Widget _buildServiceItem(String serviceName, String servicePrice) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
@@ -64,9 +65,18 @@ class InfraestructureCost extends StatelessWidget {
         borderRadius: BorderRadius.circular(25.0),
         border: Border.all(color: Colors.grey, width: 1),
       ),
-      child: Text(
-        productName,
-        style: const TextStyle(fontSize: 16, color: Colors.black),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            serviceName,
+            style: const TextStyle(fontSize: 16, color: Colors.black),
+          ),
+          Text(
+            servicePrice,
+            style: const TextStyle(fontSize: 16, color: Colors.black),
+          ),
+        ]
       ),
     );
   }

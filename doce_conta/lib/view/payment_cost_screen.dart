@@ -29,8 +29,9 @@ class PaymentCost extends StatelessWidget {
               itemCount: 5,
               itemBuilder: (context, index) {
                 // Lista de produtos
-                final productNames = ['Salários', 'Vale', '13°', 'Férias', 'Transporte'];
-                return _buildProductItem(productNames[index]);
+                final serviceNames = ['Salários', 'Vale', '13°', 'Férias', 'Transporte'];
+                final servicePrice = ['R\$ 3500', 'R\$ 400', 'R\$ 3500', 'R\$ 3500', 'R\$ 200'];
+                return _buildServiceItem(serviceNames[index], servicePrice[index]);
               },
               separatorBuilder: (context, index) => Divider(
                 color: Colors.amber, // Linha amarela entre os itens
@@ -55,7 +56,7 @@ class PaymentCost extends StatelessWidget {
     );
   }
 
-  Widget _buildProductItem(String productName) {
+  Widget _buildServiceItem(String serviceName, String servicePrice) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
@@ -64,9 +65,18 @@ class PaymentCost extends StatelessWidget {
         borderRadius: BorderRadius.circular(25.0),
         border: Border.all(color: Colors.grey, width: 1),
       ),
-      child: Text(
-        productName,
-        style: const TextStyle(fontSize: 16, color: Colors.black),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            serviceName,
+            style: const TextStyle(fontSize: 16, color: Colors.black),
+          ),
+          Text(
+            servicePrice,
+            style: const TextStyle(fontSize: 16, color: Colors.black),
+          ),
+        ]
       ),
     );
   }
