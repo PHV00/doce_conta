@@ -1,3 +1,4 @@
+import 'package:doce_conta/view/margem_lucro_personalizada.dart';
 import 'package:doce_conta/view/pagina_produto.dart';
 import 'package:doce_conta/view/register.dart';
 import 'package:flutter/gestures.dart';
@@ -7,7 +8,7 @@ import '../widgets/other_options.dart';
 import '../widgets/api_brands_login.dart';
 import '../widgets/input_and_label.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'selecao_produtos.dart'; 
+import 'margem_lucro_personalizada.dart'; 
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -68,9 +69,9 @@ class _LoginScreenState extends State<LoginScreen> {
             
             ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ProductSelection()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => CustomMargin()));
               },
-            child: const Text("Seleção de Produtos"),
+            child: const Text("Custom Profit Margin"),
             )
           ],
         ));
