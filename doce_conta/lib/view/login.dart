@@ -69,9 +69,9 @@ class _LoginScreenState extends State<LoginScreen> {
             
             ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ProductSelection()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => CustomMargin()));
               },
-            child: const Text("Seleção de Produtos"),
+            child: const Text("Custom Profit Margin"),
             )
           ],
         ));
