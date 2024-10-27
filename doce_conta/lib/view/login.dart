@@ -1,7 +1,6 @@
-import 'package:doce_conta/view/costing_system_screen.dart';
-import 'package:doce_conta/view/infrastructure_costs_screen.dart';
 import 'package:doce_conta/view/main_screen.dart';
 import 'package:doce_conta/view/register.dart';
+import 'package:doce_conta/view/taxes_cost_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
@@ -69,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
             
             ElevatedButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => InfraestructureCost()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TaxesCosting()));
               },
             child: const Text("Testing Button"),
             )
