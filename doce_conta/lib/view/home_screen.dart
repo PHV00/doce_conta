@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     buildInfoCard('MÉDIA DE MARGEM DE LUCRO', '20%'),
-                    buildInfoCard('CUSTO', 'R\$ 600,00'),
+                    buildBigInfoCard('CUSTO', 'R\$ 600,00'),
                     buildInfoCard('LUCRO ESTIMADO', 'R\$ 780,00'),
                   ],
                 ),
@@ -89,4 +89,49 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+  
+  Widget buildBigInfoCard(String title, String value) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: const Color(0xFF00382B),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title, // Texto maior
+                style: const TextStyle(
+                  fontSize: 20, // Tamanho maior
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 4), // Espaço entre os textos
+            ],
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+            decoration: BoxDecoration(
+              color: const Color(0xFF98CFC2),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Text(
+              value,
+              style: const TextStyle(
+                fontSize: 16,
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
+

@@ -1,23 +1,24 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class BtnMargemLucro extends StatefulWidget {
-  const BtnMargemLucro({super.key, required this.percentage, required this.color});
+class ButtonProfitMargin extends StatefulWidget {
+  const ButtonProfitMargin({super.key, required this.percentage, required this.color, this.onPressedFunction});
 
   final String percentage;
   final Color color;
+  final VoidCallback? onPressedFunction;
 
   @override
-  State<BtnMargemLucro> createState() => _BtnMargemLucroState();
+  State<ButtonProfitMargin> createState() => _ButtonProfitMarginState();
 }
 
-class _BtnMargemLucroState extends State<BtnMargemLucro> {
+class _ButtonProfitMarginState extends State<ButtonProfitMargin> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
         width: 70,
         child: TextButton(
-          onPressed: null,
+          onPressed: widget.onPressedFunction,
           style: ButtonStyle(
             backgroundColor: WidgetStateProperty.all<Color>(widget.color),
           ),

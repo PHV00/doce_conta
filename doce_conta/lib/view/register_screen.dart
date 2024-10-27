@@ -1,4 +1,4 @@
-import 'package:doce_conta/view/login.dart';
+import 'package:doce_conta/view/login_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../widgets/input_and_label.dart';

@@ -1,7 +1,7 @@
+import 'package:doce_conta/view/custom_profit_margin.dart';
 import 'package:doce_conta/widgets/button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import '../widgets/btn_margem_lucro.dart';
+import '../widgets/button_profit_margin.dart';
 
 class ProfitMarginScreen extends StatelessWidget {
   const ProfitMarginScreen({super.key});
@@ -37,7 +37,7 @@ class ProfitMarginScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   width: 310,
-                  child: buildColumnProfits(),
+                  child: buildColumnProfits(context),
                 ),
                 const SizedBox(
                   height: 10,
@@ -56,12 +56,11 @@ class ProfitMarginScreen extends StatelessWidget {
           ),
         ),
       ),
-    )
-  );
+    ));
   }
 }
 
-Column buildColumnProfits() {
+Column buildColumnProfits(context) {
   List<Widget> listRow = [];
   List<Widget> listColumn = [];
   var j = 0;
@@ -71,12 +70,12 @@ Column buildColumnProfits() {
     while (index < 3) {
       j++;
       listRow.add(j == 8 || j == 15
-          ? BtnMargemLucro(
+          ? ButtonProfitMargin(
               percentage: "${j * 5}%",
               color: const Color(
                 0xFF6FC3AF,
               ))
-          : BtnMargemLucro(
+          : ButtonProfitMargin(
               percentage: "${j * 5}%",
               color: const Color(
                 0xFFC1BFBF,
@@ -95,8 +94,18 @@ Column buildColumnProfits() {
     listRow = [];
     index = 0;
   }
-  listColumn
-      .add(const BtnMargemLucro(percentage: "+", color: Color(0xFFC1BFBF)));
+  listColumn.add(
+      ButtonProfitMargin(
+      percentage: "+", 
+      color: Color(0xFFC1BFBF), 
+      onPressedFunction: (){
+         Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CustomMarginProfit()));
+        }
+      )
+      );
   return Column(
     children: listColumn,
   );

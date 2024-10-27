@@ -1,20 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: CustomMargin(),
-    );
-  }
-}
-
-class CustomMargin extends StatelessWidget {
+class CustomMarginProfit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,42 +63,6 @@ class CustomMargin extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/Images/produto.svg',
-              color: const Color(0xFFF5A001),
-            ),
-            backgroundColor: const Color(0xFF00382B),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/Images/loja.svg',
-              color: const Color(0xFFF5A001),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/Images/estoque.svg',
-              color: const Color(0xFFF5A001),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/Images/relatorio.svg',
-              color: const Color(0xFFF5A001),
-            ),
-            label: '',
-          ),
-        ],
-        selectedItemColor: Colors.green[900],
-        unselectedItemColor: Colors.green[600],
-        iconSize: 45,
       ),
     );
   }

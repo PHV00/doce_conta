@@ -1,4 +1,6 @@
+import 'package:doce_conta/view/icon_selection_screen.dart';
 import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
+import 'package:doce_conta/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -8,7 +10,7 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green[900],
+        backgroundColor: Colors.white,
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
@@ -54,6 +56,27 @@ class ProductScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
+              onPressed: (){
+              Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => IconSelectionScreen()));
+              },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff003326),
+                ),
+              child:Row(
+                  children: [
+                    Center(
+                      child:Text('Selecione Icone',style: TextStyle(color: Color(0xffccf2e6))),
+                    ),
+                    SizedBox(width: 185),
+                    Icon(Icons.arrow_forward, color: Colors.white)
+                  ]
+                ) 
+                
+              ),
+            ElevatedButton(
               onPressed: () {
                 showDialog(
                   context: context,
@@ -81,7 +104,6 @@ class ProductScreen extends StatelessWidget {
                 style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
               ),
             ),
-            // BootomNavigationBarDefault()
           ],
         ),
       ),
