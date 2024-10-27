@@ -9,8 +9,6 @@ import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Initial_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:doce_conta/view/login_screen.dart';
-import 'package:doce_conta/view/product_selection_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
