@@ -4,10 +4,6 @@ import 'package:flutter/material.dart';
 import '../widgets/input_and_label.dart';
 import '../widgets/button.dart';
 
-void main(){
-  runApp(const MaterialApp(home: RegisterScreen()));
-}
-
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
