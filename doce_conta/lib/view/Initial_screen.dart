@@ -11,7 +11,7 @@ class InitialScreen extends StatelessWidget {
     return MaterialApp(
       home: GestureDetector(
         onTap: () {
-          Navigator.push(context,
+          Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => const LoginScreen()));
         },
         child: Scaffold(

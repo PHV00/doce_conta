@@ -1,8 +1,9 @@
+import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ProductPage extends StatelessWidget {
-  const ProductPage({super.key});
+class ProductScreen extends StatelessWidget {
+  const ProductScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -80,45 +81,9 @@ class ProductPage extends StatelessWidget {
                 style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
               ),
             ),
+            // BootomNavigationBarDefault()
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('Images/produto.svg',
-            // ignore: deprecated_member_use
-            color: const Color(0xFFF5A001),
-            ),
-            backgroundColor: const Color(0xFF00382B),
-          //  icon: Icon(Icons.widgets_outlined),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('Images/loja.svg',
-            // ignore: deprecated_member_use
-            color: const Color(0xFFF5A001),),
-            //icon: Icon(Icons.store),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('Images/estoque.svg',
-            // ignore: deprecated_member_use
-            color: const Color(0xFFF5A001),),
-            //icon: Icon(Icons.calculate_outlined),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset('Images/relatorio.svg',
-            // ignore: deprecated_member_use
-            color: const Color(0xFFF5A001),),
-            //icon: Icon(Icons.receipt_long_outlined),
-            label: '',
-          ),
-        ],
-        selectedItemColor: Colors.green[900],
-        unselectedItemColor: Colors.green[600],
-        iconSize: 45,
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MainPage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,42 +32,6 @@ class MainPage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/Images/produto.svg',
-              color: const Color(0xFFF5A001),
-            ),
-            backgroundColor: const Color(0xFF00382B),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/Images/loja.svg',
-              color: const Color(0xFFF5A001),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/Images/estoque.svg',
-              color: const Color(0xFFF5A001),
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/Images/relatorio.svg',
-              color: const Color(0xFFF5A001),
-            ),
-            label: '',
-          ),
-        ],
-        selectedItemColor: Colors.green[900],
-        unselectedItemColor: Colors.green[600],
-        iconSize: 45,
       ),
     );
   }
