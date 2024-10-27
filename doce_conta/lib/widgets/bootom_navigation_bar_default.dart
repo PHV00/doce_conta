@@ -58,7 +58,7 @@ class _BootomNavigationBarDefaultState
             color: _selectPosition == 1
                 ? Color(0xFFF5A001)
                 : Color.fromARGB(255, 158, 103, 0),
-            height: 45, width: 45,
+            height: 65, width: 65,
           ),
           backgroundColor: const Color(0xFF00382B),
           label: '',
@@ -70,7 +70,7 @@ class _BootomNavigationBarDefaultState
             color: _selectPosition == 2
                 ? Color(0xFFF5A001)
                 : Color.fromARGB(255, 158, 103, 0),
-            height: 45, width: 45,
+            height: 55, width: 55,
           ),
           backgroundColor: const Color(0xFF00382B),
           label: '',
@@ -82,7 +82,7 @@ class _BootomNavigationBarDefaultState
             color: _selectPosition == 3
                 ? Color(0xFFF5A001)
                 : Color.fromARGB(255, 158, 103, 0),
-            height: 65, width: 65,
+            height: 55, width: 55,
           ),
           backgroundColor: const Color(0xFF00382B),
           label: '',
@@ -94,7 +94,7 @@ class _BootomNavigationBarDefaultState
             color: _selectPosition == 4
                 ? Color(0xFFF5A001)
                 : Color.fromARGB(255, 158, 103, 0),
-            height: 65, width: 65,
+            height: 55, width: 55,
           ),
           backgroundColor: const Color(0xFF00382B),
           label: '',
