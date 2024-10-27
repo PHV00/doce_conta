@@ -1,6 +1,6 @@
+import 'package:doce_conta/view/home_screen.dart';
 import 'package:doce_conta/view/main_screen.dart';
-import 'package:doce_conta/view/payment_cost_screen.dart';
-import 'package:doce_conta/view/register.dart';
+import 'package:doce_conta/view/register_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
@@ -65,13 +65,6 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 40),
             const ApiBrandsLogin(),
             const SizedBox(height: 20),
-            
-            ElevatedButton(
-              onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentCost()));
-              },
-            child: const Text("Testing Button"),
-            )
           ],
         ));
   }

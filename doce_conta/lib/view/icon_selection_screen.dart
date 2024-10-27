@@ -57,7 +57,7 @@ class IconSelectionScreen extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           color: Colors.white,
-          onPressed: () {},
+          onPressed: () {Navigator.of(context).pop();},
         ),
       ),
       body: Padding(

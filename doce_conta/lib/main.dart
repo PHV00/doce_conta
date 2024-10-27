@@ -1,5 +1,4 @@
 import 'package:doce_conta/view/product_screen.dart';
-import 'package:doce_conta/view/login.dart';
 import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Initial_screen.dart';
 void main() {
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: InitialScreen(),
+      home: ProductScreen(),
     );
   }
 }
