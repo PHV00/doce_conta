@@ -63,7 +63,7 @@ class LojaScreen extends StatelessWidget {
 
   Widget _buildInputField(String label, TextEditingController controller) {
     return Container(
-      height: 150, // Define uma altura maior para a caixa de texto
+      height: 150,
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(8),
@@ -83,7 +83,7 @@ class LojaScreen extends StatelessWidget {
                     color: Color(0xff003326),
                     fontWeight: FontWeight.bold,
                   ),
-                  contentPadding: const EdgeInsets.only(top: 16.0), // Alinha o texto ao topo
+                  contentPadding: const EdgeInsets.only(top: 16.0),
                   border: InputBorder.none,
                 ),
               ),
@@ -92,7 +92,7 @@ class LojaScreen extends StatelessWidget {
           Align(
             alignment: Alignment.bottomRight,
             child: Padding(
-              padding: const EdgeInsets.only(right: 8.0, bottom: 8.0), // Adiciona espaçamento
+              padding: const EdgeInsets.only(right: 8.0, bottom: 8.0),
               child: TextButton(
                 onPressed: () {},
                 style: TextButton.styleFrom(
