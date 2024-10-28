@@ -99,7 +99,9 @@ class IconSelectionScreen extends StatelessWidget {
                 backgroundColor: const Color(0xFF00382B),
                 padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               child: Text(
                 'ok',
                 style: TextStyle(fontSize: 18, color: Colors.white),

@@ -1,4 +1,6 @@
+import 'package:doce_conta/view/concluded.dart';
 import 'package:doce_conta/view/icon_selection_screen.dart';
+import 'package:doce_conta/view/profit_margin_screen.dart';
 import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:doce_conta/widgets/button.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +19,7 @@ class ProductScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             //voltar
+            Navigator.pop(context);
           },
         ),
         title: const TextField(
@@ -40,13 +43,24 @@ class ProductScreen extends StatelessWidget {
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 16),
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'Margem de lucro do produto:',
-                border: OutlineInputBorder(),
-              ),
-              keyboardType: TextInputType.number,
-            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProfitMarginScreen()));
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff003326),
+                ),
+                child: Row(children: [
+                  Icon(Icons.arrow_forward, color: Colors.white),
+                  SizedBox(width: 15,),
+                  Center(
+                    child: Text('Selecione a margem de lucro',
+                        style: TextStyle(color: Color(0xffccf2e6))),
+                  ),
+                ])),
             const SizedBox(height: 16),
             const TextField(
               decoration: InputDecoration(
@@ -57,47 +71,48 @@ class ProductScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: (){
-              Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => IconSelectionScreen()));
-              },
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => IconSelectionScreen()));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xff003326),
                 ),
-              child:Row(
-                  children: [
-                    Center(
-                      child:Text('Selecione Icone',style: TextStyle(color: Color(0xffccf2e6))),
-                    ),
-                    SizedBox(width: 185),
-                    Icon(Icons.arrow_forward, color: Colors.white)
-                  ]
-                ) 
-                
-              ),
+                child: Row(children: [
+                  Icon(Icons.arrow_forward, color: Colors.white),
+                  SizedBox(width: 15,),
+                  Center(
+                    child: Text('Selecione Icone',
+                        style: TextStyle(color: Color(0xffccf2e6))),
+                  ),
+                ])),
             SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: const Text('Sucesso'),
-                      content: const Text('Registro realizado com sucesso!'),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: const Text('OK'),
-                        ),
-                      ],
-                    );
-                  },
-                );
-              },
+                // showDialog(
+                //   context: context,
+                //   builder: (BuildContext context) {
+                //     return AlertDialog(
+                //       title: const Text('Sucesso'),
+                //       content: const Text('Registro realizado com sucesso!'),
+                //       actions: [
+                //         TextButton(
+                //           onPressed: () {
+                //             Navigator.of(context).pop();
+                //           },
+                //           child: const Text('OK'),
+                //         ),
+                //       ],
+                //     );
+                //   },
+                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Concluded()));
+                },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xff003326), // cor botão
               ),
@@ -112,4 +127,3 @@ class ProductScreen extends StatelessWidget {
     );
   }
 }
-

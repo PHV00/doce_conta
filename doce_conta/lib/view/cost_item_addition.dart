@@ -1,19 +1,20 @@
+import 'package:doce_conta/view/concluded.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class CostItemAdditionScreen extends StatelessWidget {
+  const CostItemAdditionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LojaScreen(),
+      home: CostItemAddition(),
     );
   }
 }
 
-class LojaScreen extends StatelessWidget {
+class CostItemAddition extends StatelessWidget {
   final TextEditingController itemController = TextEditingController();
   final TextEditingController valorController = TextEditingController();
 
@@ -45,7 +46,12 @@ class LojaScreen extends StatelessWidget {
             _buildInputField("Insira o valor desse item:", valorController),
             const SizedBox(height: 24),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Concluded()));
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xff003326),
                 padding: const EdgeInsets.symmetric(vertical: 16.0),

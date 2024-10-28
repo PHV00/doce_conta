@@ -1,19 +1,7 @@
+import 'package:doce_conta/view/home_screen.dart';
+import 'package:doce_conta/view/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Concluded(),
-    );
-  }
-}
 
 class Concluded extends StatefulWidget {
   @override
@@ -30,67 +18,84 @@ class _Concluded extends State<Concluded> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            color: const Color(0xFFF5A001),
+    return GestureDetector(
+        onTap: () {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => const MainScreen()));
+        },
+        child: Scaffold(
+          body: Stack(
+            children: [
+              Container(
+                color: const Color(0xFFF5A001),
+              ),
+              Positioned(
+                top: 16,
+                left: 16,
+                child: IconButton(
+                  icon: Icon(Icons.arrow_back, color: Colors.white),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MainScreen()));
+                  },
+                ),
+              ),
+              Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'DOCE',
+                      style: TextStyle(
+                        fontFamily: 'Open Sans SemiBold',
+                        fontSize: 48,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const Text(
+                      'CONTA',
+                      style: TextStyle(
+                        fontFamily: 'Open Sans SemiBold',
+                        fontSize: 48,
+                        color: Colors.white,
+                      ),
+                    ),
+                    //JUST TO GIVE AN ESPACE TO THE TITLE
+                    const Text(
+                      '',
+                      style: TextStyle(
+                        fontFamily: 'Open Sans SemiBold',
+                        fontSize: 48,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const Text(
+                      'Concluído!',
+                      style: TextStyle(
+                        fontFamily: 'Open Sans SemiBold',
+                        fontSize: 24,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+                    _imgverificado,
+                    const SizedBox(height: 40),
+                    const Text(
+                      'Click para Voltar',
+                      style: TextStyle(
+                        fontFamily: 'Open Sans SemiBold',
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          Positioned(
-            top: 16,
-            left: 16,
-            child: IconButton(
-              icon: Icon(Icons.arrow_back, color: Colors.white),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ),
-          Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'DOCE',
-                  style: TextStyle(
-                    fontFamily: 'Open Sans SemiBold',
-                    fontSize: 48,
-                    color: Colors.white,
-                  ),
-                ),
-                const Text(
-                  'CONTA',
-                  style: TextStyle(
-                    fontFamily: 'Open Sans SemiBold',
-                    fontSize: 48,
-                    color: Colors.white,
-                  ),
-                ),
-                //JUST TO GIVE AN ESPACE TO THE TITLE
-                const Text(
-                  '',
-                  style: TextStyle(
-                    fontFamily: 'Open Sans SemiBold',
-                    fontSize: 48,
-                    color: Colors.white,
-                  ),
-                ),
-                const Text(
-                  'Concluído!',
-                  style: TextStyle(
-                    fontFamily: 'Open Sans SemiBold',
-                    fontSize: 24,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(height: 30),
-                _imgverificado,
-                const SizedBox(height: 40),
-              ],
-            ),
-          ),
-        ],
-      ),
+        )
     );
   }
 }

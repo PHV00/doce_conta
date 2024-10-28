@@ -1,10 +1,15 @@
 //https://medium.com/flutter-community/data-binding-in-flutter-or-passing-data-from-a-child-widget-to-a-parent-widget-4b1c5ffe2114
 
 import 'package:doce_conta/view/home_screen.dart';
+import 'package:doce_conta/view/hub_products.dart';
 import 'package:doce_conta/view/icon_selection_screen.dart';
+import 'package:doce_conta/view/infrastructure_costs_screen.dart';
+import 'package:doce_conta/view/monthly_report_screen.dart';
 import 'package:doce_conta/view/product_screen.dart';
+import 'package:doce_conta/view/product_selection_screen.dart';
 import 'package:doce_conta/view/profit_margin_screen.dart';
 import 'package:doce_conta/view/register_screen.dart';
+import 'package:doce_conta/view/value_control_screen.dart';
 import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Initial_screen.dart';
@@ -24,13 +29,13 @@ class _MainScreen extends State<MainScreen> {
     //Home
     HomeScreen(),
     //Produto
-    ProductScreen(),
+    HubProducts(),
     //Custos
-    IconSelectionScreen(),
+    InfraestructureCost(),
     //Estoque
-    ProfitMarginScreen(),
+    MontlhyReport(),
     //Relatorio
-    RegisterScreen(),
+    ValueControlScreen(),
   ];
 
   Widget actualScreen = HomeScreen();

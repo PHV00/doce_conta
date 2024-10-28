@@ -12,7 +12,10 @@ class ProfitMarginScreen extends StatelessWidget {
         home: SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: const Icon(Icons.arrow_back, color: Colors.white),
+          leading:IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () {Navigator.of(context).pop();},
+            ),
           centerTitle: true,
           title: const Text(
             "Margem de Lucro por produto",
@@ -50,7 +53,12 @@ class ProfitMarginScreen extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                const ButtonWidget(btnText: "Ok"),
+                ButtonWidget(
+                  btnText: "Ok",
+                  onPressedFunction: (){
+                    Navigator.of(context).pop();
+                  },
+                ),
               ],
             ),
           ),
@@ -94,18 +102,13 @@ Column buildColumnProfits(context) {
     listRow = [];
     index = 0;
   }
-  listColumn.add(
-      ButtonProfitMargin(
-      percentage: "+", 
-      color: Color(0xFFC1BFBF), 
-      onPressedFunction: (){
-         Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => CustomMarginProfit()));
-        }
-      )
-      );
+  listColumn.add(ButtonProfitMargin(
+      percentage: "+",
+      color: Color(0xFFC1BFBF),
+      onPressedFunction: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => CustomMarginProfit()));
+      }));
   return Column(
     children: listColumn,
   );

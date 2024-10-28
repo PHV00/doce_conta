@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/appBarWithIcon.dart';
-import '../widgets/conteinerTextCenter.dart';
+import '../widgets/conteiner_text_center.dart';
 
 void main(){
   runApp(const AnnualReportPage());
@@ -22,7 +22,7 @@ class AnnualReportPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Conteinertextcenter(btnText: "Mês - 2024", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Mês - 2024", widhtContainer: 151.54, heightContainer: 81.2,),
                   SizedBox(width: 20),
                   Conteinertextcenter(btnText: "Ano - 2024", widhtContainer: 151.54, heightContainer: 81.2),
                 ],

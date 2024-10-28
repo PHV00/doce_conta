@@ -1,3 +1,6 @@
+import 'package:doce_conta/view/concluded.dart';
+import 'package:doce_conta/view/main_screen.dart';
+import 'package:doce_conta/view/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -46,6 +49,10 @@ class ProductSelection extends StatelessWidget {
             child: FloatingActionButton(
               onPressed: () {
                 // Ação para adicionar novo produto
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ProductScreen()));
               },
               child: const Icon(Icons.add, color: Colors.black),
               backgroundColor: Colors.white,

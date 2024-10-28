@@ -1,7 +1,11 @@
+import 'package:doce_conta/view/product_screen.dart';
+import 'package:doce_conta/widgets/container_custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +41,8 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget buildInfoCard(String title, String value) {
-    final List<String> titleParts = title.split(' '); // Divide o título em partes
+    final List<String> titleParts =
+        title.split(' '); // Divide o título em partes
 
     return Container(
       padding: const EdgeInsets.all(12),
@@ -55,8 +60,8 @@ class HomeScreen extends StatelessWidget {
                 titleParts[0], // Texto menor
                 style: const TextStyle(
                   fontSize: 14, // Tamanho menor
-                  color: Colors.white70, // Cor clara 
-                  fontWeight: FontWeight.w400, 
+                  color: Colors.white70, // Cor clara
+                  fontWeight: FontWeight.w400,
                 ),
               ),
               const SizedBox(height: 4), // Espaço entre os textos
@@ -89,7 +94,7 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-  
+
   Widget buildBigInfoCard(String title, String value) {
     return Container(
       padding: const EdgeInsets.all(12),
@@ -134,4 +139,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

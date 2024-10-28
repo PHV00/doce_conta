@@ -58,7 +58,7 @@ class CustomMarginProfit extends StatelessWidget {
                   backgroundColor: Color(0xFF00382B),
                   padding: EdgeInsets.symmetric(horizontal: 50, vertical: 16),
                 ),
-                onPressed: () {},
+                onPressed: () { Navigator.pop(context);},
                 child: Text("OK", style: TextStyle(color: Colors.white)),
               ),
             ),

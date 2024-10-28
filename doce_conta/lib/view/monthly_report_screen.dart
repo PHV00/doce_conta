@@ -1,3 +1,4 @@
+import 'package:doce_conta/view/report_descriptions_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -46,7 +47,11 @@ class MontlhyReport extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 16.0),
             child: ElevatedButton(
               onPressed: () {
-                //Linkar página de descrições 
+                //Linkar página de descrições
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ReportDescriptions()));
               },
               child: 
               const Text(

@@ -67,22 +67,6 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 40),
             const ApiBrandsLogin(),
             const SizedBox(height: 20),
-
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ReportDescriptions(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF98CFC2), // Define a cor do botão
-              ),
-              child: const Text("Ir para Relatório Mensal"),
-            ),
-
           ],
         ));
   }

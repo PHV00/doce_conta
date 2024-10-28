@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MyApp extends StatelessWidget {
+class ValueControlScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyScreen(),
+      home: ValueControl(),
       theme: ThemeData(
         primaryColor: const Color(0xFF00382B),
       ),
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyScreen extends StatelessWidget {
+class ValueControl extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,3 +1,4 @@
+import 'package:doce_conta/view/cost_item_addition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -11,7 +12,7 @@ class InfraestructureCost extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.of(context).pop();
+            // Navigator.of(context).pop();
           },
         ),
         title: SvgPicture.asset(
@@ -47,6 +48,10 @@ class InfraestructureCost extends StatelessWidget {
             child: FloatingActionButton(
               onPressed: () {
                 // Adicionar novo produto
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CostItemAddition()));
               },
               child: const Icon(Icons.add, color: Colors.black),
               backgroundColor: Colors.white,
