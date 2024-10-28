@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset(
-              "assets/Images/doce_conta_logo.svg",
+              "assets/Images/LogoColorida.svg",
               width: 50,
               height: 50,
             ),

@@ -41,7 +41,7 @@ class _BootomNavigationBarDefaultState
       items: [
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
-            'assets/Images/doce_conta_logo.svg',
+            'assets/Images/LogoColorida.svg',
             // ignore: deprecated_member_use
             color: _selectPosition == 0
                 ? Color(0xFFF5A001)

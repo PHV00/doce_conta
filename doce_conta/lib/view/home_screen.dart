@@ -14,7 +14,7 @@ class HomeScreen extends StatelessWidget {
             children: [
               const SizedBox(height: 30),
               SvgPicture.asset(
-                "assets/Images/doce_conta_logo.svg",
+                "assets/Images/LogoColorida.svg",
                 width: 50,
                 height: 50,
               ),
