@@ -102,6 +102,11 @@ flutter:
     - assets/Images/estoque.svg
     - assets/Images/relatorio.svg
     - assets/Images/LogoColorida.svg
+    - assets/Images/imposto.svg
+    - assets/Images/comunicacao.svg
+    - assets/Images/infraestrutura.svg
+    - assets/Images/folha_pagamento.svg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
