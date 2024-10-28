@@ -22,49 +22,49 @@ class AnnualReportPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Conteinertextcenter(btnText: "Mês - 2024", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Janeiro", widhtContainer: 151.54, heightContainer: 81.2),
                   SizedBox(width: 20),
-                  Conteinertextcenter(btnText: "Ano - 2024", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Fevereiro", widhtContainer: 151.54, heightContainer: 81.2),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Conteinertextcenter(btnText: "Mês - 2025", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Março", widhtContainer: 151.54, heightContainer: 81.2),
                   SizedBox(width: 20),
-                  Conteinertextcenter(btnText: "Ano - 2025", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Abril", widhtContainer: 151.54, heightContainer: 81.2),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Conteinertextcenter(btnText: "Mês - 2026", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Maio", widhtContainer: 151.54, heightContainer: 81.2),
                   SizedBox(width: 20),
-                  Conteinertextcenter(btnText: "Ano - 2026", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Junho", widhtContainer: 151.54, heightContainer: 81.2),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Conteinertextcenter(btnText: "Mês - 2027", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Julho", widhtContainer: 151.54, heightContainer: 81.2),
                   SizedBox(width: 20),
-                  Conteinertextcenter(btnText: "Ano - 2027", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Agosto", widhtContainer: 151.54, heightContainer: 81.2),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Conteinertextcenter(btnText: "Mês - 2028", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Setembro", widhtContainer: 151.54, heightContainer: 81.2),
                   SizedBox(width: 20),
-                  Conteinertextcenter(btnText: "Ano - 2028", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Outubro", widhtContainer: 151.54, heightContainer: 81.2),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Conteinertextcenter(btnText: "Mês - 2029", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Novembro", widhtContainer: 151.54, heightContainer: 81.2),
                   SizedBox(width: 20),
-                  Conteinertextcenter(btnText: "Ano - 2029", widhtContainer: 151.54, heightContainer: 81.2),
+                  Conteinertextcenter(btnText: "Dezembro", widhtContainer: 151.54, heightContainer: 81.2),
                 ],
               ),
             ],
