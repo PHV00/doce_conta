@@ -1,4 +1,5 @@
 import 'package:doce_conta/view/product_screen.dart';
+import 'package:doce_conta/view/product_selection_screen.dart';
 import 'package:doce_conta/widgets/container_custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +46,7 @@ class _HubProducts extends State<HubProducts> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ProductScreen()));
+                              builder: (context) => ProductSelection()));
                       },
                       ),
                   ContainerCustomButton(
