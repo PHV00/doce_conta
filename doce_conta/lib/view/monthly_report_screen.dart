@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class PaymentCost extends StatelessWidget {
+class MontlhyReport extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF98CFC2),
       appBar: AppBar(
         backgroundColor: const Color(0xFF00382B),
         leading: IconButton(
@@ -15,7 +15,7 @@ class PaymentCost extends StatelessWidget {
           },
         ),
         title: SvgPicture.asset(
-          'assets/images/folha_pagamento.svg',
+          'assets/images/relatorio.svg',
           height: 40,
           color: const Color(0xFFF5A001),
         ),
@@ -30,9 +30,9 @@ class PaymentCost extends StatelessWidget {
               itemCount: 5,
               itemBuilder: (context, index) {
                 // Lista de produtos
-                final serviceNames = ['Salários', 'Vale', '13°', 'Férias', 'Transporte'];
-                final servicePrice = ['R\$ 3500', 'R\$ 400', 'R\$ 3500', 'R\$ 3500', 'R\$ 200'];
-                return _buildServiceItem(serviceNames[index], servicePrice[index]);
+                final infoName = ['Quantidade de itens vendidos', 'Valor bruto: caixa', 'Lucro diário', 'Valor Contas', 'Reserva'];
+                final infoPrice = ['x', 'R\$', 'R\$', 'R\$', 'R\$'];
+                return _buildInfoItem(infoName[index], infoPrice[index]);
               },
               separatorBuilder: (context, index) => Divider(
                 color: Colors.amber, // Linha amarela entre os itens
@@ -44,12 +44,15 @@ class PaymentCost extends StatelessWidget {
           // Botão de adicionar
           Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
-            child: FloatingActionButton(
+            child: ElevatedButton(
               onPressed: () {
-                // Adicionar novo produto
+                //Linkar página de descrições 
               },
-              child: const Icon(Icons.add, color: Colors.black),
-              backgroundColor: Colors.white,
+              child: 
+              const Text(
+                "Descrições",
+                style: TextStyle(color: Colors.black),
+              )
             ),
           ),
         ],
@@ -57,7 +60,7 @@ class PaymentCost extends StatelessWidget {
     );
   }
 
-  Widget _buildServiceItem(String serviceName, String servicePrice) {
+ Widget _buildInfoItem(String infoName, String infoPrice) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
@@ -70,11 +73,11 @@ class PaymentCost extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            serviceName,
+            infoName,
             style: const TextStyle(fontSize: 16, color: Colors.black),
           ),
           Text(
-            servicePrice,
+            infoPrice,
             style: const TextStyle(fontSize: 16, color: Colors.black),
           ),
         ]

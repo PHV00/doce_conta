@@ -1,6 +1,8 @@
 import 'package:doce_conta/view/home_screen.dart';
 import 'package:doce_conta/view/main_screen.dart';
+import 'package:doce_conta/view/monthly_report_screen.dart';
 import 'package:doce_conta/view/register_screen.dart';
+import 'package:doce_conta/view/report_descriptions_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../widgets/button.dart';
@@ -65,6 +67,22 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 40),
             const ApiBrandsLogin(),
             const SizedBox(height: 20),
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ReportDescriptions(),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF98CFC2), // Define a cor do botão
+              ),
+              child: const Text("Ir para Relatório Mensal"),
+            ),
+
           ],
         ));
   }

@@ -3,6 +3,7 @@ class CustomMarginProfit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Color(0xFF00382B),
         elevation: 0,
