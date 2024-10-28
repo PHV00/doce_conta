@@ -21,7 +21,7 @@ class _HubProducts extends State<HubProducts> {
         appBar: AppBar(
           backgroundColor: const Color(0xff003326),
           title: Text(
-            "Oque deseja Precificar?",
+            "Produtos",
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: true,

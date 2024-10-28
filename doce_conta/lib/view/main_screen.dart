@@ -2,6 +2,7 @@
 
 import 'package:doce_conta/view/home_screen.dart';
 import 'package:doce_conta/view/hub_products.dart';
+import 'package:doce_conta/view/hub_store.dart';
 import 'package:doce_conta/view/icon_selection_screen.dart';
 import 'package:doce_conta/view/infrastructure_costs_screen.dart';
 import 'package:doce_conta/view/monthly_report_screen.dart';
