@@ -22,19 +22,25 @@ class ProductScreen extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: const TextField(
-          decoration: InputDecoration(
-            hintText: 'Nome do Produto',
-            border: InputBorder.none,
-            hintStyle: TextStyle(color: Colors.white),
-          ),
-          style: TextStyle(color: Colors.white, fontSize: 18),
+        title: SvgPicture.asset(
+          'assets/images/bolo.svg',
+          height: 40,
+          // ignore: deprecated_member_use
+          color: const Color(0xFFF5A001),
         ),
+        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
+            const TextField(
+              decoration: InputDecoration(
+                labelText: 'Nome do produto:',
+                border: OutlineInputBorder(),
+              ),
+              keyboardType: TextInputType.number,
+            ),
             const TextField(
               decoration: InputDecoration(
                 labelText: 'Custo por unidade:',
