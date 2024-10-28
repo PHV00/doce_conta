@@ -1,27 +1,14 @@
+import 'package:doce_conta/view/login_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ContaRegistrada(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class ContaRegistrada extends StatefulWidget {
-  const ContaRegistrada({super.key});
+class SuccessfulRegister extends StatefulWidget {
+  const SuccessfulRegister({super.key});
 
   @override
-  _ContaRegistrada createState() => _ContaRegistrada();
+  _SuccessfulRegister createState() => _SuccessfulRegister();
 }
 
-class _ContaRegistrada extends State<ContaRegistrada> {
+class _SuccessfulRegister extends State<SuccessfulRegister> {
   final List<String> icons = [
     'assets/Images/realizacao.svg',
   ];
@@ -29,6 +16,10 @@ class _ContaRegistrada extends State<ContaRegistrada> {
   void _apertarBotaoLogin() {
     setState(() {
       // Action
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const LoginScreen()));
     });
   }
 

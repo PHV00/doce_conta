@@ -1,5 +1,4 @@
 import 'package:doce_conta/view/product_screen.dart';
-import 'package:doce_conta/view/product_selection_screen.dart';
 import 'package:doce_conta/widgets/container_custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +21,7 @@ class _HubProducts extends State<HubProducts> {
         appBar: AppBar(
           backgroundColor: const Color(0xff003326),
           title: Text(
-            "Oque deseja Precificar?",
+            "Produtos",
             style: TextStyle(color: Colors.white),
           ),
           centerTitle: true,
@@ -46,7 +45,7 @@ class _HubProducts extends State<HubProducts> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ProductSelection()));
+                              builder: (context) => const ProductScreen()));
                       },
                       ),
                   ContainerCustomButton(
