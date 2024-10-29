@@ -46,7 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ButtonWidget(
             btnText: "Cadastrar",
             onPressedFunction: (){
-              Navigator.push(
+              Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                     builder: (context) => SuccessfulRegister()));

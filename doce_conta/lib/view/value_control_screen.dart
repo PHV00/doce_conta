@@ -46,7 +46,7 @@ class ValueControl extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 5),
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
@@ -65,7 +65,7 @@ class ValueControl extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 5),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF00382B),
@@ -86,7 +86,7 @@ class ValueControl extends StatelessWidget {
 
   Widget buildItemCard(String title, String price, String assetPath) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: const Color(0xFF00382B),
         borderRadius: BorderRadius.circular(20),
@@ -118,7 +118,7 @@ class ValueControl extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: const Color(0xFF00382B),
-                fontSize: 16,
+                fontSize: 10,
                 fontWeight: FontWeight.bold,
               ),
             ),

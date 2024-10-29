@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import '../widgets/appBarWithIcon.dart';
 import '../widgets/conteiner_text_center.dart';
-
-void main(){
-  runApp(const AnnualReportPage());
-}
-
-class AnnualReportPage extends StatelessWidget {
-  const AnnualReportPage({super.key});
+class MonthReport extends StatelessWidget {
+  const MonthReport({super.key});
 
   @override
   Widget build(BuildContext context) {

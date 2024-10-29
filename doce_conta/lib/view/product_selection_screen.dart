@@ -31,7 +31,7 @@ class ProductSelection extends StatelessWidget {
             child: ListView.separated(
               padding: const EdgeInsets.all(16.0),
               itemCount: 3,
-              itemBuilder: (context, index) {
+              itemBuilder: (context, index){
                 // Lista de produtos
                 final productNames = ['Bolo de Chocolate', 'Bolo de Milho', 'Bolo de Fubá'];
                 return _buildProductItem(productNames[index]);
