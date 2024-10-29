@@ -17,6 +17,7 @@ import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Initial_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:doce_conta/view/hub_costing.dart';
+import 'package:doce_conta/view/hub_stock_controll.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -27,7 +28,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreen extends State<MainScreen> {
-
   List<Widget> listScreens = [
     //Home
     HomeScreen(),
@@ -36,6 +36,8 @@ class _MainScreen extends State<MainScreen> {
     //Custos
     HubCosting(),
     //Estoque
+    HubStockControll(),
+    //Relatorio
     MontlhyReport(),
     //Relatorio
     // AnnualReportPage(),
@@ -59,7 +61,7 @@ class _MainScreen extends State<MainScreen> {
           body: actualScreen,
           bottomNavigationBar:
               BootomNavigationBarDefault(changeScreen: (int position) {
-              changeScreen(position);
+            changeScreen(position);
           })),
     );
   }
