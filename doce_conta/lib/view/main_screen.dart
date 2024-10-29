@@ -16,6 +16,7 @@ import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Initial_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:doce_conta/view/hub_costing.dart';
+import 'package:doce_conta/view/hub_stock_controll.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -35,9 +36,9 @@ class _MainScreen extends State<MainScreen> {
     //Custos
     HubCosting(),
     //Estoque
-    MontlhyReport(),
+    HubStockControll(),
     //Relatorio
-    ValueControlScreen(),
+    MontlhyReport(),
   ];
 
   Widget actualScreen = HomeScreen();
