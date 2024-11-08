@@ -1,3 +1,4 @@
+import 'package:doce_conta/view/cost_item_addition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -47,6 +48,10 @@ class CostingSystem extends StatelessWidget {
             child: FloatingActionButton(
               onPressed: () {
                 // Adicionar novo produto
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CostItemAddition()));
               },
               child: const Icon(Icons.add, color: Colors.black),
               backgroundColor: Colors.white,
