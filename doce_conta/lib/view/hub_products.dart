@@ -48,7 +48,7 @@ class _HubProducts extends State<HubProducts> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => const ProductScreen()));
+                              builder: (context) => ProductSelection()));
                       },
                       ),
                     ),

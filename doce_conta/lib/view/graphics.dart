@@ -2,6 +2,7 @@ import 'package:doce_conta/view/product_screen.dart';
 import 'package:doce_conta/widgets/container_custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 class Graphics extends StatelessWidget {
   const Graphics({super.key});
 

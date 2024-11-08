@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:doce_conta/view/graphics.dart';
 
 class ValueControlScreen extends StatelessWidget {
   @override
@@ -74,7 +75,12 @@ class ValueControl extends StatelessWidget {
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
-              onPressed: () {},
+              onPressed: (){
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => Graphics())
+                );
+              },
               child: Text('Caixa',
                   style: TextStyle(fontSize: 20, color: Colors.white)),
             ),
