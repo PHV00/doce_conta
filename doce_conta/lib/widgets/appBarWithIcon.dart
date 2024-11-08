@@ -17,7 +17,11 @@ class _AppbarwithiconState extends State<Appbarwithicon> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: const Icon(Icons.arrow_back, color: Colors.white),
+      leading:IconButton(
+        icon:const Icon(Icons.arrow_back, color: Colors.white),
+        onPressed: (){
+          Navigator.pop(context);
+        }),
       centerTitle: true,
       title: SvgPicture.asset(
           widget.iconPath,

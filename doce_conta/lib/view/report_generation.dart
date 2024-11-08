@@ -1,18 +1,7 @@
+import 'package:doce_conta/view/annual_report.dart';
+import 'package:doce_conta/widgets/container_custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: ReportGeneration(),
-    );
-  }
-}
 
 class ReportGeneration extends StatefulWidget {
   const ReportGeneration({super.key});
@@ -61,7 +50,8 @@ class _ReportGeneration extends State<ReportGeneration> {
     );
   }
 
-  Widget buildGridItem({required String imagePath, required String widgetTitle}) {
+  Widget buildGridItem(
+      {required String imagePath, required String widgetTitle}) {
     return Container(
       decoration: BoxDecoration(
         color: Color(0xFF00382B), // Fundo dos itens
@@ -70,20 +60,20 @@ class _ReportGeneration extends State<ReportGeneration> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 10.0),
-          Text(
-            widgetTitle,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SvgPicture.asset(
-            imagePath,
-            height: 30,
-            width: 30,
-          ),
+          ContainerCustomButton(
+            btnText: widgetTitle,
+            widhtContainer: 140,
+            heightContainer: 140,
+            svgPath: imagePath,
+            widhtSvg: 30,
+            heightSvg: 30,
+            onPressedFunction: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AnnualReportPage()));
+            },
+          )
         ],
       ),
     );

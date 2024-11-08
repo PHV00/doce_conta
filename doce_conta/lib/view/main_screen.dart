@@ -11,6 +11,7 @@ import 'package:doce_conta/view/product_screen.dart';
 import 'package:doce_conta/view/product_selection_screen.dart';
 import 'package:doce_conta/view/profit_margin_screen.dart';
 import 'package:doce_conta/view/register_screen.dart';
+import 'package:doce_conta/view/report_generation.dart';
 import 'package:doce_conta/view/value_control_screen.dart';
 import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:flutter/material.dart';
@@ -38,10 +39,10 @@ class _MainScreen extends State<MainScreen> {
     //Estoque
     HubStockControll(),
     //Relatorio
-    MontlhyReport(),
-    //Relatorio
+    // MontlhyReport(),
     // AnnualReportPage(),
-    ValueControlScreen()
+    //ValueControlScreen()
+    ReportGeneration()
   ];
 
   Widget actualScreen = HomeScreen();

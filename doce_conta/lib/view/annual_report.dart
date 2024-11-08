@@ -1,5 +1,6 @@
 import 'package:doce_conta/view/opening_for_monthly_report.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import '../widgets/appBarWithIcon.dart';
 import '../widgets/conteiner_text_center.dart';
 
@@ -15,7 +16,20 @@ class AnnualReportPage extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xFFE1FAF4),
-        appBar: const Appbarwithicon(iconPath: "assets/Images/relatorio.svg"),
+        appBar: AppBar(
+          leading:IconButton(
+            icon:const Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: (){
+              Navigator.pop(context);
+            }),
+          centerTitle: true,
+          title: SvgPicture.asset(
+              "assets/Images/relatorio.svg",
+              height: 40,
+              color: const Color(0xFFF5A001),
+            ),
+          backgroundColor: const Color(0xFF00382B),
+        ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
