@@ -1,5 +1,5 @@
-import 'package:doce_conta/view/Initial/main_screen.dart';
-import 'package:doce_conta/view/Initial/register_screen.dart';
+import 'package:doce_conta/view/initial/main_screen.dart';
+import 'package:doce_conta/view/initial/register_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/button.dart';
