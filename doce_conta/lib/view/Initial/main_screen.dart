@@ -1,24 +1,12 @@
 //https://medium.com/flutter-community/data-binding-in-flutter-or-passing-data-from-a-child-widget-to-a-parent-widget-4b1c5ffe2114
 
-import 'package:doce_conta/view/annual_report.dart';
-import 'package:doce_conta/view/home_screen.dart';
-import 'package:doce_conta/view/hub_products.dart';
-import 'package:doce_conta/view/hub_store.dart';
-import 'package:doce_conta/view/icon_selection_screen.dart';
-import 'package:doce_conta/view/infrastructure_costs_screen.dart';
-import 'package:doce_conta/view/monthly_report_screen.dart';
-import 'package:doce_conta/view/product_screen.dart';
-import 'package:doce_conta/view/product_selection_screen.dart';
-import 'package:doce_conta/view/profit_margin_screen.dart';
-import 'package:doce_conta/view/register_screen.dart';
-import 'package:doce_conta/view/report_generation.dart';
-import 'package:doce_conta/view/value_control_screen.dart';
+import 'package:doce_conta/view/initial/home_screen.dart';
+import 'package:doce_conta/view/Product/hub_products_screen.dart';
+import 'package:doce_conta/view/Reports/hub_report_generation_screen.dart';
 import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:flutter/material.dart';
-import 'package:doce_conta/view/Initial_screen.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:doce_conta/view/hub_costing.dart';
-import 'package:doce_conta/view/hub_stock_controll.dart';
+import 'package:doce_conta/view/Store/hub_store_costing_screen.dart';
+import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -39,9 +27,7 @@ class _MainScreen extends State<MainScreen> {
     //Estoque
     HubStockControll(),
     //Relatorio
-    // MontlhyReport(),
-    // AnnualReportPage(),
-    //ValueControlScreen()
+   
     ReportGeneration()
   ];
 

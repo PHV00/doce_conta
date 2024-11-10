@@ -1,10 +1,13 @@
-import 'package:doce_conta/view/product_screen.dart';
-import 'package:doce_conta/view/product_selection_screen.dart';
 import 'package:doce_conta/widgets/container_custom_button.dart';
 import 'package:flutter/material.dart';
+import 'taxes_cost_screen.dart';
+import 'infrastructure_costs_screen.dart';
+import 'it_costs_screen.dart';
+import 'payment_cost_screen.dart';
 
-class HubProducts extends StatefulWidget {
-  const HubProducts({super.key});
+
+class HubCosting extends StatefulWidget {
+  const HubCosting({super.key});
 
   final double _widhtContainer = 140;
   final double _heightCOntainer = 140;
@@ -12,65 +15,63 @@ class HubProducts extends StatefulWidget {
   final double _heightSvg = 55;
 
   @override
-  State<HubProducts> createState() => _HubProducts();
+  State<HubCosting> createState() => _HubCosting();
 }
 
-class _HubProducts extends State<HubProducts> {
+class _HubCosting extends State<HubCosting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff003326),
         title: Text(
-          "O que deseja Precificar?",
+          "Qual custo deseja cadastrar?",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(  
+      body: SingleChildScrollView(
         child: Padding(  
           padding: EdgeInsets.symmetric(vertical: 70, horizontal: 40),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
                 child: Column(
-                  mainAxisSize: MainAxisSize.min,
+                  mainAxisSize: MainAxisSize.min,  
                   children: [
                     Flexible(
                       child: ContainerCustomButton(
-                        btnText: "Bolos",
+                        btnText: "Infraestrutura",
                         widhtContainer: widget._widhtContainer,
                         heightContainer: widget._heightCOntainer,
-                        svgPath: "assets/Images/bolo.svg",
+                        svgPath: "assets/Images/infraestrutura.svg",
                         widhtSvg: widget._widhtSvg,
                         heightSvg: widget._heightSvg,
                         onPressedFunction: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => ProductSelection()));
-                      },
+                              builder: (context) => InfraestructureCost()));
+                        },
                       ),
                     ),
                     SizedBox(height: 20),  
                     Flexible(
                       child: ContainerCustomButton(
-                        btnText: "Doces",
+                        btnText: "Impostos",
                         widhtContainer: widget._widhtContainer,
                         heightContainer: widget._heightCOntainer,
-                        svgPath: "assets/Images/brigadeiro.svg",
+                        svgPath: "assets/Images/imposto.svg",
                         widhtSvg: widget._widhtSvg,
-                        heightSvg: widget._heightSvg),
-                    ),
-                    SizedBox(height: 20),
-                    Flexible(
-                      child: ContainerCustomButton(
-                        btnText: "Sucos",
-                        widhtContainer: widget._widhtContainer,
-                        heightContainer: widget._heightCOntainer,
-                        svgPath: "assets/Images/drink.svg",
-                        widhtSvg: widget._widhtSvg,
-                        heightSvg: widget._heightSvg),
+                        heightSvg: widget._heightSvg,
+                        onPressedFunction: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => TaxesCosting()));
+                        },
+                      ),
                     ),
                   ],
                 ),
@@ -78,36 +79,40 @@ class _HubProducts extends State<HubProducts> {
               SizedBox(width: 30),
               Expanded(
                 child: Column(
-                  mainAxisSize: MainAxisSize.min, 
+                  mainAxisSize: MainAxisSize.min,  
                   children: [
                     Flexible(
                       child: ContainerCustomButton(
-                        btnText: "Pães",
+                        btnText: "Comunicação",
                         widhtContainer: widget._widhtContainer,
                         heightContainer: widget._heightCOntainer,
-                        svgPath: "assets/Images/pao.svg",
+                        svgPath: "assets/Images/comunicacao.svg",
                         widhtSvg: widget._widhtSvg,
-                        heightSvg: widget._heightSvg),
+                        heightSvg: widget._heightSvg, 
+                        onPressedFunction: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CostingSystem()));
+                        },
+                      ),
                     ),
                     SizedBox(height: 20),  
                     Flexible(
                       child: ContainerCustomButton(
-                        btnText: "Salgados",
+                        btnText: "Folha de pagamento",
                         widhtContainer: widget._widhtContainer,
                         heightContainer: widget._heightCOntainer,
-                        svgPath: "assets/Images/croissant.svg",
+                        svgPath: "assets/Images/folha_pagamento.svg",
                         widhtSvg: widget._widhtSvg,
-                        heightSvg: widget._heightSvg),
-                    ),
-                    SizedBox(height: 20),  
-                    Flexible(
-                      child: ContainerCustomButton(
-                        btnText: "Cafés",
-                        widhtContainer: widget._widhtContainer,
-                        heightContainer: widget._heightCOntainer,
-                        svgPath: "assets/Images/cafe.svg",
-                        widhtSvg: widget._widhtSvg,
-                        heightSvg: widget._heightSvg),
+                        heightSvg: widget._heightSvg,
+                        onPressedFunction: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PaymentCost()));
+                        },
+                      ),
                     ),
                   ],
                 ),

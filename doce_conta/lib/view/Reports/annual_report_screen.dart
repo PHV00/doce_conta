@@ -1,8 +1,7 @@
-import 'package:doce_conta/view/opening_for_monthly_report.dart';
+import 'package:doce_conta/view/reports/monthly_report_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../widgets/appBarWithIcon.dart';
-import '../widgets/conteiner_text_center.dart';
+import '../../widgets/conteiner_text_center.dart';
 
 void main(){
   runApp(const AnnualReportPage());

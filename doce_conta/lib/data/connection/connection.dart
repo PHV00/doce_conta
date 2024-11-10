@@ -1,7 +1,7 @@
-import 'dart:io';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
+//import 'dart:io';
+//import 'package:sqflite/sqflite.dart';
+//import 'package:path/path.dart';
+//import 'package:path_provider/path_provider.dart';
 
 class DatabaseSqlite {
   //Padrão Singleton(padrão de um unico objeto de uma unica classe)
@@ -12,7 +12,7 @@ class DatabaseSqlite {
   // //Ao se criar uma nova instancia se ele refere ao mesmo já criado
   // factory Database() => _instance;
 
-  static Database? _database;
+  //static Database? _database;
 
   // Future<Database> get_database() async {
   //   if (_database != null) {

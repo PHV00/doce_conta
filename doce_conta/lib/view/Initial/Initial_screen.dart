@@ -1,6 +1,6 @@
 //Parte visual - Inicio
 
-import 'package:doce_conta/view/login_screen.dart';
+import 'package:doce_conta/view/Initial/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class InitialScreen extends StatelessWidget {

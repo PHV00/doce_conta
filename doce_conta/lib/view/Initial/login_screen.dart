@@ -1,14 +1,11 @@
-import 'package:doce_conta/view/home_screen.dart';
-import 'package:doce_conta/view/main_screen.dart';
-import 'package:doce_conta/view/monthly_report_screen.dart';
-import 'package:doce_conta/view/register_screen.dart';
-import 'package:doce_conta/view/report_descriptions_screen.dart';
+import 'package:doce_conta/view/initial/main_screen.dart';
+import 'package:doce_conta/view/initial/register_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../widgets/button.dart';
-import '../widgets/other_options.dart';
-import '../widgets/api_brands_login.dart';
-import '../widgets/input_and_label.dart';
+import '../../widgets/button.dart';
+import '../../widgets/other_options.dart';
+import '../../widgets/api_brands_login.dart';
+import '../../widgets/input_and_label.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginScreen extends StatefulWidget {

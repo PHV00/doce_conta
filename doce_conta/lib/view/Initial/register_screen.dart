@@ -1,9 +1,9 @@
-import 'package:doce_conta/view/login_screen.dart';
-import 'package:doce_conta/view/successful_register.dart';
+import 'package:doce_conta/view/Initial/login_screen.dart';
+import 'package:doce_conta/view/Initial/successful_register_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../widgets/input_and_label.dart';
-import '../widgets/button.dart';
+import '../../widgets/input_and_label.dart';
+import '../../widgets/button.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});

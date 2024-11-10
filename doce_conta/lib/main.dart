@@ -1,6 +1,5 @@
-import 'package:doce_conta/view/product_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:doce_conta/view/Initial_screen.dart';
+import 'package:doce_conta/view/Initial/initial_screen.dart';
 void main() {
   runApp(const MyApp());
 }

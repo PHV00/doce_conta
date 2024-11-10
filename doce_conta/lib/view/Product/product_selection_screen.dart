@@ -1,12 +1,11 @@
-import 'package:doce_conta/view/report_descriptions_screen.dart';
+import 'package:doce_conta/view/Product/new_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MontlhyReport extends StatelessWidget {
+class ProductSelection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF98CFC2),
       appBar: AppBar(
         backgroundColor: const Color(0xFF00382B),
         leading: IconButton(
@@ -16,8 +15,9 @@ class MontlhyReport extends StatelessWidget {
           },
         ),
         title: SvgPicture.asset(
-          'assets/images/relatorio.svg',
+          'assets/images/bolo.svg',
           height: 40,
+          // ignore: deprecated_member_use
           color: const Color(0xFFF5A001),
         ),
         centerTitle: true,
@@ -28,12 +28,11 @@ class MontlhyReport extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               padding: const EdgeInsets.all(16.0),
-              itemCount: 5,
-              itemBuilder: (context, index) {
+              itemCount: 3,
+              itemBuilder: (context, index){
                 // Lista de produtos
-                final infoName = ['Quantidade de itens vendidos', 'Valor bruto: caixa', 'Lucro diário', 'Valor Contas', 'Reserva'];
-                final infoPrice = ['x', 'R\$', 'R\$', 'R\$', 'R\$'];
-                return _buildInfoItem(infoName[index], infoPrice[index]);
+                final productNames = ['Bolo de Chocolate', 'Bolo de Milho', 'Bolo de Fubá'];
+                return _buildProductItem(productNames[index]);
               },
               separatorBuilder: (context, index) => Divider(
                 color: Colors.amber, // Linha amarela entre os itens
@@ -45,19 +44,16 @@ class MontlhyReport extends StatelessWidget {
           // Botão de adicionar
           Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
-            child: ElevatedButton(
+            child: FloatingActionButton(
               onPressed: () {
-                //Linkar página de descrições
+                // Ação para adicionar novo produto
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ReportDescriptions()));
+                      builder: (context) => const ProductScreen()));
               },
-              child: 
-              const Text(
-                "Descrições",
-                style: TextStyle(color: Colors.black),
-              )
+              child: const Icon(Icons.add, color: Colors.black),
+              backgroundColor: Colors.white,
             ),
           ),
         ],
@@ -65,7 +61,7 @@ class MontlhyReport extends StatelessWidget {
     );
   }
 
- Widget _buildInfoItem(String infoName, String infoPrice) {
+  Widget _buildProductItem(String productName) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
@@ -74,18 +70,9 @@ class MontlhyReport extends StatelessWidget {
         borderRadius: BorderRadius.circular(25.0),
         border: Border.all(color: Colors.grey, width: 1),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            infoName,
-            style: const TextStyle(fontSize: 16, color: Colors.black),
-          ),
-          Text(
-            infoPrice,
-            style: const TextStyle(fontSize: 16, color: Colors.black),
-          ),
-        ]
+      child: Text(
+        productName,
+        style: const TextStyle(fontSize: 16, color: Colors.black),
       ),
     );
   }
