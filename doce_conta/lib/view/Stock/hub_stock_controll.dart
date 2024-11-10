@@ -1,7 +1,7 @@
-import 'package:doce_conta/view/product_screen.dart';
+import 'package:doce_conta/view/Product/product_screen.dart';
 import 'package:doce_conta/widgets/container_custom_button.dart';
 import 'package:flutter/material.dart';
-import 'package:doce_conta/view/value_control_screen.dart';
+import 'package:doce_conta/view/Stock/value_control_screen.dart';
 
 class HubStockControll extends StatefulWidget {
   const HubStockControll({super.key});

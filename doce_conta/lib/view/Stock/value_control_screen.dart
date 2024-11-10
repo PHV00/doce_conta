@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:doce_conta/view/graphics.dart';
+import 'package:doce_conta/view/Stock/graphics.dart';
 
 class ValueControlScreen extends StatelessWidget {
   @override

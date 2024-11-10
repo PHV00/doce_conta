@@ -1,8 +1,6 @@
-import 'package:doce_conta/view/concluded.dart';
-import 'package:doce_conta/view/icon_selection_screen.dart';
-import 'package:doce_conta/view/profit_margin_screen.dart';
-import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
-import 'package:doce_conta/widgets/button.dart';
+import 'package:doce_conta/view/Product/concluded.dart';
+import 'package:doce_conta/view/Product/icon_selection_screen.dart';
+import 'package:doce_conta/view/Product/profit_margin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

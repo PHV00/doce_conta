@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../widgets/appBarWithIcon.dart';
-import '../widgets/conteiner_text_center.dart';
+import '../../widgets/conteiner_text_center.dart';
+
 class MonthReport extends StatelessWidget {
   const MonthReport({super.key});
 

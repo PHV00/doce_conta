@@ -1,22 +1,22 @@
-import 'package:doce_conta/view/report_descriptions_screen.dart';
+import 'package:doce_conta/view/Store/cost_item_addition.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class MontlhyReport extends StatelessWidget {
+class InfraestructureCost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF98CFC2),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0xFF00382B),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.of(context).pop();
+            // Navigator.of(context).pop();
           },
         ),
         title: SvgPicture.asset(
-          'assets/images/relatorio.svg',
+          'assets/images/infraestrutura.svg',
           height: 40,
           color: const Color(0xFFF5A001),
         ),
@@ -28,12 +28,12 @@ class MontlhyReport extends StatelessWidget {
           Expanded(
             child: ListView.separated(
               padding: const EdgeInsets.all(16.0),
-              itemCount: 5,
+              itemCount: 4,
               itemBuilder: (context, index) {
                 // Lista de produtos
-                final infoName = ['Quantidade de itens vendidos', 'Valor bruto: caixa', 'Lucro diário', 'Valor Contas', 'Reserva'];
-                final infoPrice = ['x', 'R\$', 'R\$', 'R\$', 'R\$'];
-                return _buildInfoItem(infoName[index], infoPrice[index]);
+                final serviceNames = ['Aluguel', 'Luz', 'Água', 'Segurança'];
+                final servicePrice = ['R\$ 1400', 'R\$ 350', 'R\$ 180', 'R\$ 380'];
+                return _buildServiceItem(serviceNames[index], servicePrice[index]);
               },
               separatorBuilder: (context, index) => Divider(
                 color: Colors.amber, // Linha amarela entre os itens
@@ -45,19 +45,16 @@ class MontlhyReport extends StatelessWidget {
           // Botão de adicionar
           Padding(
             padding: const EdgeInsets.only(bottom: 16.0),
-            child: ElevatedButton(
+            child: FloatingActionButton(
               onPressed: () {
-                //Linkar página de descrições
+                // Adicionar novo produto
                 Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ReportDescriptions()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CostItemAddition()));
               },
-              child: 
-              const Text(
-                "Descrições",
-                style: TextStyle(color: Colors.black),
-              )
+              child: const Icon(Icons.add, color: Colors.black),
+              backgroundColor: Colors.white,
             ),
           ),
         ],
@@ -65,7 +62,7 @@ class MontlhyReport extends StatelessWidget {
     );
   }
 
- Widget _buildInfoItem(String infoName, String infoPrice) {
+ Widget _buildServiceItem(String serviceName, String servicePrice) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
@@ -78,11 +75,11 @@ class MontlhyReport extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            infoName,
+            serviceName,
             style: const TextStyle(fontSize: 16, color: Colors.black),
           ),
           Text(
-            infoPrice,
+            servicePrice,
             style: const TextStyle(fontSize: 16, color: Colors.black),
           ),
         ]
