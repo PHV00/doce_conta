@@ -24,10 +24,11 @@ class MonthReport extends StatelessWidget {
             ),
           backgroundColor: const Color(0xFF00382B),
         ),
-        body: Center(
+        body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

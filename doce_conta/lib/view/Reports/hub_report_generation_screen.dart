@@ -72,7 +72,7 @@ class _ReportGeneration extends State<ReportGeneration> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AnnualReportPage()));
+                              builder: (context) => const AnnualReportPage()));
                       },
                     ),
                     ),

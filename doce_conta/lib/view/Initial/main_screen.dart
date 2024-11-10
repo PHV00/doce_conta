@@ -27,7 +27,6 @@ class _MainScreen extends State<MainScreen> {
     //Estoque
     HubStockControll(),
     //Relatorio
-   
     ReportGeneration()
   ];
 
