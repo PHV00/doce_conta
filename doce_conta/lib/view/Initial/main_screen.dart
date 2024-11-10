@@ -1,12 +1,12 @@
 //https://medium.com/flutter-community/data-binding-in-flutter-or-passing-data-from-a-child-widget-to-a-parent-widget-4b1c5ffe2114
 
 import 'package:doce_conta/view/Initial/home_screen.dart';
-import 'package:doce_conta/view/Product/hub_products.dart';
-import 'package:doce_conta/view/Reports/hub_report_generation.dart';
+import 'package:doce_conta/view/Product/hub_products_screen.dart';
+import 'package:doce_conta/view/Reports/hub_report_generation_screen.dart';
 import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:flutter/material.dart';
-import 'package:doce_conta/view/Store/hub_costing.dart';
-import 'package:doce_conta/view/Stock/hub_stock_controll.dart';
+import 'package:doce_conta/view/Store/hub_store_costing_screen.dart';
+import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

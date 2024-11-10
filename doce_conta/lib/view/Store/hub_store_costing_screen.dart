@@ -2,7 +2,7 @@ import 'package:doce_conta/widgets/container_custom_button.dart';
 import 'package:flutter/material.dart';
 import 'taxes_cost_screen.dart';
 import 'infrastructure_costs_screen.dart';
-import 'costing_system_screen.dart';
+import 'it_costs_screen.dart';
 import 'payment_cost_screen.dart';
 
 

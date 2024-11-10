@@ -1,4 +1,4 @@
-import 'package:doce_conta/view/Product/custom_profit_margin.dart';
+import 'package:doce_conta/view/Product/custom_profit_margin_screen.dart';
 import 'package:doce_conta/widgets/button.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/button_profit_margin.dart';

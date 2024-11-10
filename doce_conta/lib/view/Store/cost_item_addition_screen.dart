@@ -1,4 +1,4 @@
-import 'package:doce_conta/view/Product/concluded.dart';
+import 'package:doce_conta/view/Product/concluded_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
