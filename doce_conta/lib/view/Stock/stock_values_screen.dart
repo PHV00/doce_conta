@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:doce_conta/view/Stock/dashboard_screen.dart';
+import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
 
 class ValueControlScreen extends StatelessWidget {
   @override
@@ -33,7 +34,11 @@ class ValueControl extends StatelessWidget {
                 children: [
                   IconButton(
                     icon: Icon(Icons.arrow_back, color: Colors.white),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => HubStockControll()));
+                    },
                   ),
                   Spacer(),
                   Center(
