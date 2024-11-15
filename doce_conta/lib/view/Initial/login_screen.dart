@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const SizedBox(height: 20),
             const InputAndLabelWidget(labelText: "Senha"),
             const SizedBox(height: 50),
-            ButtonWidget(
+            ButtonWidget( 
               btnText: "Logar",
               onPressedFunction: () {
                 Navigator.pushReplacement(

@@ -4,7 +4,7 @@ import '../widgets/text_field.dart';
 class InputAndLabelWidget extends StatelessWidget {
   const InputAndLabelWidget({super.key, required this.labelText});
 
-  final String labelText;
+  final String labelText; 
 
   @override
   Widget build(BuildContext context) {
