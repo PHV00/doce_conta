@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
+import 'package:doce_conta/view/Stock/stock_values_screen.dart';
 
 class StockManagementScreen extends StatefulWidget {
   @override
@@ -7,18 +9,35 @@ class StockManagementScreen extends StatefulWidget {
 }
 
 class _StockManagementScreenState extends State<StockManagementScreen> {
-  int stockQuantity = 10; // Quantidade inicial em estoque
+  int stockQuantity = 0; // Quantidade inicial em estoque
+  TextEditingController stockController = TextEditingController();
 
   void addStock() {
     setState(() {
-      stockQuantity++;
+      double quantity = double.tryParse(stockController.text) ?? 0;
+      stockQuantity += quantity.toInt();
+      stockController.clear();
     });
   }
 
   void removeStock() {
     setState(() {
-      if (stockQuantity > 0) stockQuantity--;
+      if (stockQuantity > 0){
+      double quantity = double.tryParse(stockController.text) ?? 0;
+      stockQuantity -= quantity.toInt();
+      stockController.clear();
+      }
     });
+  }
+
+  void sellProdutct(){
+    //Lógica para geração de faturamento 
+  }
+
+  @override
+  void dispose() {
+    stockController.dispose();
+    super.dispose();
   }
 
   @override
@@ -31,8 +50,12 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
-              // Voltar para a tela anterior, ajustado conforme seu fluxo de navegação
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => const HubStockControll(),
+                ),
+              );
             },
           ),
           title: SvgPicture.asset(
@@ -47,7 +70,7 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
           child: Column(
             children: [
               // Cabeçalho
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Expanded(
                 child: ListView.builder(
                   itemCount: 1,
@@ -58,8 +81,9 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
                           stockQuantity: stockQuantity,
                           addStock: addStock,
                           removeStock: removeStock,
+                          stockController: stockController,
                         ),
-                        Divider(color: Colors.orange, thickness: 1),
+                        const Divider(color: Colors.orange, thickness: 1),
                       ],
                     );
                   },
@@ -71,14 +95,18 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
-                    textStyle: TextStyle(color: Colors.white),
+                    textStyle: const TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    // Navegar para o controle do estoque
-                    // Adicione sua navegação para a próxima tela, se necessário
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ValueControlScreen(),
+                      ),
+                    );
                   },
                   child: const Text(
-                    "Controle do Estoque",
+                    "Fechamento do Estoque",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
@@ -91,36 +119,24 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
   }
 }
 
-class InventoryItem extends StatefulWidget {
+class InventoryItem extends StatelessWidget {
   final int stockQuantity;
   final VoidCallback addStock;
   final VoidCallback removeStock;
+  final TextEditingController stockController;
 
   const InventoryItem({
     required this.stockQuantity,
     required this.addStock,
     required this.removeStock,
+    required this.stockController
   });
-
-  @override
-  _InventoryItemState createState() => _InventoryItemState();
-}
-
-class _InventoryItemState extends State<InventoryItem> {
-  // Definição do controlador de texto
-  TextEditingController stockController = TextEditingController();
-
-  @override
-  void dispose() {
-    stockController.dispose(); // Libera o controlador quando o widget for removido
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.symmetric(vertical: 5),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.grey.shade300),
@@ -133,61 +149,62 @@ class _InventoryItemState extends State<InventoryItem> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Bolo de chocolate',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               Text(
-                'Estoque Atual: ${widget.stockQuantity}', // Corrigido para widget.stockQuantity
-                style: TextStyle(fontSize: 16, color: Colors.green),
+                'Estoque Atual: $stockQuantity', 
+                style: const TextStyle(fontSize: 16, color: Colors.green),
               ),
             ],
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           TextField(
-            controller: stockController, // Usando o controlador de texto
+            controller: stockController, 
             keyboardType: TextInputType.number,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: "Atualizar estoque",
               border: OutlineInputBorder(),
               isDense: true,
             ),
           ),
-          SizedBox(height: 10),
-          // Botões de controle de estoque
+          const SizedBox(height: 10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
                 child: ElevatedButton(
-                  onPressed: widget.addStock, // Corrigido para chamar a função de addStock
+                  //Função para adicionar estoque
+                  onPressed: addStock, 
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  child: Text('Adicionar', style: TextStyle(color: Colors.white)),
+                  child: const Text('Adicionar', style: TextStyle(color: Colors.white)),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: ElevatedButton(
-                  onPressed: widget.removeStock, // Corrigido para chamar a função de removeStock
+                  //Função de remover estoque 
+                  onPressed: removeStock, 
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  child: Text('Remover', style: TextStyle(color: Colors.white)),
+                  child: const Text('Remover', style: TextStyle(color: Colors.white)),
                 ),
               ),
-              SizedBox(width: 10),
+              const SizedBox(width: 10),
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
-                    // Ação de vender item (implementação futura)
+                    // Lógica para gerar faturamento com venda 
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
@@ -195,7 +212,7 @@ class _InventoryItemState extends State<InventoryItem> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  child: Text('Vender', style: TextStyle(color: Colors.white)),
+                  child: const Text('Vender', style: TextStyle(color: Colors.white)),
                 ),
               ),
             ],
