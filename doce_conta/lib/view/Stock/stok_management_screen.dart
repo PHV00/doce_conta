@@ -12,6 +12,7 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
   int stockQuantity = 0; // Quantidade inicial em estoque
   TextEditingController stockController = TextEditingController();
 
+  //Função para adicioanr ao estoque 
   void addStock() {
     setState(() {
       double quantity = double.tryParse(stockController.text) ?? 0;
@@ -20,6 +21,7 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
     });
   }
 
+  //Função para remover do estoque 
   void removeStock() {
     setState(() {
       if (stockQuantity > 0){
@@ -30,8 +32,9 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
     });
   }
 
+  //Função para gerar faturamento - VENDA 
   void sellProdutct(){
-    //Lógica para geração de faturamento 
+
   }
 
   @override
@@ -69,7 +72,6 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
           padding: const EdgeInsets.all(16),
           child: Column(
             children: [
-              // Cabeçalho
               const SizedBox(height: 20),
               Expanded(
                 child: ListView.builder(
@@ -175,7 +177,7 @@ class InventoryItem extends StatelessWidget {
             children: [
               Expanded(
                 child: ElevatedButton(
-                  //Função para adicionar estoque
+                  //Chamando função para adicionar estoque
                   onPressed: addStock, 
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
@@ -189,7 +191,7 @@ class InventoryItem extends StatelessWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: ElevatedButton(
-                  //Função de remover estoque 
+                  //Chamando função de remover estoque 
                   onPressed: removeStock, 
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
@@ -204,7 +206,7 @@ class InventoryItem extends StatelessWidget {
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
-                    // Lógica para gerar faturamento com venda 
+                    // Botão de vender 
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
