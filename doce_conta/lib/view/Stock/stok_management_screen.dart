@@ -206,7 +206,7 @@ class InventoryItem extends StatelessWidget {
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
-                    // Botão de vender 
+                    // Chamar função de vender 
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),

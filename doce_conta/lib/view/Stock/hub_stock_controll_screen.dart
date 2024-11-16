@@ -19,20 +19,22 @@ class _HubStockControll extends State<HubStockControll> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Cabeçalho
       appBar: AppBar(
         backgroundColor: const Color(0xff003326),
-        title: Text(
+        title: const Text(
           "Produtos em Estoque",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
       ),
+
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
             child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(vertical: 70, horizontal: 40),
+              padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 40),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -127,13 +129,13 @@ class _HubStockControll extends State<HubStockControll> {
               ),
             ),
           ),
-          // Botão ao final da página com cores configuradas
+
           Padding(
             padding: const EdgeInsets.only(bottom: 20.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF00382B), 
-                textStyle:TextStyle(
+                textStyle: const TextStyle(
                   color: Colors.white 
                 
                 )
