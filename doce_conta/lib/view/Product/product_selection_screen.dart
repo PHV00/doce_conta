@@ -1,6 +1,7 @@
 import 'package:doce_conta/view/Product/new_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:doce_conta/view/Product/individual_product_screen.dart';
 
 class ProductSelection extends StatelessWidget {
   @override
@@ -50,7 +51,7 @@ class ProductSelection extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const ProductScreen()));
+                      builder: (context) => IndividualProduct()));
               },
               child: const Icon(Icons.add, color: Colors.black),
               backgroundColor: Colors.white,
@@ -74,6 +75,7 @@ class ProductSelection extends StatelessWidget {
         productName,
         style: const TextStyle(fontSize: 16, color: Colors.black),
       ),
+
     );
   }
 }

@@ -34,7 +34,7 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
 
   //Função para gerar faturamento - VENDA 
   void sellProdutct(){
-
+    
   }
 
   @override
