@@ -52,7 +52,7 @@ class ValueControl extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
@@ -71,7 +71,7 @@ class ValueControl extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF00382B),
@@ -86,7 +86,7 @@ class ValueControl extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => Graphics())
                 );
               },
-              child: Text('Caixa',
+              child: const Text('Caixa',
                   style: TextStyle(fontSize: 20, color: Colors.white)),
             ),
           ],
@@ -127,8 +127,8 @@ class ValueControl extends StatelessWidget {
             child: Text(
               'Valor Bruto\n$price',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: const Color(0xFF00382B),
+              style: const TextStyle(
+                color:Color(0xFF00382B),
                 fontSize: 10,
                 fontWeight: FontWeight.bold,
               ),
