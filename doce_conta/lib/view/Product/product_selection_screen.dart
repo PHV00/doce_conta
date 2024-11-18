@@ -18,7 +18,6 @@ class ProductSelection extends StatelessWidget {
         title: SvgPicture.asset(
           'assets/images/bolo.svg',
           height: 40,
-          // ignore: deprecated_member_use
           color: const Color(0xFFF5A001),
         ),
         centerTitle: true,
@@ -30,10 +29,10 @@ class ProductSelection extends StatelessWidget {
             child: ListView.separated(
               padding: const EdgeInsets.all(16.0),
               itemCount: 3,
-              itemBuilder: (context, index){
+              itemBuilder: (context, index) {
                 // Lista de produtos
                 final productNames = ['Bolo de Chocolate', 'Bolo de Milho', 'Bolo de Fubá'];
-                return _buildProductItem(productNames[index]);
+                return _buildProductItem(context, productNames[index]);
               },
               separatorBuilder: (context, index) => Divider(
                 color: Colors.amber, // Linha amarela entre os itens
@@ -51,10 +50,10 @@ class ProductSelection extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => IndividualProduct()));
+                      builder: (context) => const ProductScreen()));
               },
-              child: const Icon(Icons.add, color: Colors.black),
               backgroundColor: Colors.white,
+              child: const Icon(Icons.add, color: Colors.black),
             ),
           ),
         ],
@@ -62,20 +61,28 @@ class ProductSelection extends StatelessWidget {
     );
   }
 
-  Widget _buildProductItem(String productName) {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0),
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(25.0),
-        border: Border.all(color: Colors.grey, width: 1),
+  Widget _buildProductItem(BuildContext context, String productName) {
+    return GestureDetector(
+      onTap: () {
+        // Ação ao clicar no produto
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => IndividualProduct()),
+        );
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(25.0),
+          border: Border.all(color: Colors.grey, width: 1),
+        ),
+        child: Text(
+          productName,
+          style: const TextStyle(fontSize: 16, color: Colors.black),
+        ),
       ),
-      child: Text(
-        productName,
-        style: const TextStyle(fontSize: 16, color: Colors.black),
-      ),
-
     );
   }
 }
