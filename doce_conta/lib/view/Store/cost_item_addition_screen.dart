@@ -18,6 +18,8 @@ class CostItemAddition extends StatelessWidget {
   final TextEditingController itemController = TextEditingController();
   final TextEditingController valorController = TextEditingController();
 
+  CostItemAddition({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

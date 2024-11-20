@@ -4,6 +4,8 @@ import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
 import 'package:doce_conta/view/Stock/stock_values_screen.dart';
 
 class StockManagementScreen extends StatefulWidget {
+  const StockManagementScreen({super.key});
+
   @override
   _StockManagementScreenState createState() => _StockManagementScreenState();
 }
@@ -127,7 +129,7 @@ class InventoryItem extends StatelessWidget {
   final VoidCallback removeStock;
   final TextEditingController stockController;
 
-  const InventoryItem({
+  const InventoryItem({super.key, 
     required this.stockQuantity,
     required this.addStock,
     required this.removeStock,

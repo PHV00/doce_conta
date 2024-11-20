@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class InitialScreen extends StatelessWidget {
-  const InitialScreen();
+  const InitialScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class InitialScreen extends StatelessWidget {
         },
         child: Scaffold(
           body: Container(
-            color: Color.fromARGB(245, 245, 160, 1),
+            color: const Color.fromARGB(245, 245, 160, 1),
             child: const Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,

@@ -9,7 +9,7 @@ class MonthReport extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xFFE1FAF4),
+        backgroundColor: const Color(0xFFE1FAF4),
         appBar: AppBar(
           leading:IconButton(
             icon:const Icon(Icons.arrow_back, color: Colors.white),
@@ -25,11 +25,11 @@ class MonthReport extends StatelessWidget {
             ),
           backgroundColor: const Color(0xFF00382B),
         ),
-        body: SingleChildScrollView(
+        body: const SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

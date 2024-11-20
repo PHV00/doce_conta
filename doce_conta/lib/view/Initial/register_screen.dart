@@ -49,7 +49,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => SuccessfulRegister()));
+                    builder: (context) => const SuccessfulRegister()));
             },
           ),
           const SizedBox(
@@ -65,7 +65,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => LoginScreen()));
+                            builder: (context) => const LoginScreen()));
                     },
                     text: "Entrar",
                     style: const TextStyle(color: Color(0xFF00A3FF))),

@@ -159,8 +159,8 @@ class Graphics extends StatelessWidget {
           height: height,
           color: Colors.green[800],
         ),
-        SizedBox(height: 8),
-        Text(label, style: TextStyle(fontSize: 12)),
+        const SizedBox(height: 8),
+        Text(label, style: const TextStyle(fontSize: 12)),
       ],
     );
   }

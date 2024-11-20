@@ -19,24 +19,24 @@ class MainScreen extends StatefulWidget {
 class _MainScreen extends State<MainScreen> {
   List<Widget> listScreens = [
     //Home
-    HomeScreen(),
+    const HomeScreen(),
     //Produto
-    HubProducts(),
+    const HubProducts(),
     //Custos
-    HubCosting(),
+    const HubCosting(),
     //Estoque
-    HubStockControll(),
+    const HubStockControll(),
     //Relatorio
-    ReportGeneration()
+    const ReportGeneration()
   ];
 
-  Widget actualScreen = HomeScreen();
+  Widget actualScreen = const HomeScreen();
 
   int position = 0;
 
   void changeScreen(int position) {
     setState(() {
-      this.actualScreen = listScreens[position];
+      actualScreen = listScreens[position];
     });
   }
 

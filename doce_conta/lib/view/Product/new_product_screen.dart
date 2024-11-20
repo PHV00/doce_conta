@@ -12,7 +12,7 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xff003326),
+        backgroundColor: const Color(0xff003326),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
@@ -51,12 +51,12 @@ class ProductScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => ProfitMarginScreen()));
+                          builder: (context) => const ProfitMarginScreen()));
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff003326),
+                  backgroundColor: const Color(0xff003326),
                 ),
-                child: Row(children: [
+                child: const Row(children: [
                   Icon(Icons.arrow_forward, color: Colors.white),
                   SizedBox(width: 15,),
                   Center(
@@ -81,9 +81,9 @@ class ProductScreen extends StatelessWidget {
                           builder: (context) => IconSelectionScreen()));
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xff003326),
+                  backgroundColor: const Color(0xff003326),
                 ),
-                child: Row(children: [
+                child: const Row(children: [
                   Icon(Icons.arrow_forward, color: Colors.white),
                   SizedBox(width: 15,),
                   Center(
@@ -91,7 +91,7 @@ class ProductScreen extends StatelessWidget {
                         style: TextStyle(color: Color(0xffccf2e6))),
                   ),
                 ])),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
                 // showDialog(
@@ -117,7 +117,7 @@ class ProductScreen extends StatelessWidget {
                       builder: (context) => Concluded()));
                 },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff003326), // cor botão
+                backgroundColor: const Color(0xff003326), // cor botão
               ),
               child: const Text(
                 'Cadastrar',

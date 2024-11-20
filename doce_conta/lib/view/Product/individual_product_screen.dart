@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class IndividualProduct extends StatefulWidget {
+  const IndividualProduct({super.key});
+
   @override
   _IndividualProductState createState() => _IndividualProductState();
 }
@@ -18,7 +20,7 @@ class _IndividualProductState extends State<IndividualProduct> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xff003326),
+        backgroundColor: const Color(0xff003326),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {

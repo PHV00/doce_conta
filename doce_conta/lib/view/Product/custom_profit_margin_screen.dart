@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 class CustomMarginProfit extends StatelessWidget {
+  const CustomMarginProfit({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xFF00382B),
+        backgroundColor: const Color(0xFF00382B),
         elevation: 0,
-        title: Text(
+        title: const Text(
           "Margem de Lucro",
           style: TextStyle(
             fontSize: 20,
@@ -16,7 +18,7 @@ class CustomMarginProfit extends StatelessWidget {
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
@@ -25,7 +27,7 @@ class CustomMarginProfit extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Nova margem de lucro:",
               style: TextStyle(
                 fontSize: 18,
@@ -33,33 +35,33 @@ class CustomMarginProfit extends StatelessWidget {
                 color: Color(0xFF00382B),
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               "Insira o valor em porcentagem % que gostaria de cadastrar:",
               style: TextStyle(
                 fontSize: 16,
                 color: Color(0xFF00382B),
               ),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(color: Color(0xFF00382B)),
+                  borderSide: const BorderSide(color: Color(0xFF00382B)),
                 ),
               ),
               keyboardType: TextInputType.number,
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Center(
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF00382B),
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 16),
+                  backgroundColor: const Color(0xFF00382B),
+                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 16),
                 ),
                 onPressed: () { Navigator.pop(context);},
-                child: Text("OK", style: TextStyle(color: Colors.white)),
+                child: const Text("OK", style: TextStyle(color: Colors.white)),
               ),
             ),
           ],

@@ -13,7 +13,7 @@ class ProfitMarginScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           leading:IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.white),
+            icon: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {Navigator.of(context).pop();},
             ),
           centerTitle: true,
@@ -104,7 +104,7 @@ Column buildColumnProfits(context) {
   }
   listColumn.add(ButtonProfitMargin(
       percentage: "+",
-      color: Color(0xFFC1BFBF),
+      color: const Color(0xFFC1BFBF),
       onPressedFunction: () {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => CustomMarginProfit()));

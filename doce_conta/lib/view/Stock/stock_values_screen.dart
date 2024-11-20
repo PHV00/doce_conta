@@ -4,6 +4,8 @@ import 'package:doce_conta/view/Stock/dashboard_screen.dart';
 import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
 
 class ValueControlScreen extends StatelessWidget {
+  const ValueControlScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,6 +18,8 @@ class ValueControlScreen extends StatelessWidget {
 }
 
 class ValueControl extends StatelessWidget {
+  const ValueControl({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,14 +37,14 @@ class ValueControl extends StatelessWidget {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.arrow_back, color: Colors.white),
+                    icon: const Icon(Icons.arrow_back, color: Colors.white),
                     onPressed: () {
                       Navigator.push(
                         context, 
-                        MaterialPageRoute(builder: (context) => HubStockControll()));
+                        MaterialPageRoute(builder: (context) => const HubStockControll()));
                     },
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Center(
                     child: SvgPicture.asset(
                       'assets/Images/estoque.svg',
@@ -48,7 +52,7 @@ class ValueControl extends StatelessWidget {
                       height: 80,
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                 ],
               ),
             ),
@@ -75,7 +79,7 @@ class ValueControl extends StatelessWidget {
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF00382B),
-                padding: EdgeInsets.symmetric(vertical: 24, horizontal: 60),
+                padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 60),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25),
                 ),
@@ -83,7 +87,7 @@ class ValueControl extends StatelessWidget {
               onPressed: (){
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => Graphics())
+                  MaterialPageRoute(builder: (context) => const Graphics())
                 );
               },
               child: const Text('Caixa',
@@ -107,15 +111,15 @@ class ValueControl extends StatelessWidget {
         children: [
           Text(
             title,
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: const TextStyle(color: Colors.white, fontSize: 18),
           ),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           SvgPicture.asset(
             assetPath,
             color: Colors.orange,
             height: 40,
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Container(
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             decoration: BoxDecoration(

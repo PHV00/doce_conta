@@ -9,7 +9,7 @@ class InputAndLabelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
-      Container(
+      SizedBox(
         width: 350,
         child: 
           Column(

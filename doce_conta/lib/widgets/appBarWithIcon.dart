@@ -10,7 +10,7 @@ class Appbarwithicon extends StatefulWidget implements PreferredSizeWidget{
   State<Appbarwithicon> createState() => _AppbarwithiconState();
 
   @override
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
 class _AppbarwithiconState extends State<Appbarwithicon> {
