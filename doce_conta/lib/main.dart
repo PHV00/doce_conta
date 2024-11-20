@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Initial/initial_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-Future<void> main() async {
+void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
 
   await Supabase.initialize(

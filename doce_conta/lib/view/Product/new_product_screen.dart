@@ -23,7 +23,6 @@ class ProductScreen extends StatelessWidget {
         title: SvgPicture.asset(
           'assets/images/bolo.svg',
           height: 40,
-          // ignore: deprecated_member_use
           color: const Color(0xFFF5A001),
         ),
         centerTitle: true,

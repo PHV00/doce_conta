@@ -76,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             const SizedBox(height: 50),
-            ButtonWidget(
+            ButtonWidget( 
               btnText: "Logar",
               onPressedFunction: () async {
                 try{

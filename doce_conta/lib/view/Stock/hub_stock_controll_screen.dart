@@ -1,4 +1,4 @@
-import 'package:doce_conta/view/Product/new_product_screen.dart';
+import 'package:doce_conta/view/Stock/stok_management_screen.dart';
 import 'package:doce_conta/widgets/container_custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Stock/stock_values_screen.dart';
@@ -19,20 +19,22 @@ class _HubStockControll extends State<HubStockControll> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Cabeçalho
       appBar: AppBar(
         backgroundColor: const Color(0xff003326),
-        title: Text(
-          "Estoque?",
+        title: const Text(
+          "Produtos em Estoque",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
       ),
+
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
             child: SingleChildScrollView(
-              padding: EdgeInsets.symmetric(vertical: 70, horizontal: 40),
+              padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 40),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -52,7 +54,7 @@ class _HubStockControll extends State<HubStockControll> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const ProductScreen(),
+                                  builder: (context) => StockManagementScreen(),
                                 ),
                               );
                             },
@@ -127,13 +129,13 @@ class _HubStockControll extends State<HubStockControll> {
               ),
             ),
           ),
-          // Botão ao final da página com cores configuradas
+
           Padding(
             padding: const EdgeInsets.only(bottom: 20.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF00382B), 
-                textStyle:TextStyle(
+                textStyle: const TextStyle(
                   color: Colors.white 
                 
                 )
@@ -146,7 +148,7 @@ class _HubStockControll extends State<HubStockControll> {
                   ),
                 );
               },
-              child: const Text("Fechamento de Estoque",style: TextStyle(color: Colors.white,),
+              child: const Text("Controle do Estoque",style: TextStyle(color: Colors.white,),
             ),
             ),
           ),
