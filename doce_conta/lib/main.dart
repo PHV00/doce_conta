@@ -11,10 +11,6 @@ void main() async {
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqbmxweWZqcXdkY3NqdWpkZHBpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzA1MDY5ODUsImV4cCI6MjA0NjA4Mjk4NX0.OFnkGA71m9hKoxmEP4_GdYvKZfFKsu5x_EGKl2vA3kQ',
   );
 
-  Supabase.instance.client.from('teste').select('var');
-
-  print(a);
-
   runApp(const MyApp());
 }
 
