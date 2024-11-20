@@ -13,7 +13,7 @@ void main() async {
 
   Supabase.instance.client.from('teste').select('var');
 
-  print(a);
+  //print();
 
   runApp(const MyApp());
 }

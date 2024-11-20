@@ -1,3 +1,5 @@
+import 'package:doce_conta/view/Initial/home_screen.dart';
+import 'package:doce_conta/view/Initial/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
@@ -53,12 +55,7 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                builder: (context) => const HubStockControll(),
-                ),
-              );
+              Navigator.of(context).pop();
             },
           ),
           title: SvgPicture.asset(
