@@ -35,16 +35,9 @@ class _MainScreen extends State<MainScreen> {
 
   int position = 0;
 
-  void insertData() async {
-    print("**********************************************************************" );
-    await Supabase.instance.client.from('teste').insert({'teste': "teste"}); //.execute();
-    print('Inserido com sucesso!');
-  }
-
   void changeScreen(int position) {
     setState(() {
       actualScreen = listScreens[position];
-      insertData();
     });
   }
 
