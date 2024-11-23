@@ -11,7 +11,7 @@ class Concluded extends StatefulWidget {
 
 class _Concluded extends State<Concluded> {
   final Widget _imgverificado = SvgPicture.asset(
-    'assets/Images/realizacao.svg',
+    'Images/realizacao.svg',
     fit: BoxFit.contain,
     width: 100,
     height: 100,
