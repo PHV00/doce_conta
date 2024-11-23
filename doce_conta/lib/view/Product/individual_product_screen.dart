@@ -65,7 +65,7 @@ class _IndividualProductState extends State<IndividualProduct> {
             TextField(
               onChanged: (value){
                 setState(() {
-                  dataStorage.ProductMargin = int.tryParse(value) ?? dataStorage.ProductMargin;
+                  dataStorage.ProductMargin = double.tryParse(value) ?? dataStorage.ProductMargin;
                 });
               },
               decoration: InputDecoration(
