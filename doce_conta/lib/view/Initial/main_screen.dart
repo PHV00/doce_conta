@@ -7,6 +7,7 @@ import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Store/hub_store_costing_screen.dart';
 import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -34,9 +35,16 @@ class _MainScreen extends State<MainScreen> {
 
   int position = 0;
 
+  void insertData() async {
+    print("**********************************************************************" );
+    await Supabase.instance.client.from('teste').insert({'teste': "teste"}); //.execute();
+    print('Inserido com sucesso!');
+  }
+
   void changeScreen(int position) {
     setState(() {
       actualScreen = listScreens[position];
+      insertData();
     });
   }
 

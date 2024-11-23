@@ -45,7 +45,7 @@ class IconSelectionScreen extends StatelessWidget {
     'assets/Images/drink3.svg',
   ];
 
-  const IconSelectionScreen({super.key});
+  IconSelectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
