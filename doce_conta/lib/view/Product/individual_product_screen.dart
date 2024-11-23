@@ -4,15 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class IndividualProduct extends StatefulWidget {
+  //FAZER ESSES DADOS IREM PARA home_screen para colocar na na home_screen
+  int ProductCost = 50;
+  int ProductMargin = 40;
+  IndividualProduct({Key? key, required this.ProductCost, required this.ProductMargin}) : super(key: key);
+
   @override
-  _IndividualProductState createState() => _IndividualProductState();
+  IndividualProductState createState() => IndividualProductState();
 }
 
-class _IndividualProductState extends State<IndividualProduct> {
-  int ProductCost = 30;
-  int ProductMargin = 20;
+class IndividualProductState extends State<IndividualProduct> {
   final TextEditingController productName = TextEditingController(text: "Bolo de Chocolate");
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,11 +53,11 @@ class _IndividualProductState extends State<IndividualProduct> {
             TextField(
               onChanged: (value) {
                 setState(() {
-                  ProductCost = int.tryParse(value) ?? ProductCost;
+                  widget.ProductCost = int.tryParse(value) ?? widget.ProductCost;
                 });
               },
               decoration: InputDecoration(
-                labelText: "Custo por unidade: $ProductCost",
+                labelText: "Custo por unidade: $widget.ProductCost",
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
@@ -63,11 +66,11 @@ class _IndividualProductState extends State<IndividualProduct> {
             TextField(
               onChanged: (value){
                 setState(() {
-                  ProductMargin = int.tryParse(value) ?? ProductMargin;
+                  widget.ProductMargin = int.tryParse(value) ?? widget.ProductMargin;
                 });
               },
               decoration: InputDecoration(
-                labelText: "Margem de Lucro: $ProductMargin",
+                labelText: "Margem de Lucro: $widget.ProductMargin",
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,

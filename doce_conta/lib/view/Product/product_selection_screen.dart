@@ -67,7 +67,7 @@ class ProductSelection extends StatelessWidget {
         // Ação ao clicar no produto
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => IndividualProduct()),
+          MaterialPageRoute(builder: (context) => IndividualProduct(key: key)),
         );
       },
       child: Container(

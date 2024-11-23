@@ -1,5 +1,5 @@
+import 'package:doce_conta/view/Initial/main_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:doce_conta/view/Initial/initial_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: InitialScreen(),
+      home: MainScreen(),
     );
   }
 }

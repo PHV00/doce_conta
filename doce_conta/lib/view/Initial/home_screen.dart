@@ -1,8 +1,10 @@
+import 'package:doce_conta/view/Product/new_product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../Product/individual_product_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +27,9 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildInfoCard('MÉDIA DE MARGEM DE LUCRO', '20%'),
-                    buildBigInfoCard('CUSTO', 'R\$ 600,00'),
+                    //COLOCAR AQUI OS VALORES PUXADOS
+                    buildInfoCard('MÉDIA DE MARGEM DE LUCRO' ProductScreen()),
+                    buildBigInfoCard('CUSTO', 'R\$'),
                     buildInfoCard('LUCRO ESTIMADO', 'R\$ 780,00'),
                   ],
                 ),
