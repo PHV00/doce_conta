@@ -20,7 +20,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreen extends State<MainScreen> {
   List<Widget> listScreens = [
     //Home
-    const HomeScreen(),
+    HomeScreen(),
     //Produto
     const HubProducts(),
     //Custos
@@ -31,7 +31,7 @@ class _MainScreen extends State<MainScreen> {
     const ReportGeneration()
   ];
 
-  Widget actualScreen = const HomeScreen();
+  Widget actualScreen = HomeScreen();
 
   int position = 0;
 
