@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../data/date_storage.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    DataStorage dataStorage = DataStorage();
     return Scaffold(
       backgroundColor: const Color(0xFFE1FAF4),
       body: SafeArea(
@@ -25,8 +27,8 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildInfoCard('MÉDIA DE MARGEM DE LUCRO', '20%'),
-                    buildBigInfoCard('CUSTO', 'R\$ 600,00'),
+                    buildInfoCard('MÉDIA DE MARGEM DE LUCRO', dataStorage.ProductMargin.toString()),
+                    buildBigInfoCard('CUSTO', 'R\$ ${dataStorage.ProductCost}'),
                     buildInfoCard('LUCRO ESTIMADO', 'R\$ 780,00'),
                   ],
                 ),

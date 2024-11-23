@@ -1,5 +1,6 @@
+import 'package:doce_conta/view/Initial/Initial_screen.dart';
+import 'package:doce_conta/view/initial/main_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:doce_conta/view/Initial/initial_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async {
