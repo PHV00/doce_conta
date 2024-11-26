@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
 class ReportDescriptions extends StatelessWidget {
+  const ReportDescriptions({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xFF00382B),
+        backgroundColor: const Color(0xFF00382B),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: Text(
+        title: const Text(
           "Descrições",
           style: TextStyle(
             color: Colors.white,
@@ -63,7 +65,7 @@ class ReportDescriptions extends StatelessWidget {
         Text(
           title,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
             color: Color(0xFF00382B),
@@ -73,7 +75,7 @@ class ReportDescriptions extends StatelessWidget {
         Text(
           description,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 14,
             color: Color(0xFF00382B),
           ),

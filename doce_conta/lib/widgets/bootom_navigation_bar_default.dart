@@ -12,7 +12,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-typedef ChangeScreen(int index);
+typedef ChangeScreen = Function(int index);
 
 class BootomNavigationBarDefault extends StatefulWidget {
   const BootomNavigationBarDefault({super.key, required this.changeScreen});
@@ -44,8 +44,8 @@ class _BootomNavigationBarDefaultState
             'assets/Images/LogoColorida.svg',
             // ignore: deprecated_member_use
             color: _selectPosition == 0
-                ? Color(0xFFF5A001)
-                : Color.fromARGB(255, 158, 103, 0),
+                ? const Color(0xFFF5A001)
+                : const Color.fromARGB(255, 158, 103, 0),
             height: 45, width: 45,
           ),
           backgroundColor: const Color(0xFF00382B),
@@ -56,8 +56,8 @@ class _BootomNavigationBarDefaultState
             'assets/Images/produto.svg',
             // ignore: deprecated_member_use
             color: _selectPosition == 1
-                ? Color(0xFFF5A001)
-                : Color.fromARGB(255, 158, 103, 0),
+                ? const Color(0xFFF5A001)
+                : const Color.fromARGB(255, 158, 103, 0),
             height: 65, width: 65,
           ),
           backgroundColor: const Color(0xFF00382B),
@@ -68,8 +68,8 @@ class _BootomNavigationBarDefaultState
             'assets/Images/loja.svg',
             // ignore: deprecated_member_use
             color: _selectPosition == 2
-                ? Color(0xFFF5A001)
-                : Color.fromARGB(255, 158, 103, 0),
+                ? const Color(0xFFF5A001)
+                : const Color.fromARGB(255, 158, 103, 0),
             height: 55, width: 55,
           ),
           backgroundColor: const Color(0xFF00382B),
@@ -80,8 +80,8 @@ class _BootomNavigationBarDefaultState
             'assets/Images/estoque.svg',
             // ignore: deprecated_member_use
             color: _selectPosition == 3
-                ? Color(0xFFF5A001)
-                : Color.fromARGB(255, 158, 103, 0),
+                ? const Color(0xFFF5A001)
+                : const Color.fromARGB(255, 158, 103, 0),
             height: 55, width: 55,
           ),
           backgroundColor: const Color(0xFF00382B),
@@ -92,8 +92,8 @@ class _BootomNavigationBarDefaultState
             'assets/Images/relatorio.svg',
             // ignore: deprecated_member_use
             color: _selectPosition == 4
-                ? Color(0xFFF5A001)
-                : Color.fromARGB(255, 158, 103, 0),
+                ? const Color(0xFFF5A001)
+                : const Color.fromARGB(255, 158, 103, 0),
             height: 55, width: 55,
           ),
           backgroundColor: const Color(0xFF00382B),

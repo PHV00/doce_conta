@@ -4,6 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:doce_conta/view/Product/individual_product_screen.dart';
 
 class ProductSelection extends StatelessWidget {
+  const ProductSelection({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +36,7 @@ class ProductSelection extends StatelessWidget {
                 final productNames = ['Bolo de Chocolate', 'Bolo de Milho', 'Bolo de Fubá'];
                 return _buildProductItem(context, productNames[index]);
               },
-              separatorBuilder: (context, index) => Divider(
+              separatorBuilder: (context, index) => const Divider(
                 color: Colors.amber, // Linha amarela entre os itens
                 thickness: 1,
                 height: 16, // Ajusta o espaçamento da linha entre os itens

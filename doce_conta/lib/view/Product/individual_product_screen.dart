@@ -2,23 +2,25 @@ import 'package:doce_conta/view/Product/concluded_screen.dart';
 import 'package:doce_conta/view/Product/product_selection_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import '../../data/date_storage.dart';
 
 class IndividualProduct extends StatefulWidget {
+  const IndividualProduct({super.key});
+
   @override
   _IndividualProductState createState() => _IndividualProductState();
 }
 
 class _IndividualProductState extends State<IndividualProduct> {
-  int ProductCost = 30;
-  int ProductMargin = 20;
   final TextEditingController productName = TextEditingController(text: "Bolo de Chocolate");
-  
+
   @override
   Widget build(BuildContext context) {
+    DataStorage dataStorage = DataStorage();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xff003326),
+        backgroundColor: const Color(0xff003326),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
@@ -50,11 +52,11 @@ class _IndividualProductState extends State<IndividualProduct> {
             TextField(
               onChanged: (value) {
                 setState(() {
-                  ProductCost = int.tryParse(value) ?? ProductCost;
+                  dataStorage.ProductCost = int.tryParse(value) ?? dataStorage.ProductCost;
                 });
               },
               decoration: InputDecoration(
-                labelText: "Custo por unidade: $ProductCost",
+                labelText: "Custo por unidade: ${dataStorage.ProductCost}",
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
@@ -63,11 +65,11 @@ class _IndividualProductState extends State<IndividualProduct> {
             TextField(
               onChanged: (value){
                 setState(() {
-                  ProductMargin = int.tryParse(value) ?? ProductMargin;
+                  dataStorage.ProductMargin = double.tryParse(value) ?? dataStorage.ProductMargin;
                 });
               },
               decoration: InputDecoration(
-                labelText: "Margem de Lucro: $ProductMargin",
+                labelText: "Margem de Lucro: ${dataStorage.ProductMargin}",
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,

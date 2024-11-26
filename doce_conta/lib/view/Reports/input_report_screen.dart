@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MontlhyReport extends StatelessWidget {
+  const MontlhyReport({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +37,7 @@ class MontlhyReport extends StatelessWidget {
                 final infoPrice = ['x', 'R\$', 'R\$', 'R\$', 'R\$'];
                 return _buildInfoItem(infoName[index], infoPrice[index]);
               },
-              separatorBuilder: (context, index) => Divider(
+              separatorBuilder: (context, index) => const Divider(
                 color: Colors.amber, // Linha amarela entre os itens
                 thickness: 1,
                 height: 16, // Ajusta o espaçamento da linha entre os itens

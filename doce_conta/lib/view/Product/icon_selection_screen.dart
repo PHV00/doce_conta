@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,19 +45,21 @@ class IconSelectionScreen extends StatelessWidget {
     'assets/Images/drink3.svg',
   ];
 
+  IconSelectionScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF00382B),
-        title: Text(
+        title: const Text(
           'Selecione o ícone que desejar:',
           style: TextStyle(
             color: Colors.white,
           ),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           color: Colors.white,
           onPressed: () {Navigator.of(context).pop();},
         ),
@@ -66,7 +70,7 @@ class IconSelectionScreen extends StatelessWidget {
           children: [
             Expanded(
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
                   crossAxisSpacing: 16.0,
                   mainAxisSpacing: 16.0,
@@ -75,7 +79,7 @@ class IconSelectionScreen extends StatelessWidget {
                 itemCount: icons.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                       color: const Color(0xFF00382B),
                       borderRadius: BorderRadius.circular(10),
@@ -93,16 +97,16 @@ class IconSelectionScreen extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF00382B),
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
               ),
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text(
+              child: const Text(
                 'ok',
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),

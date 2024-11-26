@@ -20,7 +20,7 @@ class _HubProducts extends State<HubProducts> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff003326),
-        title: Text(
+        title: const Text(
           "Produtos para precificação",
           style: TextStyle(color: Colors.white),
         ),
@@ -28,7 +28,7 @@ class _HubProducts extends State<HubProducts> {
       ),
       body: SingleChildScrollView(  
         child: Padding(  
-          padding: EdgeInsets.symmetric(vertical: 70, horizontal: 40),
+          padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 40),
           child: Row(
             children: [
               Expanded(
@@ -51,7 +51,7 @@ class _HubProducts extends State<HubProducts> {
                       },
                       ),
                     ),
-                    SizedBox(height: 20),  
+                    const SizedBox(height: 20),  
                     Flexible(
                       child: ContainerCustomButton(
                         btnText: "Doces",
@@ -61,7 +61,7 @@ class _HubProducts extends State<HubProducts> {
                         widhtSvg: widget._widhtSvg,
                         heightSvg: widget._heightSvg),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Flexible(
                       child: ContainerCustomButton(
                         btnText: "Sucos",
@@ -74,7 +74,7 @@ class _HubProducts extends State<HubProducts> {
                   ],
                 ),
               ),
-              SizedBox(width: 30),
+              const SizedBox(width: 30),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min, 
@@ -88,7 +88,7 @@ class _HubProducts extends State<HubProducts> {
                         widhtSvg: widget._widhtSvg,
                         heightSvg: widget._heightSvg),
                     ),
-                    SizedBox(height: 20),  
+                    const SizedBox(height: 20),  
                     Flexible(
                       child: ContainerCustomButton(
                         btnText: "Salgados",
@@ -98,7 +98,7 @@ class _HubProducts extends State<HubProducts> {
                         widhtSvg: widget._widhtSvg,
                         heightSvg: widget._heightSvg),
                     ),
-                    SizedBox(height: 20),  
+                    const SizedBox(height: 20),  
                     Flexible(
                       child: ContainerCustomButton(
                         btnText: "Cafés",

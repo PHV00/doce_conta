@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class PaymentCost extends StatelessWidget {
+  const PaymentCost({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +36,7 @@ class PaymentCost extends StatelessWidget {
                 final servicePrice = ['R\$ 3500', 'R\$ 400', 'R\$ 3500', 'R\$ 3500', 'R\$ 200'];
                 return _buildServiceItem(serviceNames[index], servicePrice[index]);
               },
-              separatorBuilder: (context, index) => Divider(
+              separatorBuilder: (context, index) => const Divider(
                 color: Colors.amber, // Linha amarela entre os itens
                 thickness: 1,
                 height: 16, // Ajusta o espaçamento da linha entre os itens
@@ -48,8 +50,8 @@ class PaymentCost extends StatelessWidget {
               onPressed: () {
                 // Adicionar novo produto
               },
-              child: const Icon(Icons.add, color: Colors.black),
               backgroundColor: Colors.white,
+              child: const Icon(Icons.add, color: Colors.black),
             ),
           ),
         ],

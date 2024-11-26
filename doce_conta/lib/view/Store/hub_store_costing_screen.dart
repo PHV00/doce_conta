@@ -24,7 +24,7 @@ class _HubCosting extends State<HubCosting> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff003326),
-        title: Text(
+        title: const Text(
           "Qual custo deseja cadastrar?",
           style: TextStyle(color: Colors.white),
         ),
@@ -32,7 +32,7 @@ class _HubCosting extends State<HubCosting> {
       ),
       body: SingleChildScrollView(
         child: Padding(  
-          padding: EdgeInsets.symmetric(vertical: 70, horizontal: 40),
+          padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 40),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -56,7 +56,7 @@ class _HubCosting extends State<HubCosting> {
                         },
                       ),
                     ),
-                    SizedBox(height: 20),  
+                    const SizedBox(height: 20),  
                     Flexible(
                       child: ContainerCustomButton(
                         btnText: "Impostos",
@@ -76,7 +76,7 @@ class _HubCosting extends State<HubCosting> {
                   ],
                 ),
               ),
-              SizedBox(width: 30),
+              const SizedBox(width: 30),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,  
@@ -97,7 +97,7 @@ class _HubCosting extends State<HubCosting> {
                         },
                       ),
                     ),
-                    SizedBox(height: 20),  
+                    const SizedBox(height: 20),  
                     Flexible(
                       child: ContainerCustomButton(
                         btnText: "Folha de pagamento",

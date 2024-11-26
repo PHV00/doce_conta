@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Concluded extends StatefulWidget {
+  const Concluded({super.key});
+
   @override
   _Concluded createState() => _Concluded();
 }
 
 class _Concluded extends State<Concluded> {
-  Widget _imgverificado = SvgPicture.asset(
-    'assets/Images/realizacao.svg',
+  final Widget _imgverificado = SvgPicture.asset(
+    'Images/realizacao.svg',
     fit: BoxFit.contain,
     width: 100,
     height: 100,
@@ -32,7 +34,7 @@ class _Concluded extends State<Concluded> {
                 top: 16,
                 left: 16,
                 child: IconButton(
-                  icon: Icon(Icons.arrow_back, color: Colors.white),
+                  icon: const Icon(Icons.arrow_back, color: Colors.white),
                   onPressed: () {
                     Navigator.push(
                         context,

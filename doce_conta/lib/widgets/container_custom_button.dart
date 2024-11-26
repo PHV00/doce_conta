@@ -33,24 +33,24 @@ class _ContainerCustomButtonState extends State<ContainerCustomButton> {
         onTap: widget.onPressedFunction,
         child: Container(
             decoration: BoxDecoration(
-              color: Color(0xff003326),
+              color: const Color(0xff003326),
               borderRadius: BorderRadius.circular(20),
             ),
             width: widget.widhtContainer,
             height: widget.heightContainer,
             margin: const EdgeInsets.only(bottom: 20),
             child: Column(children: [
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Center(
                   child: Text(
                 widget.btnText,
                 style: const TextStyle(color: Colors.white),
               )),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               SvgPicture.asset(
                 widget.svgPath,
                 // ignore: deprecated_member_use
-                color: Color(0xFFF5A001),
+                color: const Color(0xFFF5A001),
                 height: widget.heightSvg, width: widget.widhtSvg,
               ),
             ])));

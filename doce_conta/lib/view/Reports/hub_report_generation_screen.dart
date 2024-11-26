@@ -21,7 +21,7 @@ class _ReportGeneration extends State<ReportGeneration> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xff003326),
-        title: Text(
+        title: const Text(
           "Report Generation",
           style: TextStyle(color: Colors.white),
         ),
@@ -29,7 +29,7 @@ class _ReportGeneration extends State<ReportGeneration> {
       ),
       body: SingleChildScrollView(  
         child: Padding(  
-          padding: EdgeInsets.symmetric(vertical: 70, horizontal: 40),
+          padding: const EdgeInsets.symmetric(vertical: 70, horizontal: 40),
           child: Row(
             children: [
               Expanded(
@@ -55,7 +55,7 @@ class _ReportGeneration extends State<ReportGeneration> {
                   ],
                 ),
               ),
-              SizedBox(width: 30),
+              const SizedBox(width: 30),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min, 
