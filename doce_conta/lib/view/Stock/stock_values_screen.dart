@@ -8,12 +8,7 @@ class ValueControlScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ValueControl(),
-      theme: ThemeData(
-        primaryColor: const Color(0xFF00382B),
-      ),
-    );
+    return ValueControl();
   }
 }
 
@@ -39,9 +34,7 @@ class ValueControl extends StatelessWidget {
                   IconButton(
                     icon: const Icon(Icons.arrow_back, color: Colors.white),
                     onPressed: () {
-                      Navigator.push(
-                        context, 
-                        MaterialPageRoute(builder: (context) => const HubStockControll()));
+                      Navigator.pop(context);
                     },
                   ),
                   const Spacer(),
@@ -84,10 +77,10 @@ class ValueControl extends StatelessWidget {
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
-              onPressed: (){
+              onPressed: () {
                 Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => const Graphics())
+                  context,
+                  MaterialPageRoute(builder: (context) => Graphics()),
                 );
               },
               child: const Text('Caixa',
@@ -132,7 +125,7 @@ class ValueControl extends StatelessWidget {
               'Valor Bruto\n$price',
               textAlign: TextAlign.center,
               style: const TextStyle(
-                color:Color(0xFF00382B),
+                color: Color(0xFF00382B),
                 fontSize: 10,
                 fontWeight: FontWeight.bold,
               ),
