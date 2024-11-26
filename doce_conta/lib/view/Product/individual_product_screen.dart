@@ -3,6 +3,7 @@ import 'package:doce_conta/view/Product/product_selection_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../data/date_storage.dart';
+import '../../data/date_storage.dart';
 
 class IndividualProduct extends StatefulWidget {
   const IndividualProduct({super.key});
@@ -16,7 +17,15 @@ class _IndividualProductState extends State<IndividualProduct> {
 
   @override
   Widget build(BuildContext context) {
+    
     DataStorage dataStorage = DataStorage();
+    final getCust = dataStorage.ProductCost;
+
+    if(getCust == 0){
+      // Future<double> 
+      //FAZER LÓGICA DE INSERT NO BANCO E VERIFICAR SE ESTÁ CERTO ESSE IF
+    }
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -56,7 +65,7 @@ class _IndividualProductState extends State<IndividualProduct> {
                 });
               },
               decoration: InputDecoration(
-                labelText: "Custo por unidade: ${dataStorage.ProductCost}",
+                labelText: "Custo por unidade: ${dataStorage.ProductCost}", //Resgatar com select esse dado
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
