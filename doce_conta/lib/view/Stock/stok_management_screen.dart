@@ -105,7 +105,7 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ValueControlScreen(),
+                        builder: (context) => const ValueControlScreen(),
                       ),
                     );
                   },

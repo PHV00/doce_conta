@@ -9,7 +9,7 @@ class ValueControlScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ValueControl(),
+      home: const ValueControl(),
       theme: ThemeData(
         primaryColor: const Color(0xFF00382B),
       ),

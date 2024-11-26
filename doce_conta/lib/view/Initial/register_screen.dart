@@ -41,7 +41,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (textoDigitado.isEmpty) {
       print("\n\nTexto vazio!\n\n");
     } else {
-      print("\n\nTexto: ${textoDigitado}\n\n");
+      print("\n\nTexto: $textoDigitado\n\n");
     }
     return textoDigitado;
   }

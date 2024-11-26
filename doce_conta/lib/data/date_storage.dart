@@ -1,18 +1,13 @@
+import 'package:flutter/widgets.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class DataStorage {
-  static final DataStorage _instance = DataStorage._internal();
-
   // Propriedades que você quer compartilhar
   int ProductCost = 0;
   double ProductMargin = 0;
 
-  // Construtor privado
-  DataStorage._internal();
-
-  // Acessa a instância
-  factory DataStorage() {
-    return _instance;
+  DataStorage() {
+    getProfitMargin();
   }
 
   Future<double> getProfitMargin() async {
@@ -26,14 +21,22 @@ class DataStorage {
 
     profitMargin = profitMargin / data.length;
 
-    return Future.value(profitMargin);
+    // this.ProductMargin = profitMargin;
+
+    // print(this.ProductMargin);
+
+    return profitMargin;
   }
 
-  void reponse() async {
-    // getProfitMargin().then((data) {
-    //   print(data);
-    // });
-    // print(await getProfitMargin());
-    this.ProductMargin = await getProfitMargin();
+  String responseGetProfitMargin() {
+    String response = getProfitMargin().then((value) {
+      print(value);
+      return value.toString();
+    }).toString();
+
+    print("******************************");
+    print(response);
+
+    return response;
   }
 }
