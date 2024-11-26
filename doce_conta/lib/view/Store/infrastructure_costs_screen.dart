@@ -1,8 +1,6 @@
 import 'package:doce_conta/view/Store/cost_item_addition_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:doce_conta/view/Store/hub_store_costing_screen.dart';
-
 
 class InfraestructureCost extends StatelessWidget {
   @override
@@ -14,10 +12,7 @@ class InfraestructureCost extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.push(
-              context, 
-              MaterialPageRoute(
-                builder: (context) => HubCosting()));
+            Navigator.pop(context);
           },
         ),
         title: SvgPicture.asset(

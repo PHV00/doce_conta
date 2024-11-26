@@ -14,11 +14,22 @@ class Graphics extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 30),
-              SvgPicture.asset(
-                "assets/Images/LogoColorida.svg",
-                width: 50,
-                height: 50,
+              Row(
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.arrow_back, color: Colors.black),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  const Spacer(),
+                  SvgPicture.asset(
+                    "assets/Images/LogoColorida.svg",
+                    width: 50,
+                    height: 50,
+                  ),
+                  const Spacer(),
+                ],
               ),
               const SizedBox(height: 30),
               Expanded(
@@ -159,8 +170,8 @@ class Graphics extends StatelessWidget {
           height: height,
           color: Colors.green[800],
         ),
-        SizedBox(height: 8),
-        Text(label, style: TextStyle(fontSize: 12)),
+        const SizedBox(height: 8),
+        Text(label, style: const TextStyle(fontSize: 12)),
       ],
     );
   }
