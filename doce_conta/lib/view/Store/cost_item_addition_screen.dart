@@ -52,7 +52,7 @@ class CostItemAddition extends StatelessWidget {
                  Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => Concluded()));
+                      builder: (context) => const Concluded()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xff003326),

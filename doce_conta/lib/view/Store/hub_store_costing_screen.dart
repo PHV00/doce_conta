@@ -52,7 +52,7 @@ class _HubCosting extends State<HubCosting> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => InfraestructureCost()));
+                              builder: (context) => const InfraestructureCost()));
                         },
                       ),
                     ),
@@ -69,7 +69,7 @@ class _HubCosting extends State<HubCosting> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => TaxesCosting()));
+                              builder: (context) => const TaxesCosting()));
                         },
                       ),
                     ),
@@ -93,7 +93,7 @@ class _HubCosting extends State<HubCosting> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => CostingSystem()));
+                              builder: (context) => const CostingSystem()));
                         },
                       ),
                     ),
@@ -110,7 +110,7 @@ class _HubCosting extends State<HubCosting> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => PaymentCost()));
+                              builder: (context) => const PaymentCost()));
                         },
                       ),
                     ),

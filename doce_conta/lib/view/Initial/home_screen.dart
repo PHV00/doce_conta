@@ -27,9 +27,42 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildInfoCard('MÉDIA DE MARGEM DE LUCRO', dataStorage.ProductMargin.toString()),
-                    buildBigInfoCard('CUSTO', 'R\$ ${dataStorage.ProductCost}'),
-                    buildInfoCard('LUCRO ESTIMADO', 'R\$ 780,00'),
+                    buildInfoCard(
+                      'MÉDIA DE MARGEM DE LUCRO',
+                      FutureBuilder<double>(
+                          future: dataStorage
+                              .getProfitMargin(), // O Future sendo observado
+                          builder: (context, snapshot) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return CircularProgressIndicator(); // Enquanto carrega
+                            } else if (snapshot.hasError) {
+                              return Text(
+                                'Erro: ${snapshot.error}',
+                                style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,)
+                                );
+                            } else if (snapshot.hasData) {
+                              return Text(
+                                '${snapshot.data}',
+                                style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,)); // Sucesso
+                            } else {
+                              return Text(
+                                  'Nenhum dado disponível',
+                                  style: const TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,)); // Estado inesperado
+                            }
+                          }),
+                    ),
+                    // buildBigInfoCard('CUSTO', 'R\$ ${dataStorage.ProductCost}'),
+                    // buildInfoCard('LUCRO ESTIMADO', 'R\$ 780,00'),
                   ],
                 ),
               ),
@@ -40,7 +73,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget buildInfoCard(String title, String value) {
+  Widget buildInfoCard(String title, Widget data) {
     final List<String> titleParts =
         title.split(' '); // Divide o título em partes
 
@@ -76,20 +109,12 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-            decoration: BoxDecoration(
-              color: const Color(0xFF98CFC2),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Text(
-              value,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+              decoration: BoxDecoration(
+                color: const Color(0xFF98CFC2),
+                borderRadius: BorderRadius.circular(8),
               ),
-            ),
-          ),
+              child: data),
         ],
       ),
     );

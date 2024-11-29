@@ -26,7 +26,7 @@ class _IndividualProductState extends State<IndividualProduct> {
           onPressed: () {
             Navigator.push(
               context, 
-              MaterialPageRoute(builder: (context) => ProductSelection())
+              MaterialPageRoute(builder: (context) => const ProductSelection())
             );
           },
         ),
@@ -79,7 +79,7 @@ class _IndividualProductState extends State<IndividualProduct> {
               onPressed: (){
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context)=> Concluded()));
+                  MaterialPageRoute(builder: (context)=> const Concluded()));
               }, 
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF003326),

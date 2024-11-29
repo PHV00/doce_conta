@@ -48,7 +48,7 @@ class _ReportGeneration extends State<ReportGeneration> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => MontlhyReport()));
+                              builder: (context) => const MontlhyReport()));
                       },
                       ),
                     ),

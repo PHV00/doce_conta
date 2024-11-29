@@ -107,7 +107,7 @@ Column buildColumnProfits(context) {
       color: const Color(0xFFC1BFBF),
       onPressedFunction: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CustomMarginProfit()));
+            MaterialPageRoute(builder: (context) => const CustomMarginProfit()));
       }));
   return Column(
     children: listColumn,

@@ -54,7 +54,7 @@ class _HubStockControll extends State<HubStockControll> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => StockManagementScreen(),
+                                  builder: (context) => const StockManagementScreen(),
                                 ),
                               );
                             },
@@ -144,7 +144,7 @@ class _HubStockControll extends State<HubStockControll> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ValueControlScreen(),
+                    builder: (context) => const ValueControlScreen(),
                   ),
                 );
               },

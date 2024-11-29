@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
 import 'package:doce_conta/view/Stock/stock_values_screen.dart';
+import 'package:flutter/material.dart';
 
 class StockManagementScreen extends StatefulWidget {
   const StockManagementScreen({super.key});
@@ -14,7 +12,7 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
   int stockQuantity = 0; // Quantidade inicial em estoque
   TextEditingController stockController = TextEditingController();
 
-  //Função para adicioanr ao estoque 
+  //Função para adicionar ao estoque
   void addStock() {
     setState(() {
       double quantity = double.tryParse(stockController.text) ?? 0;
@@ -23,20 +21,15 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
     });
   }
 
-  //Função para remover do estoque 
+  //Função para remover do estoque
   void removeStock() {
     setState(() {
-      if (stockQuantity > 0){
-      double quantity = double.tryParse(stockController.text) ?? 0;
-      stockQuantity -= quantity.toInt();
-      stockController.clear();
+      if (stockQuantity > 0) {
+        double quantity = double.tryParse(stockController.text) ?? 0;
+        stockQuantity -= quantity.toInt();
+        stockController.clear();
       }
     });
-  }
-
-  //Função para gerar faturamento - VENDA 
-  void sellProdutct(){
-    
   }
 
   @override
@@ -47,76 +40,64 @@ class _StockManagementScreenState extends State<StockManagementScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF00382B),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                builder: (context) => const HubStockControll(),
-                ),
-              );
-            },
-          ),
-          title: SvgPicture.asset(
-            'assets/images/bolo.svg',
-            height: 40,
-            color: const Color(0xFFF5A001),
-          ),
-          centerTitle: true,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF00382B),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: 1,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        InventoryItem(
-                          stockQuantity: stockQuantity,
-                          addStock: addStock,
-                          removeStock: removeStock,
-                          stockController: stockController,
-                        ),
-                        const Divider(color: Colors.orange, thickness: 1),
-                      ],
-                    );
-                  },
-                ),
+        title: const Text("Gestão de Estoque", style: TextStyle(color: Colors.white)),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            const SizedBox(height: 20),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 1,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      InventoryItem(
+                        stockQuantity: stockQuantity,
+                        addStock: addStock,
+                        removeStock: removeStock,
+                        stockController: stockController,
+                      ),
+                      const Divider(color: Colors.orange, thickness: 1),
+                    ],
+                  );
+                },
               ),
-              // Botão de Fechamento de Estoque
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20.0),
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF00382B),
-                    textStyle: const TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 20.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFF00382B),
+                  textStyle: const TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => ValueControlScreen(),
+                        builder: (context) => const ValueControlScreen(),
                       ),
                     );
                   },
-                  child: const Text(
-                    "Fechamento do Estoque",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                child: const Text(
+                  "Fechamento do Estoque",
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
@@ -133,7 +114,7 @@ class InventoryItem extends StatelessWidget {
     required this.stockQuantity,
     required this.addStock,
     required this.removeStock,
-    required this.stockController
+    required this.stockController,
   });
 
   @override
@@ -158,14 +139,14 @@ class InventoryItem extends StatelessWidget {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               Text(
-                'Estoque Atual: $stockQuantity', 
+                'Estoque Atual: $stockQuantity',
                 style: const TextStyle(fontSize: 16, color: Colors.green),
               ),
             ],
           ),
           const SizedBox(height: 10),
           TextField(
-            controller: stockController, 
+            controller: stockController,
             keyboardType: TextInputType.number,
             decoration: const InputDecoration(
               labelText: "Atualizar estoque",
@@ -179,8 +160,7 @@ class InventoryItem extends StatelessWidget {
             children: [
               Expanded(
                 child: ElevatedButton(
-                  //Chamando função para adicionar estoque
-                  onPressed: addStock, 
+                  onPressed: addStock,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
                     shape: RoundedRectangleBorder(
@@ -193,8 +173,7 @@ class InventoryItem extends StatelessWidget {
               const SizedBox(width: 10),
               Expanded(
                 child: ElevatedButton(
-                  //Chamando função de remover estoque 
-                  onPressed: removeStock, 
+                  onPressed: removeStock,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
                     shape: RoundedRectangleBorder(
@@ -208,7 +187,7 @@ class InventoryItem extends StatelessWidget {
               Expanded(
                 child: ElevatedButton(
                   onPressed: () {
-                    // Chamar função de vender 
+                    // Chamar função de vender
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF00382B),
