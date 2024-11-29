@@ -6,37 +6,55 @@ class DataStorage {
   int ProductCost = 0;
   double ProductMargin = 0;
 
-  DataStorage() {
-    getProfitMargin();
-  }
+  // DataStorage() {
+  //   getProfitMargin();
+  // }
 
   Future<double> getProfitMargin() async {
     final data =
         await Supabase.instance.client.from('produto').select('margem_lucro');
 
     double profitMargin = 0.0;
+
     data.forEach(((data) {
       profitMargin += data['margem_lucro'];
     }));
 
     profitMargin = profitMargin / data.length;
 
-    // this.ProductMargin = profitMargin;
-
-    // print(this.ProductMargin);
-
-    return profitMargin;
+    return double.parse(profitMargin.toStringAsFixed(2));
   }
 
-  String responseGetProfitMargin() {
-    String response = getProfitMargin().then((value) {
-      print(value);
-      return value.toString();
-    }).toString();
+  Future<double> getProductCost() async {
+    final data =
+        await Supabase.instance.client.from('produto').select('custo_produto');
 
-    print("******************************");
-    print(response);
+    double productCost = 0.0;
 
-    return response;
+    data.forEach(((data) {
+      productCost += data['custo_produto'];
+    }));
+
+    productCost = productCost / data.length;
+
+    return double.parse(productCost.toStringAsFixed(2));
+  }
+
+  Future<double> getProfit() async {
+    final firstDayThisMouth =
+        DateTime(DateTime.now().year, DateTime.now().month);
+
+    final data = await Supabase.instance.client
+        .from('produto')
+        .select('lucro_produto')
+        .gte('data_cadastro', firstDayThisMouth);
+
+    double productProfit = 0.0;
+
+    data.forEach(((data) {
+      productProfit += data['lucro_produto'];
+    }));
+
+    return double.parse(productProfit.toStringAsFixed(2));
   }
 }

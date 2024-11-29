@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     buildInfoCard(
-                      'MÉDIA DE MARGEM DE LUCRO',
+                      'MÉDIA MARGEM DE LUCRO TOTAL',
                       FutureBuilder<double>(
                           future: dataStorage
                               .getProfitMargin(), // O Future sendo observado
@@ -61,8 +61,74 @@ class HomeScreen extends StatelessWidget {
                             }
                           }),
                     ),
-                    // buildBigInfoCard('CUSTO', 'R\$ ${dataStorage.ProductCost}'),
-                    // buildInfoCard('LUCRO ESTIMADO', 'R\$ 780,00'),
+                    buildInfoCard(
+                      'MEDIA CUSTO DOS PRODUTOS',
+                      FutureBuilder<double>(
+                      future: dataStorage
+                          .getProductCost(), // O Future sendo observado
+                      builder: (context, snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return CircularProgressIndicator(); // Enquanto carrega
+                        } else if (snapshot.hasError) {
+                          return Text(
+                            'Erro: ${snapshot.error}',
+                            style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,)
+                            );
+                        } else if (snapshot.hasData) {
+                          return Text(
+                            '${snapshot.data}',
+                            style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,)); // Sucesso
+                        } else {
+                          return Text(
+                              'Nenhum dado disponível',
+                              style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,)); // Estado inesperado
+                        }
+                      })
+                    ),
+                    buildInfoCard(
+                      'LUCRO ULTIMO MÊS',
+                      FutureBuilder<double>(
+                        future: dataStorage
+                            .getProfit(), // O Future sendo observado
+                        builder: (context, snapshot) {
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return CircularProgressIndicator(); // Enquanto carrega
+                          } else if (snapshot.hasError) {
+                            return Text(
+                              'Erro: ${snapshot.error}',
+                              style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,)
+                              );
+                          } else if (snapshot.hasData) {
+                            return Text(
+                              '${snapshot.data}',
+                              style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,)); // Sucesso
+                          } else {
+                            return Text(
+                                'Nenhum dado disponível',
+                                style: const TextStyle(
+                                fontSize: 16,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,)); // Estado inesperado
+                          }
+                        })
+                    ),
                   ],
                 ),
               ),
@@ -120,7 +186,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget buildBigInfoCard(String title, String value) {
+  Widget buildBigInfoCard(String title, Widget data) {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -150,14 +216,7 @@ class HomeScreen extends StatelessWidget {
               color: const Color(0xFF98CFC2),
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Text(
-              value,
-              style: const TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            child: data
           ),
         ],
       ),
