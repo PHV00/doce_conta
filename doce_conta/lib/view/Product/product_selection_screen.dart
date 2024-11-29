@@ -52,7 +52,7 @@ class ProductSelection extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const ProductScreen()));
+                      builder: (context) => ProductScreen()));
               },
               backgroundColor: Colors.white,
               child: const Icon(Icons.add, color: Colors.black),

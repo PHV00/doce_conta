@@ -82,7 +82,8 @@ Column buildColumnProfits(context) {
               percentage: "${j * 5}%",
               color: const Color(
                 0xFF6FC3AF,
-              ))
+              ),
+            )
           : ButtonProfitMargin(
               percentage: "${j * 5}%",
               color: const Color(

@@ -5,7 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({super.key});
+  ProductScreen({super.key});
+
+  final TextEditingController productNameController = TextEditingController();
+  final TextEditingController unitCustController = TextEditingController();
+  final TextEditingController unitProfitController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -31,15 +35,17 @@ class ProductScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: productNameController,
+              decoration: const InputDecoration(
                 labelText: 'Nome do produto:',
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
             ),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: unitCustController,
+              decoration: const InputDecoration(
                 labelText: 'Custo por unidade:',
                 border: OutlineInputBorder(),
               ),
@@ -65,8 +71,9 @@ class ProductScreen extends StatelessWidget {
                   ),
                 ])),
             const SizedBox(height: 16),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: unitProfitController,
+              decoration: const InputDecoration(
                 labelText: 'Lucro por unidade:',
                 border: OutlineInputBorder(),
               ),
@@ -110,7 +117,8 @@ class ProductScreen extends StatelessWidget {
                 //       ],
                 //     );
                 //   },
-                // );
+                // // );
+              
                 Navigator.push(
                   context,
                   MaterialPageRoute(
