@@ -8,6 +8,12 @@ class ProfitMarginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    //Salvando os valores dos lucros em uma lista
+    List<int> textButtons = List.generate(24, (index) => (index+1) * 5);
+    
+
+
     return MaterialApp(
         home: SafeArea(
       child: Scaffold(
@@ -40,7 +46,7 @@ class ProfitMarginScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   width: 310,
-                  child: buildColumnProfits(context),
+                  child: buildColumnProfits(context, textButtons),
                 ),
                 const SizedBox(
                   height: 10,
@@ -68,29 +74,74 @@ class ProfitMarginScreen extends StatelessWidget {
   }
 }
 
-Column buildColumnProfits(context) {
+// Column buildColumnProfits(context) {
+//   List<Widget> listRow = [];
+//   List<Widget> listColumn = [];
+//   var j = 0;
+//   int index = 0;
+
+//   for (var i = 0; i < 8; i++) {
+//     while (index < 3) {
+//       j++;
+//       listRow.add(j == 8 || j == 15
+//           ? ButtonProfitMargin(
+//               percentage: "${j * 5}%",
+//               color: const Color(
+//                 0xFF6FC3AF,
+//               ),
+//             )
+//           : ButtonProfitMargin(
+//               percentage: "${j * 5}%",
+//               color: const Color(
+//                 0xFFC1BFBF,
+//               )));
+//       listRow.add(const SizedBox(width: 50));
+//       index++;
+//     }
+//     listRow.removeLast(); //Remove last widht box
+//     listRow.add(const SizedBox(
+//       height: 60,
+//     )); //Add space box height
+//     listColumn.add(Row(children: listRow));
+
+//     listRow.removeLast();
+
+//     listRow = [];
+//     index = 0;
+//   }
+//   listColumn.add(ButtonProfitMargin(
+//       percentage: "+",
+//       color: const Color(0xFFC1BFBF),
+//       onPressedFunction: () {
+//         Navigator.push(context,
+//             MaterialPageRoute(builder: (context) => const CustomMarginProfit()));
+//       }));
+//   return Column(
+//     children: listColumn,
+//   );
+// }
+
+Column buildColumnProfits(context, List<int> textButtonList) {
   List<Widget> listRow = [];
   List<Widget> listColumn = [];
   var j = 0;
   int index = 0;
 
+  // TENTAR FAZER COM QUE CONSIGA CLICAR E PEGAR O TEXTO DO BOTÃO
+  // VERIFICAR NO CHAT SOBRE O LISTER.GENERATE E O INDEX DESSA LISTA 
+
   for (var i = 0; i < 8; i++) {
     while (index < 3) {
-      j++;
-      listRow.add(j == 8 || j == 15
-          ? ButtonProfitMargin(
-              percentage: "${j * 5}%",
-              color: const Color(
-                0xFF6FC3AF,
-              ),
-            )
-          : ButtonProfitMargin(
-              percentage: "${j * 5}%",
-              color: const Color(
-                0xFFC1BFBF,
-              )));
+      listRow.add(ButtonProfitMargin(
+              percentage: "${textButtonList[j]}%",
+              color: const Color(0xFF6FC3AF,),
+              onPressedFunction: () {
+                debugPrint("Texto do botão apertado: ${textButtonList[j]}");
+              },
+            ));
       listRow.add(const SizedBox(width: 50));
       index++;
+      j++;
     }
     listRow.removeLast(); //Remove last widht box
     listRow.add(const SizedBox(
