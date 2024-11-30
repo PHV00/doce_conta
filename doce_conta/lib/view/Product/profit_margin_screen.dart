@@ -12,7 +12,10 @@ class ProfitMarginScreen extends StatelessWidget {
     //Salvando os valores dos lucros em uma lista
     List<int> textButtons = List.generate(24, (index) => (index+1) * 5);
     
-
+    List<ButtonProfitMargin> listButtons = List.generate(24, (index) => 
+                ButtonProfitMargin(percentage: "${textButtons[index]}%",
+                                   color: const Color(0xFF6FC3AF),
+                                   onPressedFunction: () => {debugPrint("Valor do botão: ${textButtons[index]}")},));
 
     return MaterialApp(
         home: SafeArea(
@@ -46,7 +49,7 @@ class ProfitMarginScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   width: 310,
-                  child: buildColumnProfits(context, textButtons),
+                  child: buildColumnProfits(context, listButtons),
                 ),
                 const SizedBox(
                   height: 10,
@@ -121,7 +124,7 @@ class ProfitMarginScreen extends StatelessWidget {
 //   );
 // }
 
-Column buildColumnProfits(context, List<int> textButtonList) {
+Column buildColumnProfits(context, List<ButtonProfitMargin> buttonList) {
   List<Widget> listRow = [];
   List<Widget> listColumn = [];
   var j = 0;
@@ -132,13 +135,7 @@ Column buildColumnProfits(context, List<int> textButtonList) {
 
   for (var i = 0; i < 8; i++) {
     while (index < 3) {
-      listRow.add(ButtonProfitMargin(
-              percentage: "${textButtonList[j]}%",
-              color: const Color(0xFF6FC3AF,),
-              onPressedFunction: () {
-                debugPrint("Texto do botão apertado: ${textButtonList[j]}");
-              },
-            ));
+      listRow.add(buttonList[j]);
       listRow.add(const SizedBox(width: 50));
       index++;
       j++;
