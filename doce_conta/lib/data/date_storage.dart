@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/widgets.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -56,5 +58,33 @@ class DataStorage {
     }));
 
     return double.parse(productProfit.toStringAsFixed(2));
+  }
+
+  Future<Map<String,List<dynamic>>> getListProductsCake() async {
+    final firstDayThisMouth =
+        DateTime(DateTime.now().year, DateTime.now().month);
+
+    final data = await Supabase.instance.client
+        .from('produto')
+        .select('id, nome_produto')
+        .eq('id_categoria', 1);
+
+    List<String> listNames = [];
+    List<int> listIds = [];
+
+    int i = 0;
+
+    data.forEach(((data) {
+      listIds.add(data['id']);
+      listNames.add(data['nome_produto']);
+      i++;
+    }));
+
+    Map<String, List<dynamic>> response = {
+      'id': listIds,
+      'name': listNames,
+    };
+
+    return response;
   }
 }

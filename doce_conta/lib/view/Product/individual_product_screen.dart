@@ -26,7 +26,7 @@ class _IndividualProductState extends State<IndividualProduct> {
           onPressed: () {
             Navigator.push(
               context, 
-              MaterialPageRoute(builder: (context) => const ProductSelection())
+              MaterialPageRoute(builder: (context) => ProductSelectionScreen())
             );
           },
         ),
