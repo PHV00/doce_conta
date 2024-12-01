@@ -1,22 +1,21 @@
+import 'package:doce_conta/view/Product/concluded_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../data/date_storage.dart';
 
 class IndividualProduct extends StatefulWidget {
   IndividualProduct(
       {super.key,
       required this.id,
-      required this.nome,
+      required this.name,
       required this.unitCost,
       required this.profitMargin});
 
   final int id;
-  final String nome;
+  final String name;
   final double unitCost;
   final double profitMargin;
-
-  double newUnitCost = 0;
-  double newProfitMargin = 0;
 
   @override
   _IndividualProductState createState() => _IndividualProductState();
@@ -26,9 +25,32 @@ class _IndividualProductState extends State<IndividualProduct> {
   // final TextEditingController productName =
   //     TextEditingController(text: "Bolo de Chocolate");
 
+  double newUnitCost = 0;
+  double newProfitMargin = 0;
+
+  late TextEditingController controllerName;
+  late TextEditingController controllerUnitCost;
+  late TextEditingController controllerProfitMargin;
+
+  String newName = '';
+
+  @override
+  void initState() {
+    super.initState();
+
+    controllerName = TextEditingController(text: widget.name);
+    controllerUnitCost =
+        TextEditingController(text: widget.unitCost.toString());
+    controllerProfitMargin =
+        TextEditingController(text: widget.profitMargin.toString());
+
+    newName = widget.name;
+    newUnitCost = widget.unitCost;
+    newProfitMargin = widget.profitMargin;
+  }
+
   @override
   Widget build(BuildContext context) {
-    DataStorage dataStorage = DataStorage();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -51,41 +73,43 @@ class _IndividualProductState extends State<IndividualProduct> {
         child: Column(
           children: [
             TextField(
-              controller: TextEditingController(text: widget.nome),
+              controller: controllerName,
               decoration: const InputDecoration(
                 labelText: "Nome do produto: ",
                 border: OutlineInputBorder(),
               ),
-            ),
-            const SizedBox(height: 16),
-            TextField(
-              controller:
-                  TextEditingController(text: widget.unitCost.toString()),
               onChanged: (value) {
                 setState(() {
                   // dataStorage.ProductCost =
                   //     int.tryParse(value) ?? dataStorage.ProductCost;
-
-                  print("!!!!!!!!!!!!!!!");
-                  print(value);
-                  widget.newUnitCost = double.tryParse(value)!;
+                  newName = value;
+                });
+              },
+            ),
+            const SizedBox(height: 16),
+            TextField(
+              controller: controllerUnitCost,
+              onChanged: (value) {
+                setState(() {
+                  // dataStorage.ProductCost =
+                  //     int.tryParse(value) ?? dataStorage.ProductCost;
+                  newUnitCost = double.tryParse(value)!;
                 });
               },
               decoration: InputDecoration(
-                labelText: "Custo por unidade: ${widget.unitCost}",
+                labelText: "Custo por unidade: ${newUnitCost}",
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 16),
             TextField(
-              controller:
-                  TextEditingController(text: widget.profitMargin.toString()),
+              controller: controllerProfitMargin,
               onChanged: (value) {
                 setState(() {
-                  // widget.newProfitMargin = widget.profitMargin;
+                  // widget.newProfitMargin = widget.profitwMargin;
 
-                  widget.newProfitMargin = double.tryParse(value)!;
+                  newProfitMargin = double.tryParse(value)!;
                 });
               },
               decoration: InputDecoration(
@@ -96,12 +120,19 @@ class _IndividualProductState extends State<IndividualProduct> {
             ),
             const SizedBox(height: 30),
             ElevatedButton(
-              onPressed: () {
-                print(widget.newProfitMargin);
-                print(widget.newUnitCost);
+              onPressed: () async {
+                print(newName);
+                print(newUnitCost);
+                print(newProfitMargin);
 
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => const Concluded()));
+                final response = await Supabase.instance.client.from('produto').update({
+                  'nome_produto': newName,
+                  'custo_produto': newUnitCost,
+                  'margem_lucro': newProfitMargin
+                }).eq('id', widget.id);
+
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Concluded()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF003326),

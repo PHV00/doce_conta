@@ -114,7 +114,7 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => IndividualProduct(id: id, nome: name, unitCost: unitCost, profitMargin: profitMargin,)),
+              builder: (context) => IndividualProduct(id: id, name: name, unitCost: unitCost, profitMargin: profitMargin,)),
         );
       },
       child: Container(

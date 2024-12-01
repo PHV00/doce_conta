@@ -2,8 +2,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 class DataStorage {
   // Propriedades que você quer compartilhar
-  int ProductCost = 0;
-  double ProductMargin = 0;
+  // int ProductCost = 0;
+  // double ProductMargin = 0;
 
   // DataStorage() {
   //   getProfitMargin();
