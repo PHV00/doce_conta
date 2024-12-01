@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:doce_conta/view/Stock/dashboard_screen.dart';
-import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
 
 class ValueControlScreen extends StatelessWidget {
   const ValueControlScreen({super.key});
@@ -85,7 +84,7 @@ class ValueControl extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Graphics()),
+                  MaterialPageRoute(builder: (context) => const Graphics()),
                 );
               },
               child: const Text('Caixa',

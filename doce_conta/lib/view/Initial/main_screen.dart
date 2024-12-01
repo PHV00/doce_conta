@@ -6,7 +6,6 @@ import 'package:doce_conta/widgets/bootom_navigation_bar_default.dart';
 import 'package:flutter/material.dart';
 import 'package:doce_conta/view/Store/hub_store_costing_screen.dart';
 import 'package:doce_conta/view/Stock/hub_stock_controll_screen.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

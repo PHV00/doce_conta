@@ -1,15 +1,28 @@
 import 'package:doce_conta/view/Product/concluded_screen.dart';
 import 'package:doce_conta/view/Product/icon_selection_screen.dart';
+import 'package:doce_conta/view/Product/product_selection_screen.dart';
 import 'package:doce_conta/view/Product/profit_margin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-class ProductScreen extends StatelessWidget {
-  ProductScreen({super.key});
+class ProductScreen extends StatefulWidget {
+  ProductScreen({super.key, required this.idCategory});
 
+  final int idCategory;
+
+  @override
+  _ProductScreenState createState() => _ProductScreenState();
+}
+
+class _ProductScreenState extends State<ProductScreen> {
   final TextEditingController productNameController = TextEditingController();
   final TextEditingController unitCustController = TextEditingController();
   final TextEditingController unitProfitController = TextEditingController();
+
+  String newName = "";
+  double newUnitCost = 0;
+  double newProfitMargin = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +34,10 @@ class ProductScreen extends StatelessWidget {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             //voltar
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProductSelectionScreen(category: widget.idCategory,)));
           },
         ),
         title: SvgPicture.asset(
@@ -42,7 +58,15 @@ class ProductScreen extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
+              onChanged: (value) {
+                setState(() {
+                  // dataStorage.ProductCost =
+                  //     int.tryParse(value) ?? dataStorage.ProductCost;
+                  newName = value;
+                });
+              },
             ),
+            Padding(padding: EdgeInsets.only(bottom: 20)),
             TextField(
               controller: unitCustController,
               decoration: const InputDecoration(
@@ -50,27 +74,36 @@ class ProductScreen extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
+              onChanged: (value) {
+                setState(() {
+                  // dataStorage.ProductCost =
+                  //     int.tryParse(value) ?? dataStorage.ProductCost;
+                  newUnitCost = double.tryParse(value)!;
+                });
+              },
             ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ProfitMarginScreen()));
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff003326),
-                ),
-                child: const Row(children: [
-                  Icon(Icons.arrow_forward, color: Colors.white),
-                  SizedBox(width: 15,),
-                  Center(
-                    child: Text('Selecione a margem de lucro',
-                        style: TextStyle(color: Color(0xffccf2e6))),
-                  ),
-                ])),
-            const SizedBox(height: 16),
+            // Padding(padding: EdgeInsets.only(bottom: 20)),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.push(
+            //           context,
+            //           MaterialPageRoute(
+            //               builder: (context) => const ProfitMarginScreen()));
+            //     },
+            //     style: ElevatedButton.styleFrom(
+            //       backgroundColor: const Color(0xff003326),
+            //     ),
+            //     child: const Row(children: [
+            //       Icon(Icons.arrow_forward, color: Colors.white),
+            //       SizedBox(
+            //         width: 15,
+            //       ),
+            //       Center(
+            //         child: Text('Selecione a margem de lucro',
+            //             style: TextStyle(color: Color(0xffccf2e6))),
+            //       ),
+            //     ])),
+            Padding(padding: EdgeInsets.only(bottom: 20)),
             TextField(
               controller: unitProfitController,
               decoration: const InputDecoration(
@@ -78,52 +111,32 @@ class ProductScreen extends StatelessWidget {
                 border: OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
+              onChanged: (value) {
+                setState(() {
+                  // dataStorage.ProductCost =
+                  //     int.tryParse(value) ?? dataStorage.ProductCost;
+                  newProfitMargin = double.tryParse(value)!;
+                });
+              },
             ),
-            const SizedBox(height: 20),
+            Padding(padding: EdgeInsets.only(bottom: 20)),
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => IconSelectionScreen()));
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff003326),
-                ),
-                child: const Row(children: [
-                  Icon(Icons.arrow_forward, color: Colors.white),
-                  SizedBox(width: 15,),
-                  Center(
-                    child: Text('Selecione Icone',
-                        style: TextStyle(color: Color(0xffccf2e6))),
-                  ),
-                ])),
-            const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () {
-                // showDialog(
-                //   context: context,
-                //   builder: (BuildContext context) {
-                //     return AlertDialog(
-                //       title: const Text('Sucesso'),
-                //       content: const Text('Registro realizado com sucesso!'),
-                //       actions: [
-                //         TextButton(
-                //           onPressed: () {
-                //             Navigator.of(context).pop();
-                //           },
-                //           child: const Text('OK'),
-                //         ),
-                //       ],
-                //     );
-                //   },
-                // // );
-              
+              onPressed: () async {
+                await Supabase.instance.client.from("produto").insert([
+                  {
+                    'nome_produto': newName,
+                    'custo_produto': newUnitCost,
+                    'margem_lucro': newProfitMargin,
+                    'lucro_produto': newUnitCost * (newProfitMargin / 100),
+                    'id_categoria': widget.idCategory,
+                  }
+                ]);
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const Concluded()));
-                },
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xff003326), // cor botão
               ),

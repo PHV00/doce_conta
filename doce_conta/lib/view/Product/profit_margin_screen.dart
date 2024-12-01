@@ -8,23 +8,28 @@ class ProfitMarginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     //Salvando os valores dos lucros em uma lista
-    List<int> textButtons = List.generate(24, (index) => (index+1) * 5);
-    
-    List<ButtonProfitMargin> listButtons = List.generate(24, (index) => 
-                ButtonProfitMargin(percentage: "${textButtons[index]}%",
-                                   color: const Color(0xFF6FC3AF),
-                                   onPressedFunction: () => {debugPrint("Valor do botão: ${textButtons[index]}")},));
+    List<int> textButtons = List.generate(24, (index) => (index + 1) * 5);
+
+    List<ButtonProfitMargin> listButtons = List.generate(
+        24,
+        (index) => ButtonProfitMargin(
+              percentage: "${textButtons[index]}%",
+              color: const Color(0xFF6FC3AF),
+              onPressedFunction: () =>
+                  {debugPrint("Valor do botão: ${textButtons[index]}")},
+            ));
 
     return MaterialApp(
-        home: SafeArea(
+      home: SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading:IconButton(
+          leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () {Navigator.of(context).pop();},
-            ),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
           centerTitle: true,
           title: const Text(
             "Margem de Lucro por produto",
@@ -40,31 +45,16 @@ class ProfitMarginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(
-                    width: 310,
-                    child: Text(
-                        "Selecione a procentagem de lucro que gostaria de ter em seu produto:")),
-                const SizedBox(
-                  height: 10,
+                Text(
+                    "Selecione a procentagem de lucro que gostaria de ter em seu produto:"),
+                Row(
+                  children:[ buildColumnProfits(context, listButtons) ],
                 ),
-                SizedBox(
-                  width: 310,
-                  child: buildColumnProfits(context, listButtons),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const SizedBox(
-                  width: 310,
-                  child: Text(
-                      "Os Valores de 40% e de 75% são porcentagens recomendadas para o seu negócio!"),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
+                Text(
+                    "Os Valores de 40% e de 75% são porcentagens recomendadas para o seu negócio!"),
                 ButtonWidget(
                   btnText: "Ok",
-                  onPressedFunction: (){
+                  onPressedFunction: () {
                     Navigator.of(context).pop();
                   },
                 ),
@@ -131,12 +121,13 @@ Column buildColumnProfits(context, List<ButtonProfitMargin> buttonList) {
   int index = 0;
 
   // TENTAR FAZER COM QUE CONSIGA CLICAR E PEGAR O TEXTO DO BOTÃO
-  // VERIFICAR NO CHAT SOBRE O LISTER.GENERATE E O INDEX DESSA LISTA 
+  // VERIFICAR NO CHAT SOBRE O LISTER.GENERATE E O INDEX DESSA LISTA
 
   for (var i = 0; i < 8; i++) {
     while (index < 3) {
       listRow.add(buttonList[j]);
-      listRow.add(const SizedBox(width: 50));
+      listRow.add(const Padding(padding: EdgeInsets.only(left: 25)));
+      listRow.add(const Padding(padding: EdgeInsets.only(bottom: 50)));
       index++;
       j++;
     }
@@ -151,13 +142,6 @@ Column buildColumnProfits(context, List<ButtonProfitMargin> buttonList) {
     listRow = [];
     index = 0;
   }
-  listColumn.add(ButtonProfitMargin(
-      percentage: "+",
-      color: const Color(0xFFC1BFBF),
-      onPressedFunction: () {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const CustomMarginProfit()));
-      }));
   return Column(
     children: listColumn,
   );
