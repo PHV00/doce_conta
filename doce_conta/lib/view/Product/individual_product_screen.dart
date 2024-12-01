@@ -119,29 +119,45 @@ class _IndividualProductState extends State<IndividualProduct> {
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 30),
-            ElevatedButton(
-              onPressed: () async {
-                print(newName);
-                print(newUnitCost);
-                print(newProfitMargin);
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ElevatedButton(
+                  onPressed: () async {
+                    await Supabase.instance.client.from('produto').update({
+                      'nome_produto': newName,
+                      'custo_produto': newUnitCost,
+                      'margem_lucro': newProfitMargin
+                    }).eq('id', widget.id);
 
-                final response = await Supabase.instance.client.from('produto').update({
-                  'nome_produto': newName,
-                  'custo_produto': newUnitCost,
-                  'margem_lucro': newProfitMargin
-                }).eq('id', widget.id);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Concluded()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF003326),
+                  ),
+                  child: const Text(
+                    "Salvar Alterações",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
 
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Concluded()));
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF003326),
-              ),
-              child: const Text(
-                "Concluído",
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
+                ElevatedButton(
+                  onPressed: () async {
+                    await Supabase.instance.client.from('produto').delete().eq('id', widget.id);
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Concluded()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF003326),
+                  ),
+                  child: const Text(
+                    "Deletar",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
