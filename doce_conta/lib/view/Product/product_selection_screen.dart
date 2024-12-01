@@ -39,7 +39,7 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
           future: dataStorage.getListProductsCake(), // O Future sendo observado
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator(); // Enquanto carrega
+              return const CircularProgressIndicator(); // Enquanto carrega
             } else if (snapshot.hasError) {
               return Text('Erro: ${snapshot.error}',
                   style: const TextStyle(
@@ -48,12 +48,7 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
                     fontWeight: FontWeight.bold,
                   ));
             } else if (snapshot.hasData) {
-              // final id = data['id'] as List<int>;
-              // final name = data['name'] as List<String>;
-
-              print(snapshot.data!['id']);
-
-              print(snapshot.data!['name']);
+              print(snapshot.data);
 
               return Column(
                 children: [
@@ -65,7 +60,14 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
                       itemBuilder: (context, index) {
                         // Lista de produtos
                         final productNames = snapshot.data!['name'];
-                        return _buildProductItem(context, productNames![index]);
+                        return _buildProductItem(
+                            context,
+                            productNames![index],
+                            snapshot.data!['id']?[index],
+                            snapshot.data!['name']?[index],
+                            snapshot.data!['unit_cost']?[index],
+                            snapshot.data!['profit_margin']?[index]
+                            );
                       },
                       separatorBuilder: (context, index) => const Divider(
                         color: Colors.amber, // Linha amarela entre os itens
@@ -93,8 +95,8 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
                 ],
               );
             } else {
-              return Text('Nenhum dado disponível',
-                  style: const TextStyle(
+              return const Text('Nenhum dado disponível',
+                  style: TextStyle(
                     fontSize: 16,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
@@ -104,13 +106,15 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
     );
   }
 
-  Widget _buildProductItem(BuildContext context, String productName) {
+  Widget _buildProductItem(
+      BuildContext context, String productName, int id, String name, double unitCost , double profitMargin ) {
     return GestureDetector(
       onTap: () {
         // Ação ao clicar no produto
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const IndividualProduct()),
+          MaterialPageRoute(
+              builder: (context) => IndividualProduct(id: id, nome: name, unitCost: unitCost, profitMargin: profitMargin,)),
         );
       },
       child: Container(

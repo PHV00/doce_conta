@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                           builder: (context, snapshot) {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {
-                              return CircularProgressIndicator(); // Enquanto carrega
+                              return const CircularProgressIndicator(); // Enquanto carrega
                             } else if (snapshot.hasError) {
                               return Text(
                                 'Erro: ${snapshot.error}',
@@ -52,9 +52,9 @@ class HomeScreen extends StatelessWidget {
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,)); // Sucesso
                             } else {
-                              return Text(
+                              return const Text(
                                   'Nenhum dado disponível',
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                   fontSize: 16,
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,)); // Estado inesperado
@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState ==
                             ConnectionState.waiting) {
-                          return CircularProgressIndicator(); // Enquanto carrega
+                          return const CircularProgressIndicator(); // Enquanto carrega
                         } else if (snapshot.hasError) {
                           return Text(
                             'Erro: ${snapshot.error}',
@@ -86,9 +86,9 @@ class HomeScreen extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.bold,)); // Sucesso
                         } else {
-                          return Text(
+                          return const Text(
                               'Nenhum dado disponível',
-                              style: const TextStyle(
+                              style: TextStyle(
                               fontSize: 16,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,)); // Estado inesperado
@@ -103,7 +103,7 @@ class HomeScreen extends StatelessWidget {
                         builder: (context, snapshot) {
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
-                            return CircularProgressIndicator(); // Enquanto carrega
+                            return const CircularProgressIndicator(); // Enquanto carrega
                           } else if (snapshot.hasError) {
                             return Text(
                               'Erro: ${snapshot.error}',
@@ -120,9 +120,9 @@ class HomeScreen extends StatelessWidget {
                               color: Colors.black,
                               fontWeight: FontWeight.bold,)); // Sucesso
                           } else {
-                            return Text(
+                            return const Text(
                                 'Nenhum dado disponível',
-                                style: const TextStyle(
+                                style: TextStyle(
                                 fontSize: 16,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,)); // Estado inesperado

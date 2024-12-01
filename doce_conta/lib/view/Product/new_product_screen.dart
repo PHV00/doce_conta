@@ -58,7 +58,9 @@ class ProductScreen extends StatelessWidget {
                 ),
                 child: const Row(children: [
                   Icon(Icons.arrow_forward, color: Colors.white),
-                  SizedBox(width: 15,),
+                  SizedBox(
+                    width: 15,
+                  ),
                   Center(
                     child: Text('Selecione a margem de lucro',
                         style: TextStyle(color: Color(0xffccf2e6))),
@@ -85,7 +87,9 @@ class ProductScreen extends StatelessWidget {
                 ),
                 child: const Row(children: [
                   Icon(Icons.arrow_forward, color: Colors.white),
-                  SizedBox(width: 15,),
+                  SizedBox(
+                    width: 15,
+                  ),
                   Center(
                     child: Text('Selecione Icone',
                         style: TextStyle(color: Color(0xffccf2e6))),
@@ -111,11 +115,9 @@ class ProductScreen extends StatelessWidget {
                 //     );
                 //   },
                 // );
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const Concluded()));
-                },
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Concluded()));
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xff003326), // cor botão
               ),

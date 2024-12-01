@@ -1,18 +1,30 @@
-import 'package:doce_conta/view/Product/concluded_screen.dart';
-import 'package:doce_conta/view/Product/product_selection_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../data/date_storage.dart';
 
 class IndividualProduct extends StatefulWidget {
-  const IndividualProduct({super.key});
+  IndividualProduct(
+      {super.key,
+      required this.id,
+      required this.nome,
+      required this.unitCost,
+      required this.profitMargin});
+
+  final int id;
+  final String nome;
+  final double unitCost;
+  final double profitMargin;
+
+  double newUnitCost = 0;
+  double newProfitMargin = 0;
 
   @override
   _IndividualProductState createState() => _IndividualProductState();
 }
 
 class _IndividualProductState extends State<IndividualProduct> {
-  final TextEditingController productName = TextEditingController(text: "Bolo de Chocolate");
+  // final TextEditingController productName =
+  //     TextEditingController(text: "Bolo de Chocolate");
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +36,7 @@ class _IndividualProductState extends State<IndividualProduct> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
-            Navigator.push(
-              context, 
-              MaterialPageRoute(builder: (context) => ProductSelectionScreen())
-            );
+            Navigator.pop(context);
           },
         ),
         title: SvgPicture.asset(
@@ -42,7 +51,7 @@ class _IndividualProductState extends State<IndividualProduct> {
         child: Column(
           children: [
             TextField(
-              controller: productName,
+              controller: TextEditingController(text: widget.nome),
               decoration: const InputDecoration(
                 labelText: "Nome do produto: ",
                 border: OutlineInputBorder(),
@@ -50,37 +59,50 @@ class _IndividualProductState extends State<IndividualProduct> {
             ),
             const SizedBox(height: 16),
             TextField(
+              controller:
+                  TextEditingController(text: widget.unitCost.toString()),
               onChanged: (value) {
                 setState(() {
-                  dataStorage.ProductCost = int.tryParse(value) ?? dataStorage.ProductCost;
+                  // dataStorage.ProductCost =
+                  //     int.tryParse(value) ?? dataStorage.ProductCost;
+
+                  print("!!!!!!!!!!!!!!!");
+                  print(value);
+                  widget.newUnitCost = double.tryParse(value)!;
                 });
               },
               decoration: InputDecoration(
-                labelText: "Custo por unidade: ${dataStorage.ProductCost}",
+                labelText: "Custo por unidade: ${widget.unitCost}",
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 16),
             TextField(
-              onChanged: (value){
+              controller:
+                  TextEditingController(text: widget.profitMargin.toString()),
+              onChanged: (value) {
                 setState(() {
-                  dataStorage.ProductMargin = double.tryParse(value) ?? dataStorage.ProductMargin;
+                  // widget.newProfitMargin = widget.profitMargin;
+
+                  widget.newProfitMargin = double.tryParse(value)!;
                 });
               },
               decoration: InputDecoration(
-                labelText: "Margem de Lucro: ${dataStorage.ProductMargin}",
+                labelText: "Margem de Lucro: ${widget.profitMargin}",
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 30),
             ElevatedButton(
-              onPressed: (){
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context)=> const Concluded()));
-              }, 
+              onPressed: () {
+                print(widget.newProfitMargin);
+                print(widget.newUnitCost);
+
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => const Concluded()));
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF003326),
               ),
@@ -95,7 +117,3 @@ class _IndividualProductState extends State<IndividualProduct> {
     );
   }
 }
-
-
-
-
