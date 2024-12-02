@@ -1,4 +1,5 @@
 import 'package:doce_conta/view/Product/new_product_screen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:doce_conta/view/Product/individual_product_screen.dart';
@@ -6,7 +7,9 @@ import '../../data/date_storage.dart';
 
 class ProductSelectionScreen extends StatefulWidget {
   //colocar const e resolver
-  ProductSelectionScreen({super.key});
+  ProductSelectionScreen({super.key, required this.category});
+
+  final int category;
 
   final List ids = [0];
   final List names = [0];
@@ -48,8 +51,6 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
                     fontWeight: FontWeight.bold,
                   ));
             } else if (snapshot.hasData) {
-              print(snapshot.data);
-
               return Column(
                 children: [
                   // Lista de produtos
@@ -66,8 +67,7 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
                             snapshot.data!['id']?[index],
                             snapshot.data!['name']?[index],
                             snapshot.data!['unit_cost']?[index],
-                            snapshot.data!['profit_margin']?[index]
-                            );
+                            snapshot.data!['profit_margin']?[index]);
                       },
                       separatorBuilder: (context, index) => const Divider(
                         color: Colors.amber, // Linha amarela entre os itens
@@ -83,10 +83,10 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
                     child: FloatingActionButton(
                       onPressed: () {
                         // Ação para adicionar novo produto
-                        Navigator.push(
+                        Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const ProductScreen()));
+                                builder: (context) => ProductScreen(idCategory: 1)));
                       },
                       backgroundColor: Colors.white,
                       child: const Icon(Icons.add, color: Colors.black),
@@ -106,15 +106,20 @@ class _ProductSelectionScreen extends State<ProductSelectionScreen> {
     );
   }
 
-  Widget _buildProductItem(
-      BuildContext context, String productName, int id, String name, double unitCost , double profitMargin ) {
+  Widget _buildProductItem(BuildContext context, String productName, int id,
+      String name, double unitCost, double profitMargin) {
     return GestureDetector(
       onTap: () {
         // Ação ao clicar no produto
         Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => IndividualProduct(id: id, name: name, unitCost: unitCost, profitMargin: profitMargin,)),
+              builder: (context) => IndividualProduct(
+                    id: id,
+                    name: name,
+                    unitCost: unitCost,
+                    profitMargin: profitMargin,
+                  )),
         );
       },
       child: Container(

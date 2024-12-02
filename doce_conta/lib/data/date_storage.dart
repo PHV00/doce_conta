@@ -58,9 +58,6 @@ class DataStorage {
   }
 
   Future<Map<String, List<dynamic>>> getListProductsCake() async {
-    final firstDayThisMouth =
-        DateTime(DateTime.now().year, DateTime.now().month);
-
     final data = await Supabase.instance.client
         .from('produto')
         .select('id, nome_produto , custo_produto , margem_lucro')

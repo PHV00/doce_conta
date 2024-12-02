@@ -2,6 +2,8 @@ import 'package:doce_conta/view/Initial/login_screen.dart';
 import 'package:doce_conta/view/Initial/successful_register_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import '../../widgets/input_and_label.dart';
 import '../../widgets/button.dart';
 import '../../data/auth_service.dart';
 

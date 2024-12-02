@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                       })
                     ),
                     buildInfoCard(
-                      'LUCRO ULTIMO MÊS',
+                      'LUCRO UNITÁRIO DO ULTIMO MÊS',
                       FutureBuilder<double>(
                         future: dataStorage
                             .getProfit(), // O Future sendo observado
