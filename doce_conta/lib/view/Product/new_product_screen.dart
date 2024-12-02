@@ -1,7 +1,5 @@
 import 'package:doce_conta/view/Product/concluded_screen.dart';
-import 'package:doce_conta/view/Product/icon_selection_screen.dart';
 import 'package:doce_conta/view/Product/product_selection_screen.dart';
-import 'package:doce_conta/view/Product/profit_margin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';

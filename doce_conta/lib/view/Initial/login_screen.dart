@@ -80,6 +80,25 @@ class _LoginScreenState extends State<LoginScreen> {
               onPressedFunction: () async {
                 try{
                   final response = await authService.signInWithEmailPassword(_pegarTexto(_emailInput), _pegarTexto(_passwordInput));
+                  
+                showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('RESPOSTA'),
+                    content: Text(response.toString()),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Fechar'),
+                      ),
+                    ],
+                  );
+                },
+              );
+                  
                   if(response.session == null){
                       setState(() {
                         successfullLogin = false;
