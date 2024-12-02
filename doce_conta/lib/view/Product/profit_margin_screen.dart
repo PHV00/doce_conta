@@ -16,8 +16,8 @@ class ProfitMarginScreen extends StatelessWidget {
         (index) => ButtonProfitMargin(
               percentage: "${textButtons[index]}%",
               color: const Color(0xFF6FC3AF),
-              onPressedFunction: () =>
-                  {debugPrint("Valor do botão: ${textButtons[index]}")},
+              // onPressedFunction: () =>
+                  // {debugPrint("Valor do botão: ${textButtons[index]}")},
             ));
 
     return MaterialApp(
@@ -45,12 +45,12 @@ class ProfitMarginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                     "Selecione a procentagem de lucro que gostaria de ter em seu produto:"),
                 Row(
                   children:[ buildColumnProfits(context, listButtons) ],
                 ),
-                Text(
+                const Text(
                     "Os Valores de 40% e de 75% são porcentagens recomendadas para o seu negócio!"),
                 ButtonWidget(
                   btnText: "Ok",

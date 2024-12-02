@@ -6,10 +6,10 @@ class ApiBrandsLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgPicture.asset("assets/Images/google_icon.svg", width: 24, height: 24,),
+        // SvgPicture.asset("assets/Images/google_icon.svg", width: 24, height: 24,),
       ],
     );
   }

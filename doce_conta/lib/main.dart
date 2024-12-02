@@ -1,4 +1,4 @@
-import 'package:doce_conta/view/initial/main_screen.dart';
+import 'package:doce_conta/view/Initial/Initial_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: MainScreen(),
+      home: InitialScreen(),
     );
   }
 }

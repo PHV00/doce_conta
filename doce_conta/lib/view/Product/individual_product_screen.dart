@@ -5,7 +5,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../data/date_storage.dart';
 
 class IndividualProduct extends StatefulWidget {
-  IndividualProduct(
+  const IndividualProduct(
       {super.key,
       required this.id,
       required this.name,
@@ -97,7 +97,7 @@ class _IndividualProductState extends State<IndividualProduct> {
                 });
               },
               decoration: InputDecoration(
-                labelText: "Custo por unidade: ${newUnitCost}",
+                labelText: "Custo por unidade: $newUnitCost",
                 border: const OutlineInputBorder(),
               ),
               keyboardType: TextInputType.number,
@@ -131,7 +131,7 @@ class _IndividualProductState extends State<IndividualProduct> {
                     }).eq('id', widget.id);
 
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Concluded()));
+                        MaterialPageRoute(builder: (context) => const Concluded()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF003326),
@@ -146,7 +146,7 @@ class _IndividualProductState extends State<IndividualProduct> {
                   onPressed: () async {
                     await Supabase.instance.client.from('produto').delete().eq('id', widget.id);
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Concluded()));
+                        MaterialPageRoute(builder: (context) => const Concluded()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF003326),

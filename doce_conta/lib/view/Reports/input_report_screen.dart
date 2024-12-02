@@ -11,12 +11,6 @@ class MontlhyReport extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0xFF00382B),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
         title: SvgPicture.asset(
           'assets/images/relatorio.svg',
           height: 40,

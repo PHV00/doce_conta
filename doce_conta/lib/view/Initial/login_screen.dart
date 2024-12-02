@@ -3,7 +3,6 @@ import 'package:doce_conta/view/initial/register_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import '../../widgets/button.dart';
-import '../../widgets/other_options.dart';
 import '../../widgets/api_brands_login.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../data/auth_service.dart';
@@ -116,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: const TextStyle(color: Color(0xFF00A3FF))),
                 ])),
             const SizedBox(height: 50),
-            const OtherOptionsWidget(),
+            // const OtherOptionsWidget(),
             const SizedBox(height: 40),
             const ApiBrandsLogin(),
             const SizedBox(height: 20),

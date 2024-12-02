@@ -7,7 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class ProductScreen extends StatefulWidget {
-  ProductScreen({super.key, required this.idCategory});
+  const ProductScreen({super.key, required this.idCategory});
 
   final int idCategory;
 
@@ -66,7 +66,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 });
               },
             ),
-            Padding(padding: EdgeInsets.only(bottom: 20)),
+            const Padding(padding: EdgeInsets.only(bottom: 20)),
             TextField(
               controller: unitCustController,
               decoration: const InputDecoration(
@@ -103,7 +103,7 @@ class _ProductScreenState extends State<ProductScreen> {
             //             style: TextStyle(color: Color(0xffccf2e6))),
             //       ),
             //     ])),
-            Padding(padding: EdgeInsets.only(bottom: 20)),
+            const Padding(padding: EdgeInsets.only(bottom: 20)),
             TextField(
               controller: unitProfitController,
               decoration: const InputDecoration(
@@ -119,7 +119,7 @@ class _ProductScreenState extends State<ProductScreen> {
                 });
               },
             ),
-            Padding(padding: EdgeInsets.only(bottom: 20)),
+            const Padding(padding: EdgeInsets.only(bottom: 20)),
             ElevatedButton(
               onPressed: () async {
                 await Supabase.instance.client.from("produto").insert([
