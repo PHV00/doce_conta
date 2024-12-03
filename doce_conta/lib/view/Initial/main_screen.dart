@@ -1,4 +1,5 @@
 //https://medium.com/flutter-community/data-binding-in-flutter-or-passing-data-from-a-child-widget-to-a-parent-widget-4b1c5ffe2114
+import 'package:doce_conta/view/Reports/hub_report_generation_screen.dart';
 import 'package:doce_conta/view/Reports/input_report_screen.dart';
 import 'package:doce_conta/view/initial/home_screen.dart';
 import 'package:doce_conta/view/Product/hub_products_screen.dart';
@@ -26,7 +27,7 @@ class _MainScreen extends State<MainScreen> {
     //Estoque
     const HubStockControll(),
     //Relatorio
-    const MontlhyReport()
+    const ReportGeneration()
   ];
 
   Widget actualScreen = const HomeScreen();

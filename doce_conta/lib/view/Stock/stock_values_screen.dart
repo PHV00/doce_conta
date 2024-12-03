@@ -1,3 +1,4 @@
+import 'package:doce_conta/view/Initial/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:doce_conta/view/Stock/dashboard_screen.dart';
@@ -38,7 +39,12 @@ class ValueControl extends StatelessWidget {
                   IconButton(
                     icon: const Icon(Icons.arrow_back, color: Colors.white),
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const MainScreen(),
+                        ),
+                );
                     },
                   ),
                   const Spacer(),

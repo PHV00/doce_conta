@@ -22,7 +22,7 @@ class _ReportGeneration extends State<ReportGeneration> {
       appBar: AppBar(
         backgroundColor: const Color(0xff003326),
         title: const Text(
-          "Report Generation",
+          "Geração de Relatórios",
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
