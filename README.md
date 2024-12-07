@@ -15,7 +15,7 @@
 
 ### Amanda Korczagin
 ### Daniel Douglas dos Santos
-### Flávia Antonieli
+### Flávia Antonieli de Souza
 ### Guilherme Mafra Paluski
 ### Gustavo Cachoeira
 ### Gustavo Mafra Paluski
