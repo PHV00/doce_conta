@@ -13,6 +13,7 @@
 ```flutter run lib/main.dart```
 ### Escolha a forma de visualização e pronto! O app está pronto para uso.
 
+### Integrantes:
 ### Amanda Korczagin
 ### Daniel Douglas dos Santos
 ### Flávia Antonieli de Souza
