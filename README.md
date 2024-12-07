@@ -4,7 +4,7 @@
 
 ### O aplicativo contribui ao cliente administrar os gastos da loja.
 
-### O projeto foi desenvolvido para realizar a gestão financeira dos gastos e lucros do microempreendimento cadastrado.
+### O aplicativo Doce Conta tem como objetivo principal facilitar e automatizar a gestão de microempresas no ramo da confeitaria, oferecendo ferramentas para o controle de custos, precificação, controle de estoque e acompanhamento financeiro. ### Ele busca auxiliar empreendedores a gerenciar suas operações com eficiência, aumentando a lucratividade e promovendo uma visão mais clara sobre os gastos e receitas.
 
 ### Ao baixar o arquivo do app, basta abri-lo no Visual Code Studio e apertar "Ctrl" + "J". Em seguida, digite o seguinte comando:
 
