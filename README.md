@@ -12,3 +12,11 @@
 ### Depois, digite:
 ```flutter run lib/main.dart```
 ### Escolha a forma de visualização e pronto! O app está pronto para uso.
+
+### Amanda Korczagin
+### Daniel Douglas dos Santos
+### Flávia Antonieli
+### Guilherme Mafra Paluski
+### Gustavo Cachoeira
+### Gustavo Mafra Paluski
+### Pedro Henrique Vitoreti
